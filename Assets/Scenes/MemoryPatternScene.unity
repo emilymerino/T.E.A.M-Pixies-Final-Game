@@ -1831,7 +1831,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playersSelection: {fileID: 615105077}
-  timeRemaining: 10
+  timeRemaining: 3
   PlayersTurnText: {fileID: 714209393}
 --- !u!114 &714209393
 MonoBehaviour:
@@ -2452,7 +2452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67236c19ebaca47f2a536202d1dd23b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 10
+  timeRemaining: 3
   Clue: {fileID: 1183130671}
 --- !u!114 &1183130671
 MonoBehaviour:
@@ -2698,7 +2698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ac0be65ffa2b4f87a9db80f339d1655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 10
+  timeRemaining: 3
   MinigameName: {fileID: 1293412769}
   instructionsPopUp: {fileID: 1642889268}
 --- !u!1 &1552688881
@@ -3143,7 +3143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94ad7dd6c743c4337ba17fea74d2256d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 10
+  timeRemaining: 25
   Instructions: {fileID: 1642889266}
   borderBehaviour: {fileID: 441341474}
   setPattern: {fileID: 1859818375}
@@ -3779,7 +3779,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recievedCluePopUp: {fileID: 1183130670}
-  timeRemaining: 10
+  timeRemaining: 3
   GameOver: {fileID: 2087133833}
 --- !u!114 &2087133833
 MonoBehaviour:
