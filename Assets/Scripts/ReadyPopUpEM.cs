@@ -5,6 +5,7 @@ using TMPro;
 
 public class ReadyPopUpEM : MonoBehaviour
 {
+    public BoardBehaviourEM boardBehaviourEM;
     public float timeRemaining = 1f;
     public TextMeshProUGUI Ready;
 
@@ -32,6 +33,8 @@ public class ReadyPopUpEM : MonoBehaviour
         {
             Ready.gameObject.SetActive(false); // hide text
             enabled = false;
+            boardBehaviourEM.ShowBoard(); // go to BoardBehaviour script
+            boardBehaviourEM.ShowShapes(); // go to BoardBehaviour script
         }
     }
 }

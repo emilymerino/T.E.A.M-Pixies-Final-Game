@@ -4,22 +4,34 @@ using UnityEngine;
 
 public class PlayersSelectionEM : MonoBehaviour
 {
-    public BoardBehaviourEM boardBehaviourEM;
+    private SpriteRenderer spriteRenderer;
+    public Sprite clickedShape;
+    public Sprite shape;
 
-    public void SelectShape()
+    private bool isSelected = false;
+    public bool canSelect = true;
+
+    void Start()
     {
-        boardBehaviourEM.ShowBoard(); // go to BoardBehaviour script
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = shape;
     }
-
-    public void DeselectShape()
-    {
-
-    }
-
     void OnMouseDown()
     {
+        if (!canSelect) return;
         if (!CompareTag("Selectable")) return;
 
-        Debug.Log("Selectable object clicked !");
+        isSelected = !isSelected; // flips value
+
+        if (isSelected)
+        {
+            spriteRenderer.sprite = clickedShape;
+            Debug.Log("Selected " + gameObject.name);
+        }
+        else
+        {
+            spriteRenderer.sprite = shape;
+            Debug.Log("Deselected " + gameObject.name);
+        }
     }
 }
