@@ -10,7 +10,10 @@ public class MatchCheckerEM : MonoBehaviour
     public PlayersSelectionEM secondSelected;
 
     private float resetTimer = 0f;
+    public float timeRemaining = 5f;
+
     private bool waitingReset = false;
+    public bool timerIsRunning = false;
 
     public void SelectShape(GameObject obj)
     {
@@ -24,6 +27,12 @@ public class MatchCheckerEM : MonoBehaviour
         {
             secondSelected = shape;
             CheckMatch();
+        }
+
+        if (!timerIsRunning) // timer has started
+        {
+            timeRemaining = 5f; // reset time
+            timerIsRunning = true;
         }
     }
 
@@ -43,6 +52,22 @@ public class MatchCheckerEM : MonoBehaviour
 
     public void Update()
     {
+        if (!timerIsRunning) return; // checks if timer has started
+
+        if (timeRemaining > 0)
+        {
+            timeRemaining -= Time.deltaTime; // decrease time
+        }
+        else // timer stopped
+        {
+            timeRemaining = 0;
+            timerIsRunning = false;
+
+            foreach (PlayersSelectionEM shape in FindObjectsOfType<PlayersSelectionEM>())
+            {
+                shape.RemoveShape();
+            }
+        }
         if (waitingReset)
         {
             resetTimer += Time.deltaTime;
@@ -55,6 +80,7 @@ public class MatchCheckerEM : MonoBehaviour
             }
         }
     }
+
     public void CheckMatch()
     {
         if (firstSelected != null && secondSelected != null)
