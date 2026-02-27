@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayersSelectionEM : MonoBehaviour
 {
+    public MatchCheckerEM matchCheckerEM;
+
     private SpriteRenderer spriteRenderer;
     public Sprite selectedShape;
     public Sprite shape;
@@ -18,6 +20,7 @@ public class PlayersSelectionEM : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = shape;
     }
+
     void OnMouseDown()
     {
         if (!canSelect) return;
@@ -25,27 +28,48 @@ public class PlayersSelectionEM : MonoBehaviour
 
         if (!isSelected && selectedCount == maxSelectedShapes) // prevent selecting more than max allowed shapes
         {
-            Debug.Log("Max Selected");
             return;
         }
 
         isSelected = !isSelected; // flips value
 
-        if (selectedCount < maxSelectedShapes)
+        if (isSelected)
         {
-            if (isSelected)
-            {
-                spriteRenderer.sprite = selectedShape;
-                selectedCount++;
-                Debug.Log("Selected " + gameObject.name);
-            }
-            else
-            {
-                spriteRenderer.sprite = shape;
-                selectedCount--;
-                Debug.Log("Deselected " + gameObject.name);
-            }
-            Debug.Log("Selected " + selectedCount);
+            spriteRenderer.sprite = selectedShape;
+            selectedCount++;
+            matchCheckerEM.SelectShape(gameObject);
+            Debug.Log("Selected !");
         }
+        else
+        {
+            spriteRenderer.sprite = shape;
+            selectedCount--;
+            matchCheckerEM.DeselectShape(gameObject);
+            Debug.Log("Deselected !");
+        }
+    }
+
+    public void RemoveShape()
+    {
+        if (isSelected)
+        {
+            selectedCount--;
+            isSelected = false;
+        }
+
+        spriteRenderer.enabled = false;
+        canSelect = false;
+    }
+
+    public void ForceDeselect()
+    {
+        if (isSelected)
+        {
+            isSelected = false;
+            spriteRenderer.sprite = shape;
+            selectedCount--;
+            canSelect = true;
+        }
+        canSelect = true;
     }
 }
