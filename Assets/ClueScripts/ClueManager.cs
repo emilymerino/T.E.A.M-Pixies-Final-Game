@@ -8,46 +8,64 @@ public class ClueManager : MonoBehaviour
     public static ClueManager Instance;
 
 
+    public GameObject openInventoryButton;
+    public GameObject exitInventoryButton;
     public GameObject cluePopupPanel;
     public TMP_Text cluePopupText;
+    public Image cluePopupIcon;
 
     public GameObject clueInventoryPanel;
-    public Transform clueSlotsParent; 
-    public GameObject clueSlotPrefab; 
+    public Transform clueSlotsParent; // grid layout panel
+
+
     public Image clueDetailIcon;
     public TMP_Text clueDetailDescription;
 
-    public List<ClueData> allClues = new List<ClueData>();
     private List<ClueData> foundClues = new List<ClueData>();
 
     private void Awake()
     {
         if (Instance == null)
-        {
             Instance = this;
-        }
         else
-        {
             Destroy(gameObject);
-        }
+    }
+
+    private void Start()
+    {
+        cluePopupPanel.SetActive(false);
+        clueInventoryPanel.SetActive(false);
+
+        clueDetailIcon.enabled = false;
+        clueDetailDescription.text = "Select a clue to view details.";
     }
 
     public void UnlockClue(ClueData clue)
     {
-        if (!foundClues.Contains(clue))
-        {
-            foundClues.Add(clue);
-            ShowPopup(clue);
-            AddClueToInventory(clue);
-        }
+        if (foundClues.Contains(clue))
+            return;
+
+        foundClues.Add(clue);
+
+        ShowPopup(clue);
+        CreateClueSlot(clue);
     }
 
     private void ShowPopup(ClueData clue)
     {
-        cluePopupText.text = "Clue Found: " + clue.clueName;
         cluePopupPanel.SetActive(true);
 
-        Invoke("HidePopup", 2f);
+        cluePopupText.text = "Clue Found: " + clue.clueName;
+
+        if (cluePopupIcon != null)
+        {
+            cluePopupIcon.sprite = clue.icon;
+            cluePopupIcon.enabled = true;
+            cluePopupIcon.preserveAspect = true;
+        }
+
+        CancelInvoke();
+        Invoke(nameof(HidePopup), 2f);
     }
 
     private void HidePopup()
@@ -55,24 +73,57 @@ public class ClueManager : MonoBehaviour
         cluePopupPanel.SetActive(false);
     }
 
-    private void AddClueToInventory(ClueData clue)
+    // creates slot automatically
+    private void CreateClueSlot(ClueData clue)
     {
-        GameObject newSlot = Instantiate(clueSlotPrefab, clueSlotsParent);
-        TMP_Text slotText = newSlot.GetComponentInChildren<TMP_Text>();
-        slotText.text = clue.clueName;
+        // create button object
+        GameObject slot = new GameObject(clue.clueName);
 
-        Button btn = newSlot.GetComponent<Button>();
-        btn.onClick.AddListener(() => ShowClueDetails(clue));
-    }
+        slot.transform.SetParent(clueSlotsParent, false);
 
-    private void ShowClueDetails(ClueData clue)
-    {
-        clueDetailIcon.sprite = clue.icon;
-        clueDetailDescription.text = clue.description;
+        RectTransform rect = slot.AddComponent<RectTransform>();
+        rect.sizeDelta = new Vector2(100, 100);
+
+        Image background = slot.AddComponent<Image>();
+        background.color = new Color(0.8f, 0.8f, 0.8f, 1f);
+
+        Button button = slot.AddComponent<Button>();
+
+        // create icon child
+        GameObject iconObj = new GameObject("Icon");
+        iconObj.transform.SetParent(slot.transform, false);
+
+        RectTransform iconRect = iconObj.AddComponent<RectTransform>();
+        iconRect.anchorMin = Vector2.zero;
+        iconRect.anchorMax = Vector2.one;
+        iconRect.offsetMin = new Vector2(10, 10);
+        iconRect.offsetMax = new Vector2(-10, -10);
+
+        Image iconImage = iconObj.AddComponent<Image>();
+        iconImage.sprite = clue.icon;
+        iconImage.preserveAspect = true;
+
+        // click event
+        button.onClick.AddListener(() =>
+        {
+            clueDetailIcon.enabled = true;
+            clueDetailIcon.sprite = clue.icon;
+            clueDetailDescription.text = clue.description;
+        });
     }
 
     public void ToggleInventory()
     {
-        clueInventoryPanel.SetActive(!clueInventoryPanel.activeSelf);
+        bool isActive = !clueInventoryPanel.activeSelf;
+
+        clueInventoryPanel.SetActive(isActive);
+
+        // hide open button when inventory is open
+        if (openInventoryButton != null)
+            openInventoryButton.SetActive(!isActive);
+
+        // show exit button when inventory is open
+        if (exitInventoryButton != null)
+            exitInventoryButton.SetActive(isActive);
     }
 }
