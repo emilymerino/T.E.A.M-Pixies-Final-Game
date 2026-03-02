@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AutoHideAfterSeconds : MonoBehaviour
+public class TNAutoHideAfterSeconds : MonoBehaviour
 {
     [SerializeField] private float seconds = 3f;
     [SerializeField] private GameObject nextObject;
@@ -18,7 +18,7 @@ public class AutoHideAfterSeconds : MonoBehaviour
 
         gameObject.SetActive(false);
 
-        if (nextObject != null) 
+        if (nextObject != null)
             nextObject.SetActive(true);
     }
 }

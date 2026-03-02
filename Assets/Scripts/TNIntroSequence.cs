@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IntroSequence : MonoBehaviour
+public class TNIntroSequence : MonoBehaviour
 {
-
     [SerializeField] private float introDuration = 3f;
     [SerializeField] private GameObject instructionsTitle;
     [SerializeField] private GameObject instructionsBody;
