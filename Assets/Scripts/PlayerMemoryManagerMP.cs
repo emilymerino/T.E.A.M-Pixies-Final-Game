@@ -4,12 +4,13 @@ using UnityEngine;
 using TMPro;
 using System;
 
-public class PlayerMemoryManager : MonoBehaviour
+public class PlayerMemoryManagerMP : MonoBehaviour
 {
-    public PlayerPattern playerPattern;
-    public SetPattern setPattern;
-    public BorderBehaviour borderBehaviour;
-    public GameOverPopUp gameOverPopUp;
+    public PlayersPatternMP playersPatternMP;
+    public SetPatternMP setPatternMP;
+    public BoardBehaviourMP boardBehaviourMP;
+    public PlayerLostPopUpMP playerLostPopUpMP;
+    public PlayerWonPopUpMP playerWonPopUpMP;
 
     private List<GameObject> selectedSquares = new List<GameObject>(); // list of squares that have been selected
     public float timeRemaining = 5f;
@@ -51,7 +52,7 @@ public class PlayerMemoryManager : MonoBehaviour
                 spriteSquare.enabled = true;
             }
 
-            playerPattern.ShowSquares(playersSquare); // go to PlayerPattern script
+            playersPatternMP.ShowSquares(playersSquare); // go to PlayerPattern script
 
         }
     }
@@ -81,12 +82,10 @@ public class PlayerMemoryManager : MonoBehaviour
             timerIsRunning = false;
             canSelect = false;
 
-            bool result = ComparePatterns(setPattern.squaresToShow, selectedSquares);
+            bool result = ComparePatterns(setPatternMP.squaresToShow, selectedSquares);
 
             timerText.gameObject.SetActive(false);
-            borderBehaviour.HideBorder(); // go to BorderBehaviour script
-
-            gameOverPopUp.ShowGameOver(); // go to GameOverPopUp script
+            boardBehaviourMP.HideBorder(); // go to BorderBehaviour script
 
             ClearSelection();
         }
@@ -104,6 +103,7 @@ public class PlayerMemoryManager : MonoBehaviour
     {
         if (squaresToShow.Count != selectedSquares.Count) // checks number of elements
         {
+            playerLostPopUpMP.ShowLostPopUp();
             Debug.Log("Lists are not the same");
             return false;
         }
@@ -112,10 +112,13 @@ public class PlayerMemoryManager : MonoBehaviour
         {
             if (!selectedSquares.Contains(square))
             {
+                playerLostPopUpMP.ShowLostPopUp();
+                Debug.Log("Lists are not the same");
                 Debug.Log("Missing square: " + square.name);
                 return false;
             }
         }
+        playerWonPopUpMP.ShowWonPopUp();
         Debug.Log("Lists are the same");
         return true;
     }

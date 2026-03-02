@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerPattern : MonoBehaviour
+public class PlayersPatternMP : MonoBehaviour
 {
     public List<GameObject> playersSquaresToShow; // list of squares that players selected
 

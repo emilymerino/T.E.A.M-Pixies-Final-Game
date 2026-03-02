@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BorderBehaviour : MonoBehaviour
+public class BoardBehaviourMP : MonoBehaviour
 {
     public List<GameObject> border; // list of squares to form minigame border
 

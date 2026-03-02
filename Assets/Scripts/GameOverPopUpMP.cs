@@ -3,23 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class RecievedCluePopUp : MonoBehaviour
+public class GameOverPopUp : MonoBehaviour
 {
     public float timeRemaining = 10f;
-    public TextMeshProUGUI Clue;
+    public TextMeshProUGUI GameOver;
 
     void Start()
     {
-        if (Clue == null)
+        if (GameOver == null)
         {
-            Clue = GetComponent<TextMeshProUGUI>();
+            GameOver = GetComponent<TextMeshProUGUI>();
         }
-        Clue.gameObject.SetActive(false); // starts hidden
+        GameOver.gameObject.SetActive(false); // starts hidden
     }
 
-    public void ShowClue()
+    public void ShowGameOver()
     {
-        Clue.gameObject.SetActive(true); // show text
+        GameOver.gameObject.SetActive(true); // show text
     }
 
     void Update()
@@ -30,7 +30,7 @@ public class RecievedCluePopUp : MonoBehaviour
         }
         else // timer stoped
         {
-            Clue.gameObject.SetActive(false); // hide text
+            GameOver.gameObject.SetActive(false); // hide text
             enabled = false;
         }
     }

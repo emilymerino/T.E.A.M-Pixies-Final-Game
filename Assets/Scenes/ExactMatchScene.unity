@@ -1859,11 +1859,25 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "INSTRUCTIONS\n\nOutlined shapes will appear on the board. Study them carefully!
-    \n\nDrag each filled shape to its matching outline \n\nIf it fits correctly,
-    it will lock into place. If it\u2019s wrong\u2026 it will snap back \n\nComplete
-    all matches before time runs out to unlock a hidden clue \n\nBut hurry, the clock
-    is ticking! \n\nReady to test your focus? "
+  m_text: 'INSTRUCTIONS
+
+
+    Shapes will appear on the board, study them carefully!
+
+
+    Select
+    two shapes you think match.
+
+
+    Find and match all pairs before time runs out
+    to unlock a hidden clue.
+
+
+    Stay focused, the clock is ticking!
+
+
+    Ready
+    to test your memory?'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2addb59d53d014f4988c6524d3f94944, type: 2}
   m_sharedMaterial: {fileID: 7221344724475131436, guid: 2addb59d53d014f4988c6524d3f94944, type: 2}

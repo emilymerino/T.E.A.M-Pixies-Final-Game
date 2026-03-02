@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class InstructionsPopUp : MonoBehaviour
+public class InstructionsPopUpMP : MonoBehaviour
 {
-    public float timeRemaining = 10f;
+    public float timeRemaining = 20f;
     public TextMeshProUGUI Instructions;
-    public BorderBehaviour borderBehaviour;
-    public SetPattern setPattern;
+    public BoardBehaviourMP boardBehaviourMP;
+    public SetPatternMP setPatternMP;
 
     void Start()
     {
@@ -33,8 +33,8 @@ public class InstructionsPopUp : MonoBehaviour
         else // timer stoped
         {
             Instructions.gameObject.SetActive(false); // hide text
-            borderBehaviour.ShowBorder(); // go to BorderBehaviour script
-            setPattern.ShowPattern(); // go to PatternBehaviour script
+            boardBehaviourMP.ShowBorder(); // go to BorderBehaviour script
+            setPatternMP.ShowPattern(); // go to PatternBehaviour script
             enabled = false;
         }
     }

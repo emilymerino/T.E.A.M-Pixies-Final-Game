@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class SetPattern : MonoBehaviour
+public class SetPatternMP : MonoBehaviour
 {
-    public PlayerPattern playerPattern;
-    public PlayerMemoryManager playerMemoryManager;
+    public PlayersPatternMP playersPatternMP;
+    public PlayerMemoryManagerMP playerMemoryManagerMP;
 
-    public SetPattern setPattern;
-    public BorderBehaviour borderBehaviour;
-    public PlayersTurnPopUp playersTurnPopUp;
+    public SetPatternMP setPatternMP;
+    public BoardBehaviourMP boardBehaviourMP;
+    public ReadyPopUpMP readyPopUpMP;
     public List<GameObject> squaresToShow; // list of squares to form pattern
     public float displayDuration = 1f;
     private float timer;
@@ -78,10 +78,10 @@ public class SetPattern : MonoBehaviour
                     {
                         lastSpriteSquare.enabled = false;
                     }
-                    borderBehaviour.HideBorder(); // go to BorderBehaviour script
-                    playersTurnPopUp.ShowText();
+                    boardBehaviourMP.HideBorder(); // go to BorderBehaviour script
+                    readyPopUpMP.ShowText();
 
-                    playerMemoryManager.StartPlayerTurn();
+                    playerMemoryManagerMP.StartPlayerTurn();
 
                     enabled = false;
                 }
