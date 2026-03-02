@@ -1,13 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using System;
 
 public class MatchCheckerEM : MonoBehaviour
 {
     public PlayersSelectionEM playersSelectionEM;
+    public GameOverPopUpEM gameOverPopUpEM;
+    public BoardBehaviourEM boardBehaviourEM;
+    public PlayerLostPopUpEM playerLostPopUpEM;
+    public PlayerWonPopUpEM playerWonPopUpEM;
 
     public PlayersSelectionEM firstSelected;
     public PlayersSelectionEM secondSelected;
+
+    public TextMeshProUGUI timerText;
 
     private float resetTimer = 0f;
     public float timeRemaining = 5f;
@@ -52,21 +60,31 @@ public class MatchCheckerEM : MonoBehaviour
 
     public void Update()
     {
+        if (timerText == null)
+        {
+            timerText = GetComponent<TextMeshProUGUI>(); // grab timer text
+        }
+
         if (!timerIsRunning) return; // checks if timer has started
 
         if (timeRemaining > 0)
         {
             timeRemaining -= Time.deltaTime; // decrease time
+            DisplayTime(timeRemaining); // show timer 
         }
         else // timer stopped
         {
             timeRemaining = 0;
             timerIsRunning = false;
 
+            timerText.gameObject.SetActive(false);
+
             foreach (PlayersSelectionEM shape in FindObjectsOfType<PlayersSelectionEM>())
             {
                 shape.RemoveShape();
             }
+            playerLostPopUpEM.ShowLostPopUp();
+            boardBehaviourEM.HideBoard();
         }
         if (waitingReset)
         {
@@ -81,6 +99,14 @@ public class MatchCheckerEM : MonoBehaviour
         }
     }
 
+    void DisplayTime(float timeToDisplay)
+    {
+        if (timeToDisplay < 0) timeToDisplay = 0;
+
+        TimeSpan timeSpan = TimeSpan.FromSeconds(timeToDisplay);
+        timerText.text = string.Format("{0:00}:{1:00}", (int)timeSpan.TotalMinutes, timeSpan.Seconds);
+    }
+
     public void CheckMatch()
     {
         if (firstSelected != null && secondSelected != null)
@@ -89,9 +115,24 @@ public class MatchCheckerEM : MonoBehaviour
             {
                 Debug.Log("You Got A Match !");
 
-                firstSelected.RemoveShape();
-                secondSelected.RemoveShape();
+                if (FindObjectsOfType<PlayersSelectionEM>().Length == 2)
+                {
+                    timerIsRunning = false;
+                    timeRemaining = 0f;
+                    DisplayTime(timeRemaining);
+                    timerText.gameObject.SetActive(false);
 
+                    firstSelected.RemoveShape();
+                    secondSelected.RemoveShape();
+
+                    boardBehaviourEM.HideBoard();
+                    playerWonPopUpEM.ShowWonPopUp();
+                }
+                else
+                {
+                    firstSelected.RemoveShape();
+                    secondSelected.RemoveShape();
+                }
                 ResetSelections();
             }
             else
@@ -108,6 +149,7 @@ public class MatchCheckerEM : MonoBehaviour
         }
     }
 
+
     public void ResetSelections()
     {
         if (firstSelected != null)
@@ -119,5 +161,4 @@ public class MatchCheckerEM : MonoBehaviour
         firstSelected = null;
         secondSelected = null;
     }
-
 }

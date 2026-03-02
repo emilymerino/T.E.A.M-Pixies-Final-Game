@@ -51,14 +51,7 @@ public class PlayersSelectionEM : MonoBehaviour
 
     public void RemoveShape()
     {
-        if (isSelected)
-        {
-            selectedCount--;
-            isSelected = false;
-        }
-
-        spriteRenderer.enabled = false;
-        canSelect = false;
+        Destroy(gameObject);
     }
 
     public void ForceDeselect()

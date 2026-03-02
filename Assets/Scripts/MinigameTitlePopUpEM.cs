@@ -5,7 +5,7 @@ using TMPro;
 
 public class MinigameTitlePopUpEM : MonoBehaviour
 {
-    public float timeRemaining = 1f;
+    public float timeRemaining = 3f;
     public TextMeshProUGUI MinigameTitle;
     public InstructionsPopUpEM instructionsPopUpEM;
 

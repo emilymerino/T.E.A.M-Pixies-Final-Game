@@ -7,7 +7,7 @@ public class InstructionsPopUpEM : MonoBehaviour
 {
     public ReadyPopUpEM readyPopUpEM;
 
-    public float timeRemaining = 1f;
+    public float timeRemaining = 20f;
     public TextMeshProUGUI Instructions;
 
     void Start()
