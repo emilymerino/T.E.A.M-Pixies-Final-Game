@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Instructions
+  - Minigame Name
+  - Selectable
+  - Pattern
   layers:
   - Default
   - TransparentFX
@@ -40,4 +44,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: SetPattern
+    uniqueID: 4130169143
+    locked: 0
+  - name: PlayersPattern
+    uniqueID: 2578866677
     locked: 0
