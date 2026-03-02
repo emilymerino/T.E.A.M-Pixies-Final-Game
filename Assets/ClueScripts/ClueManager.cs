@@ -8,22 +8,24 @@ public class ClueManager : MonoBehaviour
     public static ClueManager Instance;
 
 
-    public GameObject openInventoryButton;
-    public GameObject exitInventoryButton;
     public GameObject cluePopupPanel;
     public TMP_Text cluePopupText;
     public Image cluePopupIcon;
 
-    public GameObject clueInventoryPanel;
-    public Transform clueSlotsParent; // grid layout panel
 
+    public GameObject clueInventoryPanel;
+    public Transform clueSlotsParent;
+
+    public Button openClueInventoryButton;
+    public TMP_Text openClueInventoryButtonText;
 
     public Image clueDetailIcon;
     public TMP_Text clueDetailDescription;
+    public Image clueDetailBackground;
 
     private List<ClueData> foundClues = new List<ClueData>();
 
-    private void Awake()
+    void Awake()
     {
         if (Instance == null)
             Instance = this;
@@ -31,19 +33,37 @@ public class ClueManager : MonoBehaviour
             Destroy(gameObject);
     }
 
-    private void Start()
+    void Start()
     {
-        cluePopupPanel.SetActive(false);
-        clueInventoryPanel.SetActive(false);
+        if (clueInventoryPanel != null)
+            clueInventoryPanel.SetActive(false);
 
-        clueDetailIcon.enabled = false;
-        clueDetailDescription.text = "Select a clue to view details.";
+        if (cluePopupPanel != null)
+            cluePopupPanel.SetActive(false);
+
+        if (clueDetailIcon != null)
+            clueDetailIcon.enabled = false;
+
+        if (clueDetailBackground != null)
+            clueDetailBackground.enabled = false;
+
+        if (clueDetailDescription != null)
+            clueDetailDescription.text = "Select a clue to view details.";
+
+ 
+        if (openClueInventoryButton != null)
+        {
+            openClueInventoryButton.onClick.RemoveAllListeners();
+            openClueInventoryButton.onClick.AddListener(ToggleInventory);
+        }
+
+        UpdateButtonText();
     }
 
     public void UnlockClue(ClueData clue)
     {
-        if (foundClues.Contains(clue))
-            return;
+        if (clue == null) return;
+        if (foundClues.Contains(clue)) return;
 
         foundClues.Add(clue);
 
@@ -51,79 +71,92 @@ public class ClueManager : MonoBehaviour
         CreateClueSlot(clue);
     }
 
-    private void ShowPopup(ClueData clue)
+    void ShowPopup(ClueData clue)
     {
-        cluePopupPanel.SetActive(true);
+        if (cluePopupPanel != null)
+            cluePopupPanel.SetActive(true);
 
-        cluePopupText.text = "Clue Found: " + clue.clueName;
+        if (cluePopupText != null)
+            cluePopupText.text = clue.clueName;
 
         if (cluePopupIcon != null)
         {
             cluePopupIcon.sprite = clue.icon;
             cluePopupIcon.enabled = true;
-            cluePopupIcon.preserveAspect = true;
         }
 
         CancelInvoke();
         Invoke(nameof(HidePopup), 2f);
     }
 
-    private void HidePopup()
+    void HidePopup()
     {
-        cluePopupPanel.SetActive(false);
+        if (cluePopupPanel != null)
+            cluePopupPanel.SetActive(false);
     }
 
-    // creates slot automatically
-    private void CreateClueSlot(ClueData clue)
+    void CreateClueSlot(ClueData clue)
     {
-        // create button object
-        GameObject slot = new GameObject(clue.clueName);
-
+        GameObject slot = new GameObject(clue.clueName + "_Slot");
         slot.transform.SetParent(clueSlotsParent, false);
 
         RectTransform rect = slot.AddComponent<RectTransform>();
         rect.sizeDelta = new Vector2(100, 100);
 
-        Image background = slot.AddComponent<Image>();
-        background.color = new Color(0.8f, 0.8f, 0.8f, 1f);
+        Image bg = slot.AddComponent<Image>();
+        bg.color = new Color(0.4f, 0.4f, 0.45f, 1f);
 
-        Button button = slot.AddComponent<Button>();
+        Button btn = slot.AddComponent<Button>();
 
-        // create icon child
         GameObject iconObj = new GameObject("Icon");
         iconObj.transform.SetParent(slot.transform, false);
 
         RectTransform iconRect = iconObj.AddComponent<RectTransform>();
         iconRect.anchorMin = Vector2.zero;
         iconRect.anchorMax = Vector2.one;
-        iconRect.offsetMin = new Vector2(10, 10);
-        iconRect.offsetMax = new Vector2(-10, -10);
+        iconRect.offsetMin = new Vector2(8, 8);
+        iconRect.offsetMax = new Vector2(-8, -8);
 
-        Image iconImage = iconObj.AddComponent<Image>();
-        iconImage.sprite = clue.icon;
-        iconImage.preserveAspect = true;
+        Image icon = iconObj.AddComponent<Image>();
+        icon.sprite = clue.icon;
+        icon.preserveAspect = true;
+        icon.enabled = true;
 
-        // click event
-        button.onClick.AddListener(() =>
+        btn.onClick.AddListener(() =>
         {
-            clueDetailIcon.enabled = true;
-            clueDetailIcon.sprite = clue.icon;
-            clueDetailDescription.text = clue.description;
+            if (clueDetailIcon != null)
+            {
+                clueDetailIcon.sprite = clue.icon;
+                clueDetailIcon.enabled = true;
+            }
+
+            if (clueDetailDescription != null)
+                clueDetailDescription.text = clue.description;
+
+            if (clueDetailBackground != null)
+                clueDetailBackground.enabled = true;
         });
     }
 
     public void ToggleInventory()
     {
-        bool isActive = !clueInventoryPanel.activeSelf;
+        if (clueInventoryPanel == null || openClueInventoryButtonText == null) return;
 
-        clueInventoryPanel.SetActive(isActive);
+        bool isOpen = !clueInventoryPanel.activeSelf;
+        clueInventoryPanel.SetActive(isOpen);
 
-        // hide open button when inventory is open
-        if (openInventoryButton != null)
-            openInventoryButton.SetActive(!isActive);
+        Debug.Log("ToggleInventory clicked. Inventory is now: " + (isOpen ? "Open" : "Closed"));
 
-        // show exit button when inventory is open
-        if (exitInventoryButton != null)
-            exitInventoryButton.SetActive(isActive);
+        UpdateButtonText();
+    }
+
+    void UpdateButtonText()
+    {
+        if (openClueInventoryButtonText == null) return;
+
+        if (clueInventoryPanel.activeSelf)
+            openClueInventoryButtonText.text = "X";
+        else
+            openClueInventoryButtonText.text = "Clues";
     }
 }
