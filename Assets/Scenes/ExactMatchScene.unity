@@ -2901,7 +2901,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You Lost:(
+  m_text: You Lost
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2addb59d53d014f4988c6524d3f94944, type: 2}
   m_sharedMaterial: {fileID: 7221344724475131436, guid: 2addb59d53d014f4988c6524d3f94944, type: 2}
@@ -3430,7 +3430,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You Won!
+  m_text: You Won
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2addb59d53d014f4988c6524d3f94944, type: 2}
   m_sharedMaterial: {fileID: 7221344724475131436, guid: 2addb59d53d014f4988c6524d3f94944, type: 2}
