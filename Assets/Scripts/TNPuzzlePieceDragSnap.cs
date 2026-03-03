@@ -48,10 +48,15 @@ public class TNPuzzlePieceDragSnap : MonoBehaviour
         if (snapTarget == null) return;
 
         float dist = Vector2.Distance(transform.position, snapTarget.position);
+
         if (dist <= snapDistance)
         {
             transform.position = snapTarget.position;
             isSnapped = true;
+        }
+        else
+        {
+            transform.position = homePosition;
         }
     }
 }
