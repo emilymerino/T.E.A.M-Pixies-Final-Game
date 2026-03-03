@@ -1,0 +1,28 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class TNAutoHideAfterSeconds : MonoBehaviour
+{
+    [SerializeField] private float seconds = 3f;
+    [SerializeField] private GameObject nextObject;
+    [SerializeField] private TNPuzzleTimer timerManager;
+
+    private void OnEnable()
+    {
+        StartCoroutine(Hide());
+    }
+
+    private IEnumerator Hide()
+    {
+        yield return new WaitForSeconds(seconds);
+
+        gameObject.SetActive(false);
+
+        if (nextObject != null)
+            nextObject.SetActive(true);
+
+        if (timerManager != null)
+            timerManager.StartTimer();
+    }
+}
