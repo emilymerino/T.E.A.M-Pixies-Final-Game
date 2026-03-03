@@ -13,6 +13,7 @@ public class TNPuzzlePieceDragSnap : MonoBehaviour
     private Vector3 offset;
     private bool isDragging;
     private bool isSnapped;
+    private bool reportedSnap;
 
 
     // Start is called before the first frame update
@@ -55,7 +56,11 @@ public class TNPuzzlePieceDragSnap : MonoBehaviour
             transform.position = snapTarget.position;
             isSnapped = true;
 
-            if (completionManager != null) completionManager.RegisterPieceSnapped();
+            if (!reportedSnap && completionManager  != null)
+            {
+                reportedSnap = true;
+                completionManager.RegisterPieceSnapped();
+            }
         }
         else
         {

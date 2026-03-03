@@ -13,10 +13,6 @@ public class TNPuzzleCompletionManager : MonoBehaviour
     [SerializeField] private TNPuzzleTimer timer;
     [SerializeField] private GameObject puzzleRoot;
     [SerializeField] private GameObject noteOverlayRoot;
-    [SerializeField] private GameObject clueAddedText;
-
-    [Header("Timing")]
-    [SerializeField] private float overlayDuration = 3f;
 
     public void RegisterPieceSnapped()
     {
@@ -39,11 +35,6 @@ public class TNPuzzleCompletionManager : MonoBehaviour
 
         if (noteOverlayRoot != null) noteOverlayRoot.SetActive(true);
 
-        yield return new WaitForSeconds(overlayDuration);
-
-        if (noteOverlayRoot != null) noteOverlayRoot.SetActive(false);
-
-        if (clueAddedText != null)  clueAddedText.SetActive(true);
-
+        yield break;
     }
 }

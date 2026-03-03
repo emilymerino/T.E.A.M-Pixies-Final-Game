@@ -464,7 +464,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Time: 30'
+  m_text: 'Time: 20'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5e20a7e32f2664a4ea4ef16001841b8a, type: 2}
   m_sharedMaterial: {fileID: -3356062087252364405, guid: 5e20a7e32f2664a4ea4ef16001841b8a, type: 2}
@@ -1065,7 +1065,6 @@ GameObject:
   - component: {fileID: 461139937}
   - component: {fileID: 461139939}
   - component: {fileID: 461139938}
-  - component: {fileID: 461139940}
   m_Layer: 5
   m_Name: GameOverText
   m_TagString: Untagged
@@ -1189,21 +1188,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 461139936}
   m_CullTransparentMesh: 1
---- !u!114 &461139940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 461139936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61959c64a0d1e8e40bece6b5988d2152, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  seconds: 3
-  nextObject: {fileID: 46947645}
-  timerManager: {fileID: 0}
 --- !u!1 &492893485
 GameObject:
   m_ObjectHideFlags: 0
@@ -1683,7 +1667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 161435619}
-  startTimeSeconds: 30
+  startTimeSeconds: 20
   gameOverText: {fileID: 461139936}
   puzzleRoot: {fileID: 694468436}
   puzzlePieces: []
@@ -1881,7 +1865,6 @@ MonoBehaviour:
   timer: {fileID: 1008470226}
   puzzleRoot: {fileID: 694468436}
   noteOverlayRoot: {fileID: 674601838}
-  clueAddedText: {fileID: 46947645}
   overlayDuration: 3
 --- !u!4 &1189555178
 Transform:
