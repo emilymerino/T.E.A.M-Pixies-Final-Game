@@ -7,6 +7,7 @@ public class TNPuzzlePieceDragSnap : MonoBehaviour
     [Header("Snap Settings")]
     [SerializeField] private Transform snapTarget;
     [SerializeField] private float snapDistance = 0.6f;
+    [SerializeField] private TNPuzzleCompletionManager completionManager;
 
     private Vector3 homePosition;
     private Vector3 offset;
@@ -53,6 +54,8 @@ public class TNPuzzlePieceDragSnap : MonoBehaviour
         {
             transform.position = snapTarget.position;
             isSnapped = true;
+
+            if (completionManager != null) completionManager.RegisterPieceSnapped();
         }
         else
         {

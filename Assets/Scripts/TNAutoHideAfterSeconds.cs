@@ -6,6 +6,7 @@ public class TNAutoHideAfterSeconds : MonoBehaviour
 {
     [SerializeField] private float seconds = 3f;
     [SerializeField] private GameObject nextObject;
+    [SerializeField] private TNPuzzleTimer timerManager;
 
     private void OnEnable()
     {
@@ -20,5 +21,8 @@ public class TNAutoHideAfterSeconds : MonoBehaviour
 
         if (nextObject != null)
             nextObject.SetActive(true);
+
+        if (timerManager != null)
+            timerManager.StartTimer();
     }
 }
