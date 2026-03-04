@@ -1837,7 +1837,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   readyPopUpEM: {fileID: 302388421}
-  timeRemaining: 20
+  timeRemaining: 15
   Instructions: {fileID: 1028707802}
 --- !u!114 &1028707802
 MonoBehaviour:
