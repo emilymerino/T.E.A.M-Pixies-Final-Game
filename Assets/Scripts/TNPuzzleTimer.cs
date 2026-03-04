@@ -12,7 +12,7 @@ public class TNPuzzleTimer : MonoBehaviour
     [Header("When time runs out")]
     [SerializeField] private GameObject gameOverText;
     [SerializeField] private GameObject puzzleRoot;
-    [SerializeField] private TNPuzzlePieceDragSnap[] puzzlePieces;
+    [SerializeField] private TNPuzzlePieceDragSnap_UI[] puzzlePieces;
 
 
     private float timeLeft;
