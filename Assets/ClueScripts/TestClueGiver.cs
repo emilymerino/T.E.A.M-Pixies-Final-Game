@@ -34,4 +34,4 @@ public class TestClueGiver : MonoBehaviour
         if (clue != null)
             ClueManager.Instance.UnlockClue(clue);
     }
-}
+} 
