@@ -78,12 +78,12 @@ public class MiddeDialogueManager : MonoBehaviour
         zeke.SetActive(true);
         yield return StartCoroutine(currentDialogue("Zeke", 7, "The vampire thing worries me. Hey Lou, aren't you allergic to garlic?"));
         zeke.SetActive(false);
-        yield return StartCoroutine(currentDialogue("", 8, "The room erupted into choas. Everyone was acting weird, you can't seem trust anyone."));
+        yield return StartCoroutine(currentDialogue("", 8, "The room erupted into choas. Everyone was acting weird, you can't seem to trust anyone."));
 
         classroom.SetActive(false);
         lockers.SetActive(true);
         yield return StartCoroutine(currentDialogue("", 8, "You quietly step out the room. Your eye catches something peeking through the cracks of a nearby locker."));
-        yield return StartCoroutine(currentDialogue("", 10, "You take a closer look and you realize it's a bloody sheelve of the council blazer. You have to see what's inside this locker."));
+        yield return StartCoroutine(currentDialogue("", 10, "You take a closer look and you realize it's a bloody sleeve of the council blazer. You have to see what's inside this locker."));
         //SceneManager.LoadSceneAsync("[Next Scene]");
 
         // Load Next Scene

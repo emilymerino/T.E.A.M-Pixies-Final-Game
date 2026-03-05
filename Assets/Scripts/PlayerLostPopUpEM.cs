@@ -8,6 +8,8 @@ public class PlayerLostPopUpEM : MonoBehaviour
     public float timeRemaining = 2f;
     public TextMeshProUGUI PlayerLost;
 
+    private SMMinigameAutoNext sceneAutoNext;
+
     void Start()
     {
         if (PlayerLost == null)
@@ -15,11 +17,16 @@ public class PlayerLostPopUpEM : MonoBehaviour
             PlayerLost = GetComponent<TextMeshProUGUI>();
         }
         PlayerLost.gameObject.SetActive(false); // starts hidden
+        enabled = false;
+
+        sceneAutoNext = FindObjectOfType<SMMinigameAutoNext>();
     }
 
     public void ShowLostPopUp()
     {
         PlayerLost.gameObject.SetActive(true); // show text
+        timeRemaining = 2f;
+        enabled = true;
     }
 
     void Update()
@@ -32,6 +39,9 @@ public class PlayerLostPopUpEM : MonoBehaviour
         {
             PlayerLost.gameObject.SetActive(false); // hide text
             enabled = false;
+
+            if (sceneAutoNext != null)
+                sceneAutoNext.LoadNextScene();
         }
     }
 }
