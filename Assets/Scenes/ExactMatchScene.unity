@@ -1778,22 +1778,15 @@ MonoBehaviour:
   m_text: 'INSTRUCTIONS
 
 
-    Shapes will appear on the board, study them carefully!
+    Shapes will appear on the board, remember them!
 
 
     Select
-    two shapes you think match.
+    two shapes that match.
 
 
-    Find and match all pairs before time runs out
-    to unlock a hidden clue.
-
-
-    Stay focused, the clock is ticking!
-
-
-    Ready
-    to test your memory?'
+    Match all pairs before time runs out to unlock a
+    clue.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2addb59d53d014f4988c6524d3f94944, type: 2}
   m_sharedMaterial: {fileID: 7221344724475131436, guid: 2addb59d53d014f4988c6524d3f94944, type: 2}
