@@ -6,7 +6,7 @@ using TMPro;
 public class ReadyPopUpEM : MonoBehaviour
 {
     public BoardBehaviourEM boardBehaviourEM;
-    public float timeRemaining = 3f;
+    public float timeRemaining = 2f;
     public TextMeshProUGUI Ready;
 
     void Start()
