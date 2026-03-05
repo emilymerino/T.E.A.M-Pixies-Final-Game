@@ -12,6 +12,11 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField] GameObject textBox;
 
+
+    // clues reference
+    public ClueData Clue1;
+
+
     void Start()
     {
         fadeTransition.SetActive(true);
@@ -39,6 +44,14 @@ public class DialogueManager : MonoBehaviour
         yield return StartCoroutine(currentDialogue("", 10, "You push open the bathroom doors. There you find your best friend Mei's lifeless body with a bite mark on her neck."));
         yield return StartCoroutine(currentDialogue("", 10, "Panic sets in and you look around, some pieces of bloody, torn up paper catch your eye."));
         //SceneManager.LoadSceneAsync("[Next Scene]");
+
+        // unlock clue here
+
+        // UNLOCK CLUE HERE
+        if (ClueManager.Instance != null && Clue1 != null)
+        {
+            ClueManager.Instance.UnlockClue(Clue1);
+        }
     }
 
     IEnumerator currentDialogue(string name, int num, string dialogue)
