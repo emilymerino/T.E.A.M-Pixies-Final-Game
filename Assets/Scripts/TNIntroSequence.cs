@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TNIntroSequence : MonoBehaviour
 {
-    [SerializeField] private float introDuration = 3f;
+    [SerializeField] private float introDuration = 2f;
     [SerializeField] private GameObject instructionsTitle;
     [SerializeField] private GameObject instructionsBody;
 

@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19331a4be7adb46b79c8284052b45413, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 3
+  timeRemaining: 2
   MinigameTitle: {fileID: 22908419}
   instructionsPopUpEM: {fileID: 1028707801}
 --- !u!1 &123524989
@@ -521,7 +521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boardBehaviourEM: {fileID: 489374915}
-  timeRemaining: 3
+  timeRemaining: 2
   Ready: {fileID: 302388422}
 --- !u!114 &302388422
 MonoBehaviour:
@@ -1753,7 +1753,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   readyPopUpEM: {fileID: 302388421}
-  timeRemaining: 15
+  timeRemaining: 10
   Instructions: {fileID: 1028707802}
 --- !u!114 &1028707802
 MonoBehaviour:
@@ -1778,22 +1778,15 @@ MonoBehaviour:
   m_text: 'INSTRUCTIONS
 
 
-    Shapes will appear on the board, study them carefully!
+    Shapes will appear on the board, remember them!
 
 
     Select
-    two shapes you think match.
+    two shapes that match.
 
 
-    Find and match all pairs before time runs out
-    to unlock a hidden clue.
-
-
-    Stay focused, the clock is ticking!
-
-
-    Ready
-    to test your memory?'
+    Match all pairs before time runs out to unlock a
+    clue.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2addb59d53d014f4988c6524d3f94944, type: 2}
   m_sharedMaterial: {fileID: 7221344724475131436, guid: 2addb59d53d014f4988c6524d3f94944, type: 2}
@@ -2906,7 +2899,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ab7b58029964e2092abd6557dda692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 3
+  timeRemaining: 2
   PlayerLost: {fileID: 1551576993}
 --- !u!1 &1807241964
 GameObject:
@@ -3435,7 +3428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 900bae1357349410687b1259a0421e7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 3
+  timeRemaining: 2
   PlayerWon: {fileID: 2097204064}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

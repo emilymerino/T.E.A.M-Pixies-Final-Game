@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class SkipDialogue : MonoBehaviour
 {
-    public bool skip;
-
     public void DialogueSkip()
     {
-        Debug.Log("Clicked");
-        skip = true;
+       GetComponent<DialogueManager>().skip = true;
        Debug.Log("Skipped");
     }
 

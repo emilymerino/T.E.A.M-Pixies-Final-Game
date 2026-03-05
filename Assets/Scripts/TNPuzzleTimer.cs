@@ -7,7 +7,7 @@ using UnityEngine.PlayerLoop;
 public class TNPuzzleTimer : MonoBehaviour
 {
     [SerializeField] private TMP_Text timerText;
-    [SerializeField] private float startTimeSeconds = 20f;
+    [SerializeField] private float startTimeSeconds = 15f;
 
     [Header("When time runs out")]
     [SerializeField] private GameObject gameOverText;

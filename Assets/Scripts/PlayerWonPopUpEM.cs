@@ -5,7 +5,7 @@ using TMPro;
 
 public class PlayerWonPopUpEM : MonoBehaviour
 {
-    public float timeRemaining = 3f;
+    public float timeRemaining = 2f;
     public TextMeshProUGUI PlayerWon;
 
     void Start()
