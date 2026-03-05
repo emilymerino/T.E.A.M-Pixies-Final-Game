@@ -35,6 +35,8 @@ public class TNPuzzleCompletionManager : MonoBehaviour
 
         if (noteOverlayRoot != null) noteOverlayRoot.SetActive(true);
 
-        yield break;
+        yield return new WaitForSeconds(2f);
+
+        FindObjectOfType<SMMinigameAutoNext>().LoadNextScene();
     }
 }

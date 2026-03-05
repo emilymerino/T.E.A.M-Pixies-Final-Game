@@ -9,6 +9,7 @@ public class EndingDialogueManager : MonoBehaviour
     public GameObject mainText;
     public GameObject charName;
     [SerializeField] GameObject textBox;
+    [SerializeField] private SMDialogueAutoNext autoNext;
 
     public bool skip = false;
 
@@ -40,6 +41,12 @@ public class EndingDialogueManager : MonoBehaviour
         yield return StartCoroutine(currentDialogue("", 8, "You remember that the torn note mentioned that room and you march in to see the mess around you."));
         yield return StartCoroutine(currentDialogue("", 8, "You're certain that underneath this mess, there's a clue hidden here."));
         //SceneManager.LoadSceneAsync("[Next Scene]");
+
+        // Load Next Scene
+        if (autoNext != null)
+        {
+            autoNext.LoadNextScene();
+        }
     }
 
     IEnumerator currentDialogue(string name, int num, string dialogue)
