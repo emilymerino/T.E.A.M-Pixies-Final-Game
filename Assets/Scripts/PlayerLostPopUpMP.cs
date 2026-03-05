@@ -5,7 +5,7 @@ using TMPro;
 
 public class PlayerLostPopUpMP : MonoBehaviour
 {
-    public float timeRemaining = 3f;
+    public float timeRemaining = 2f;
     public TextMeshProUGUI PlayerLost;
 
     void Start()
