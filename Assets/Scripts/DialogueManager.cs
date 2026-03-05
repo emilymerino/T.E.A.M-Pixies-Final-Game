@@ -11,6 +11,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject charName;
 
     [SerializeField] GameObject textBox;
+    [SerializeField] private SMDialogueAutoNext autoNext;
 
 
     // clues reference
@@ -51,6 +52,12 @@ public class DialogueManager : MonoBehaviour
         if (ClueManager.Instance != null && Clue1 != null)
         {
             ClueManager.Instance.UnlockClue(Clue1);
+        }
+
+        // Load Next Scene
+        if (autoNext != null)
+        {
+            autoNext.LoadNextScene();
         }
     }
 

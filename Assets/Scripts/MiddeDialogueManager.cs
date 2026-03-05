@@ -18,6 +18,8 @@ public class MiddeDialogueManager : MonoBehaviour
     public Sprite Zeke;
 
     [SerializeField] GameObject textBox;
+    [SerializeField] private SMDialogueAutoNext autoNext;
+
 
 
     void Start()
@@ -60,6 +62,12 @@ public class MiddeDialogueManager : MonoBehaviour
         yield return StartCoroutine(currentDialogue("", 8, "You quietly step out the room. Your eye catches something peeking through the cracks of a nearby locker."));
         yield return StartCoroutine(currentDialogue("", 10, "You take a closer look and you realize it's a bloody sheelve of the council blazer. You have to see what's inside this locker."));
         //SceneManager.LoadSceneAsync("[Next Scene]");
+
+        // Load Next Scene
+        if (autoNext != null)
+        {
+            autoNext.LoadNextScene();
+        }
     }
 
     IEnumerator currentDialogue(string name, int num, string dialogue)
