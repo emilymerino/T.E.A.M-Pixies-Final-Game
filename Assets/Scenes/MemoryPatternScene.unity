@@ -1832,7 +1832,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playersSelectionMP: {fileID: 859598983}
-  timeRemaining: 3
+  timeRemaining: 2
   PlayersTurnText: {fileID: 714209393}
 --- !u!114 &714209393
 MonoBehaviour:
@@ -2513,7 +2513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ac0be65ffa2b4f87a9db80f339d1655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 3
+  timeRemaining: 2
   MinigameTitle: {fileID: 1293412769}
   instructionsPopUpMP: {fileID: 1642889268}
 --- !u!1 &1552688881
@@ -2866,10 +2866,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "INSTRUCTIONS\n\nA pattern of tiles will light up one by one, watch carefully!
-    \n\nDon\u2019t worry about the order, just remember which tiles glow. \n\nWhen
-    the lights fade, it\u2019s your turn to click them. \n\nSelect every correct
-    tile to unlock a hidden clue. \n\nBut hurry\u2026 you\u2019re on the clock! "
+  m_text: "INSTRUCTIONS\n\nWatch the tiles light up and remember which ones glow.\n\nWhen
+    the lights fade, click the same tiles (order doesn\u2019t matter).\n\nGet them
+    all right before time runs out to unlock a clue."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2addb59d53d014f4988c6524d3f94944, type: 2}
   m_sharedMaterial: {fileID: 7221344724475131436, guid: 2addb59d53d014f4988c6524d3f94944, type: 2}
@@ -2958,7 +2957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94ad7dd6c743c4337ba17fea74d2256d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 15
+  timeRemaining: 10
   Instructions: {fileID: 1642889266}
   boardBehaviourMP: {fileID: 441341474}
   setPatternMP: {fileID: 1859818375}
@@ -3131,7 +3130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0a9f06e566ef47d49f2b67bddcf7500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 3
+  timeRemaining: 2
   PlayerWon: {fileID: 1700830792}
 --- !u!1 &1721412244
 GameObject:
@@ -3302,7 +3301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f722b2376e4ef435db5cb3e1f4ad4848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 3
+  timeRemaining: 2
   PlayerLost: {fileID: 1721412247}
 --- !u!1 &1792544435
 GameObject:

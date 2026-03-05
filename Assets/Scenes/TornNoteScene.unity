@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61959c64a0d1e8e40bece6b5988d2152, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seconds: 15
+  seconds: 10
   nextObject: {fileID: 348093415}
   timerManager: {fileID: 0}
 --- !u!1 &105632046
@@ -555,18 +555,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Time to test your speed in puzzles
+  m_text: 'Time to test your puzzle skills!
 
 
-    This note has been torn into
-    several pieces
+    Drag the torn pieces into the correct
+    spots.
 
 
-    Use your mouse to drag each piece into the correct position
-
-
-    Put
-    the paper back together to read the message'
+    Rebuild the note to reveal the message.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5e20a7e32f2664a4ea4ef16001841b8a, type: 2}
   m_sharedMaterial: {fileID: -3356062087252364405, guid: 5e20a7e32f2664a4ea4ef16001841b8a, type: 2}
@@ -1089,7 +1085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61959c64a0d1e8e40bece6b5988d2152, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seconds: 3
+  seconds: 2
   nextObject: {fileID: 24128694}
   timerManager: {fileID: 0}
 --- !u!114 &492893491
@@ -1104,7 +1100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a418fc3599c697f4d9a2ffd718d5b9d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  introDuration: 3
+  introDuration: 2
   instructionsTitle: {fileID: 24128694}
   instructionsBody: {fileID: 331542322}
 --- !u!1 &565001298
@@ -1536,7 +1532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 161435619}
-  startTimeSeconds: 20
+  startTimeSeconds: 15
   gameOverText: {fileID: 461139936}
   puzzleRoot: {fileID: 1017494969}
   puzzlePieces: []

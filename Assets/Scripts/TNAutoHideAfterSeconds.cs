@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TNAutoHideAfterSeconds : MonoBehaviour
 {
-    [SerializeField] private float seconds = 3f;
+    [SerializeField] private float seconds = 2f;
     [SerializeField] private GameObject nextObject;
     [SerializeField] private TNPuzzleTimer timerManager;
 

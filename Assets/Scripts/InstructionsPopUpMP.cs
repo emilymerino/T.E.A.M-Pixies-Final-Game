@@ -5,7 +5,7 @@ using TMPro;
 
 public class InstructionsPopUpMP : MonoBehaviour
 {
-    public float timeRemaining = 20f;
+    public float timeRemaining = 10f;
     public TextMeshProUGUI Instructions;
     public BoardBehaviourMP boardBehaviourMP;
     public SetPatternMP setPatternMP;
