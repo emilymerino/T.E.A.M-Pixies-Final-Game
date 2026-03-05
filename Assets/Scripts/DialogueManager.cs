@@ -11,10 +11,16 @@ public class DialogueManager : MonoBehaviour
     public GameObject charName;
     [SerializeField] GameObject textBox;
 
+<<<<<<< update-story-scenes
     public bool skip = false;
 
     public GameObject classroom;
     public GameObject bathroom;
+=======
+
+    // clues reference
+    public ClueData Clue1;
+>>>>>>> main
 
 
     void Start()
@@ -50,6 +56,14 @@ public class DialogueManager : MonoBehaviour
         yield return StartCoroutine(currentDialogue("", 8, "You push open the bathroom doors. There you find your best friend Mei's lifeless body with a bite mark on her neck."));
         yield return StartCoroutine(currentDialogue("", 8, "Panic sets in and you look around, some pieces of bloody, torn up paper catch your eye."));
         //SceneManager.LoadSceneAsync("[Next Scene]");
+
+        // unlock clue here
+
+        // UNLOCK CLUE HERE
+        if (ClueManager.Instance != null && Clue1 != null)
+        {
+            ClueManager.Instance.UnlockClue(Clue1);
+        }
     }
 
     IEnumerator currentDialogue(string name, int num, string dialogue)
