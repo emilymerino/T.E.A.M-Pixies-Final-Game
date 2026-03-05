@@ -12,16 +12,16 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] GameObject textBox;
     [SerializeField] private SMDialogueAutoNext autoNext;
 
-<<<<<<< update-story-scenes
+
     public bool skip = false;
 
     public GameObject classroom;
     public GameObject bathroom;
-=======
+
 
     // clues reference
     public ClueData Clue1;
->>>>>>> main
+
 
 
     void Start()
