@@ -2,16 +2,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ClueManager : MonoBehaviour
 {
     public static ClueManager Instance;
-
-
     public GameObject cluePopupPanel;
     public TMP_Text cluePopupText;
     public Image cluePopupIcon;
-
 
     public GameObject clueInventoryPanel;
     public Transform clueSlotsParent;
@@ -23,22 +21,53 @@ public class ClueManager : MonoBehaviour
     public TMP_Text clueDetailDescription;
     public Image clueDetailBackground;
 
+
+    public string[] allowedScenes = { "Beginning Scene", "Middle Story Scene", "Ending Story Scene" };
+
     private List<ClueData> foundClues = new List<ClueData>();
 
     void Awake()
     {
+
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject); // keeps cluesystem across all scenes 
         }
         else
         {
             Destroy(gameObject);
+            return;
         }
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     void Start()
+    {
+        InitializeUI();
+    }
+
+    void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // show button only in allowed scenes
+        bool showInventory = System.Array.Exists(allowedScenes, s => s == scene.name);
+        if (openClueInventoryButton != null)
+            openClueInventoryButton.gameObject.SetActive(showInventory);
+
+        //  close inventory when loading a new scene
+        if (clueInventoryPanel != null)
+            clueInventoryPanel.SetActive(false);
+
+        UpdateButtonText();
+    }
+
+    void InitializeUI()
     {
         if (clueInventoryPanel != null)
             clueInventoryPanel.SetActive(false);
@@ -55,7 +84,6 @@ public class ClueManager : MonoBehaviour
         if (clueDetailDescription != null)
             clueDetailDescription.text = "Select a clue to view details.";
 
- 
         if (openClueInventoryButton != null)
         {
             openClueInventoryButton.onClick.RemoveAllListeners();
@@ -67,8 +95,7 @@ public class ClueManager : MonoBehaviour
 
     public void UnlockClue(ClueData clue)
     {
-        if (clue == null) return;
-        if (foundClues.Contains(clue)) return;
+        if (clue == null || foundClues.Contains(clue)) return;
 
         foundClues.Add(clue);
 
@@ -102,6 +129,8 @@ public class ClueManager : MonoBehaviour
 
     void CreateClueSlot(ClueData clue)
     {
+        if (clueSlotsParent == null) return;
+
         GameObject slot = new GameObject(clue.clueName + "_Slot");
         slot.transform.SetParent(clueSlotsParent, false);
 
@@ -150,8 +179,6 @@ public class ClueManager : MonoBehaviour
         bool isOpen = !clueInventoryPanel.activeSelf;
         clueInventoryPanel.SetActive(isOpen);
 
-        Debug.Log("ToggleInventory clicked. Inventory is now: " + (isOpen ? "Open" : "Closed"));
-
         UpdateButtonText();
     }
 
@@ -159,9 +186,6 @@ public class ClueManager : MonoBehaviour
     {
         if (openClueInventoryButtonText == null) return;
 
-        if (clueInventoryPanel.activeSelf)
-            openClueInventoryButtonText.text = "X";
-        else
-            openClueInventoryButtonText.text = "Clues";
+        openClueInventoryButtonText.text = clueInventoryPanel.activeSelf ? "X" : "Clues";
     }
 }

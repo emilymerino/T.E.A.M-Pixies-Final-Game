@@ -16,6 +16,19 @@ public class EndingDialogueManager : MonoBehaviour
     public GameObject lockers;
     public GameObject storage;
 
+    public ClueData Clue1;
+    public ClueData Clue2;
+    public ClueData Clue3;
+    public ClueData Clue4;
+    public ClueData Clue5;
+    public ClueData Clue6;
+    public ClueData Clue7;
+    public ClueData Clue8;
+    public ClueData Clue9;
+    public ClueData Clue10;
+    public ClueData Clue11;
+
+
     void Start()
     {
         lockers.SetActive(true);
@@ -35,6 +48,14 @@ public class EndingDialogueManager : MonoBehaviour
         textBox.SetActive(true);
         mainText.SetActive(true);
         yield return StartCoroutine(currentDialogue("", 8, "There's a note in the pocket of the blazer, “Meeting you about the missing transfers. This ends tonight. - Mei”"));
+
+
+        yield return new WaitForSeconds(2);
+
+        // unlock clue
+        ClueManager.Instance.UnlockClue(Clue8); 
+
+
         yield return StartCoroutine(currentDialogue("", 8, "You shut the locker door and glance down the hallway. You can see an open door leading to the storage room."));
         lockers.SetActive(false);
         storage.SetActive(true);
