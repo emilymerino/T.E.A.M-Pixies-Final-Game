@@ -837,6 +837,17 @@ MonoBehaviour:
   skip: 0
   lockers: {fileID: 1185702658}
   storage: {fileID: 1577763083}
+  Clue1: {fileID: 11400000, guid: 083e6a50ccd17a24298ec75dfb76ae97, type: 2}
+  Clue2: {fileID: 11400000, guid: 5cdd83fa71f388c419d96d07e631ac76, type: 2}
+  Clue3: {fileID: 11400000, guid: 82fb9d12dd605fc4087d583437406656, type: 2}
+  Clue4: {fileID: 11400000, guid: e0e246944c0ad734783db0f595b1e30a, type: 2}
+  Clue5: {fileID: 11400000, guid: f5d2f8437510a7b418406e6ab023b011, type: 2}
+  Clue6: {fileID: 11400000, guid: 1202239f6e7b8084bbd4ea3205e50c32, type: 2}
+  Clue7: {fileID: 11400000, guid: 6c5056e28e35a37458bb885704a55c17, type: 2}
+  Clue8: {fileID: 11400000, guid: dffa46881bbedee408b6d0ffb7344feb, type: 2}
+  Clue9: {fileID: 11400000, guid: 170fbe515366677488b0fff44ef66d56, type: 2}
+  Clue10: {fileID: 11400000, guid: 6ecc27d46addd2b49a69d6e42487b6e0, type: 2}
+  Clue11: {fileID: 11400000, guid: 73e92364974800040962c07a723c31f3, type: 2}
 --- !u!4 &1450071516
 Transform:
   m_ObjectHideFlags: 0
