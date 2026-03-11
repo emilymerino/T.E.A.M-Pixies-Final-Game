@@ -10,7 +10,6 @@ public class TNPuzzleCompletionManager : MonoBehaviour
     private bool successTriggered = false;
 
     [Header("References")]
-    [SerializeField] private TNPuzzleTimer timer;
     [SerializeField] private GameObject puzzleRoot;
     [SerializeField] private GameObject noteOverlayRoot;
 
@@ -29,8 +28,6 @@ public class TNPuzzleCompletionManager : MonoBehaviour
 
     private IEnumerator SuccessSequence()
     {
-        if (timer != null) timer.StopTimer();
-
         if (puzzleRoot != null) puzzleRoot.SetActive(false);
 
         if (noteOverlayRoot != null) noteOverlayRoot.SetActive(true);
