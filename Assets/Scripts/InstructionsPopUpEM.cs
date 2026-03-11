@@ -5,9 +5,9 @@ using TMPro;
 
 public class InstructionsPopUpEM : MonoBehaviour
 {
+    public BMReadyButtonSelection bmReadyButtonSelection;
     public ReadyPopUpEM readyPopUpEM;
 
-    public float timeRemaining = 10f;
     public TextMeshProUGUI Instructions;
 
     void Start()
@@ -22,19 +22,13 @@ public class InstructionsPopUpEM : MonoBehaviour
     public void ShowInstructions()
     {
         Instructions.gameObject.SetActive(true); // show text
+        bmReadyButtonSelection.ShowReadyButton();
     }
 
-    void Update()
+    public void HideInstructions()
     {
-        if (timeRemaining > 0)
-        {
-            timeRemaining -= Time.deltaTime; // decrease time
-        }
-        else // timer stoped
-        {
-            Instructions.gameObject.SetActive(false); // hide text
-            enabled = false;
-            readyPopUpEM.ShowText();
-        }
+        Instructions.gameObject.SetActive(false); // hide text
+        enabled = false;
+        readyPopUpEM.ShowText();
     }
 }

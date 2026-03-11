@@ -5,9 +5,11 @@ using TMPro;
 
 public class MinigameTitlePopUpEM : MonoBehaviour
 {
+    //public BMReadyButtonSelection bmReadyButtonSelection;
+    public InstructionsPopUpEM instructionsPopUpEM;
+
     public float timeRemaining = 2f;
     public TextMeshProUGUI MinigameTitle;
-    public InstructionsPopUpEM instructionsPopUpEM;
 
     void Start()
     {
@@ -27,7 +29,8 @@ public class MinigameTitlePopUpEM : MonoBehaviour
         else // timer stoped
         {
             MinigameTitle.gameObject.SetActive(false); // hide text
-            instructionsPopUpEM.ShowInstructions(); // go to InstructionsPopUpEM script
+            instructionsPopUpEM.ShowInstructions();
+            //bmReadyButtonSelection.gameObject.SetActive(true);
             enabled = false; // stop script
         }
     }
