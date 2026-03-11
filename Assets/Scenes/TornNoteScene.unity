@@ -532,8 +532,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.021473374, y: -360.48004}
-  m_SizeDelta: {x: 1910.012, y: 608.798}
+  m_AnchoredPosition: {x: 25, y: -289}
+  m_SizeDelta: {x: 992.9929, y: 494.1705}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &331542325
 MonoBehaviour:
@@ -555,14 +555,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Time to test your puzzle skills!
-
-
-    Drag the torn pieces into the correct
-    spots.
-
-
-    Rebuild the note to reveal the message.'
+  m_text: Drag the torn pieces with your mouse to reassemble the note and reveal
+    the message that will help you get one step closer to finding the vampire
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5e20a7e32f2664a4ea4ef16001841b8a, type: 2}
   m_sharedMaterial: {fileID: -3356062087252364405, guid: 5e20a7e32f2664a4ea4ef16001841b8a, type: 2}
