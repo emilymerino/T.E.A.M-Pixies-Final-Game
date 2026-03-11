@@ -8,6 +8,8 @@ public class TNIntroSequence : MonoBehaviour
     [SerializeField] private GameObject instructionsTitle;
     [SerializeField] private GameObject instructionsBody;
 
+    [SerializeField] private TNReadyButtonSelection readyButton;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -22,5 +24,10 @@ public class TNIntroSequence : MonoBehaviour
 
         instructionsTitle.SetActive(true);
         instructionsBody.SetActive(true);
+
+        if (readyButton != null)
+        {
+            readyButton.ShowReadyButton();
+        }
     }
 }

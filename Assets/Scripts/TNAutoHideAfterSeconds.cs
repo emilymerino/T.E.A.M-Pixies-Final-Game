@@ -4,18 +4,10 @@ using UnityEngine;
 
 public class TNAutoHideAfterSeconds : MonoBehaviour
 {
-    [SerializeField] private float seconds = 2f;
     [SerializeField] private GameObject nextObject;
 
-    private void OnEnable()
+    public void HideObject()
     {
-        StartCoroutine(Hide());
-    }
-
-    private IEnumerator Hide()
-    {
-        yield return new WaitForSeconds(seconds);
-
         gameObject.SetActive(false);
 
         if (nextObject != null)
