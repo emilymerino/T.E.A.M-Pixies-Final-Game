@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class InstructionsPopUpEM : MonoBehaviour
+public class BMInstructionsPopUp : MonoBehaviour
 {
     public BMReadyButtonSelection bmReadyButtonSelection;
-    public ReadyPopUpEM readyPopUpEM;
-
     public TextMeshProUGUI Instructions;
 
     void Start()
@@ -29,6 +27,5 @@ public class InstructionsPopUpEM : MonoBehaviour
     {
         Instructions.gameObject.SetActive(false); // hide text
         enabled = false;
-        readyPopUpEM.ShowText();
     }
 }

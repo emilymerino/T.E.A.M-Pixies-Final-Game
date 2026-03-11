@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class MinigameTitlePopUpEM : MonoBehaviour
+public class BMMinigameTitlePopUp : MonoBehaviour
 {
     //public BMReadyButtonSelection bmReadyButtonSelection;
-    public InstructionsPopUpEM instructionsPopUpEM;
+    public BMInstructionsPopUp instructionsPopUp;
 
     public float timeRemaining = 2f;
     public TextMeshProUGUI MinigameTitle;
@@ -29,7 +29,7 @@ public class MinigameTitlePopUpEM : MonoBehaviour
         else // timer stoped
         {
             MinigameTitle.gameObject.SetActive(false); // hide text
-            instructionsPopUpEM.ShowInstructions();
+            instructionsPopUp.ShowInstructions();
             //bmReadyButtonSelection.gameObject.SetActive(true);
             enabled = false; // stop script
         }

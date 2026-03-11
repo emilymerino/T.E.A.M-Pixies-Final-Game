@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class GameOverPopUpEM : MonoBehaviour
+public class BMGameOverPopUp : MonoBehaviour
 {
     public float timeRemaining = 3f;
     public TextMeshProUGUI GameOver;

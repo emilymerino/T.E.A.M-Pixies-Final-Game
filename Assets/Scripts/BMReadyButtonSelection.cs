@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BMReadyButtonSelection : MonoBehaviour
 {
-    public InstructionsPopUpEM instructionsPopUpEM;
+    public BMInstructionsPopUp instructionsPopUp;
     public SpriteRenderer ReadyButton;
     public bool isSelected = false;
 
@@ -36,6 +36,6 @@ public class BMReadyButtonSelection : MonoBehaviour
     {
         ReadyButton.gameObject.SetActive(false);
         Debug.Log("Button Hidden");
-        instructionsPopUpEM.HideInstructions();
+        instructionsPopUp.HideInstructions();
     }
 }

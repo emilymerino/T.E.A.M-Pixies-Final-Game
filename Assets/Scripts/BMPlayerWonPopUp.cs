@@ -3,28 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class PlayerLostPopUpEM : MonoBehaviour
+public class BMPlayerWonPopUp : MonoBehaviour
 {
     public float timeRemaining = 2f;
-    public TextMeshProUGUI PlayerLost;
+    public TextMeshProUGUI PlayerWon;
 
     private SMMinigameAutoNext sceneAutoNext;
 
     void Start()
     {
-        if (PlayerLost == null)
+        if (PlayerWon == null)
         {
-            PlayerLost = GetComponent<TextMeshProUGUI>();
+            PlayerWon = GetComponent<TextMeshProUGUI>();
         }
-        PlayerLost.gameObject.SetActive(false); // starts hidden
+        PlayerWon.gameObject.SetActive(false); // starts hidden
         enabled = false;
 
         sceneAutoNext = FindObjectOfType<SMMinigameAutoNext>();
     }
 
-    public void ShowLostPopUp()
+    public void ShowWonPopUp()
     {
-        PlayerLost.gameObject.SetActive(true); // show text
+        PlayerWon.gameObject.SetActive(true); // show text
         timeRemaining = 2f;
         enabled = true;
     }
@@ -37,7 +37,7 @@ public class PlayerLostPopUpEM : MonoBehaviour
         }
         else // timer stoped
         {
-            PlayerLost.gameObject.SetActive(false); // hide text
+            PlayerWon.gameObject.SetActive(false); // hide text
             enabled = false;
 
             if (sceneAutoNext != null)
