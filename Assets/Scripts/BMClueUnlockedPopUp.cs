@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class BMPlayerWonPopUp : MonoBehaviour
+public class LCClueUnlocked : MonoBehaviour
 {
     public float timeRemaining = 2f;
     public TextMeshProUGUI PlayerWon;
