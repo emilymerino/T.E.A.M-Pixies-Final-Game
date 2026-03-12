@@ -27,8 +27,8 @@ public class LCMinigameTitlePopUp : MonoBehaviour
         }
         else // timer stoped
         {
-            MinigameTitle.gameObject.SetActive(false); // hide text
-            instructionsPopUp.ShowInstructions(); // go to InstructionsPopUp script
+            MinigameTitle.gameObject.SetActive(false);
+            instructionsPopUp.ShowInstructions();
             enabled = false; // stop script
         }
     }
