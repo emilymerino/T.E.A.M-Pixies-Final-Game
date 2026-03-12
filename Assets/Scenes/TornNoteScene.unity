@@ -419,8 +419,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Drag the torn pieces with your mouse to reassemble the note and reveal
-    the message that will help you get one step closer to finding the vampire
+  m_text: Drag the torn pieces to the board with your mouse to reassemble the note
+    and reveal the message that will help you get one step closer to finding the
+    vampire
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5e20a7e32f2664a4ea4ef16001841b8a, type: 2}
   m_sharedMaterial: {fileID: -3356062087252364405, guid: 5e20a7e32f2664a4ea4ef16001841b8a, type: 2}

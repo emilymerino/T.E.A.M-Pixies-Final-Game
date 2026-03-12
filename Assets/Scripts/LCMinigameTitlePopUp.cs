@@ -5,9 +5,10 @@ using TMPro;
 
 public class LCMinigameTitlePopUp : MonoBehaviour
 {
+    public LCInstructionsPopUp instructionsPopUp;
+
     public float timeRemaining = 2f;
     public TextMeshProUGUI MinigameTitle;
-    public LCInstructionsPopUp instructionsPopUp;
 
     void Start()
     {
