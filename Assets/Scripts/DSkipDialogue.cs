@@ -6,7 +6,7 @@ public class SkipDialogue : MonoBehaviour
 {
     public void DialogueSkip()
     {
-       GetComponent<DialogueManager>().skip = true;
+       GetComponent<DDialogueManager>().skip = true;
        Debug.Log("Skipped");
     }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-public class DialogueManager : MonoBehaviour
+public class DDialogueManager : MonoBehaviour
 {
     public GameObject fadeTransition;
     public GameObject mainText;

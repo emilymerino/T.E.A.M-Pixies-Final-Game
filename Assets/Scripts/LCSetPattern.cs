@@ -3,20 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class SetPatternMP : MonoBehaviour
+public class LCSetPattern : MonoBehaviour
 {
-    public PlayersPatternMP playersPatternMP;
-    public PlayerMemoryManagerMP playerMemoryManagerMP;
+    public LCPlayerMemoryManager playerMemoryManager;
 
-    public SetPatternMP setPatternMP;
-    public BoardBehaviourMP boardBehaviourMP;
-    public ReadyPopUpMP readyPopUpMP;
+    public LCSetPattern setPattern;
+    public LCBoardBehaviour boardBehaviour;
+    public LCReadyPopUp readyPopUp;
     public List<GameObject> squaresToShow; // list of squares to form pattern
     public float displayDuration = 1f;
     private float timer;
     private int currentIndex = 0;
     private int repeatCount = 0;
-    private int maxRepeats = 2;
+    private int maxRepeats = 1;
 
     void Start()
     {
@@ -78,10 +77,10 @@ public class SetPatternMP : MonoBehaviour
                     {
                         lastSpriteSquare.enabled = false;
                     }
-                    boardBehaviourMP.HideBorder(); // go to BorderBehaviour script
-                    readyPopUpMP.ShowText();
+                    boardBehaviour.HideBorder(); // go to BorderBehaviour script
+                    readyPopUp.ShowText();
 
-                    playerMemoryManagerMP.StartPlayerTurn();
+                    playerMemoryManager.StartPlayerTurn();
 
                     enabled = false;
                 }

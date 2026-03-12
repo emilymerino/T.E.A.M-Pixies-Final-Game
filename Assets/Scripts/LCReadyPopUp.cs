@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class ReadyPopUpMP : MonoBehaviour
+public class LCReadyPopUp : MonoBehaviour
 {
-    public PlayersSelectionMP playersSelectionMP;
+    public LCPlayersSelection playersSelection;
     public float timeRemaining = 3f;
     public TextMeshProUGUI PlayersTurnText;
 
@@ -32,7 +32,7 @@ public class ReadyPopUpMP : MonoBehaviour
         else // timer stoped
         {
             PlayersTurnText.gameObject.SetActive(false); // hide text
-            playersSelectionMP.EnablePlayerSelection(); // go to PlayersSelectionscript
+            playersSelection.EnablePlayerSelection(); // go to PlayersSelectionscript
             enabled = false;
         }
     }

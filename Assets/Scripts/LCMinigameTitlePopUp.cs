@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class MinigameTitlePopUpMP : MonoBehaviour
+public class LCMinigameTitlePopUp : MonoBehaviour
 {
     public float timeRemaining = 2f;
     public TextMeshProUGUI MinigameTitle;
-    public InstructionsPopUpMP instructionsPopUpMP;
+    public LCInstructionsPopUp instructionsPopUp;
 
     void Start()
     {
@@ -27,7 +27,7 @@ public class MinigameTitlePopUpMP : MonoBehaviour
         else // timer stoped
         {
             MinigameTitle.gameObject.SetActive(false); // hide text
-            instructionsPopUpMP.ShowInstructions(); // go to InstructionsPopUp script
+            instructionsPopUp.ShowInstructions(); // go to InstructionsPopUp script
             enabled = false; // stop script
         }
     }
