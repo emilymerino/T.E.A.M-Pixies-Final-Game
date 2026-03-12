@@ -5,7 +5,6 @@ using TMPro;
 
 public class BMMinigameTitlePopUp : MonoBehaviour
 {
-    //public BMReadyButtonSelection bmReadyButtonSelection;
     public BMInstructionsPopUp instructionsPopUp;
 
     public float timeRemaining = 2f;
@@ -30,7 +29,6 @@ public class BMMinigameTitlePopUp : MonoBehaviour
         {
             MinigameTitle.gameObject.SetActive(false); // hide text
             instructionsPopUp.ShowInstructions();
-            //bmReadyButtonSelection.gameObject.SetActive(true);
             enabled = false; // stop script
         }
     }
