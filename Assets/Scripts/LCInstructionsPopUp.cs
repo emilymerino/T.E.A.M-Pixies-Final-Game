@@ -5,7 +5,7 @@ using TMPro;
 
 public class LCInstructionsPopUp : MonoBehaviour
 {
-    public LCReadyButtonSelection ReadyButtonSelection;
+    public LCReadyButtonSelection readyButtonSelection;
     public TextMeshProUGUI Instructions;
 
     void Start()
@@ -20,7 +20,7 @@ public class LCInstructionsPopUp : MonoBehaviour
     public void ShowInstructions()
     {
         Instructions.gameObject.SetActive(true); // show text
-        ReadyButtonSelection.ShowReadyButton();
+        readyButtonSelection.ShowReadyButton();
     }
 
     public void HideInstructions()
