@@ -6,6 +6,8 @@ using TMPro;
 public class LCInstructionsPopUp : MonoBehaviour
 {
     public LCReadyButtonSelection readyButtonSelection;
+    public LCLockBehaviour lockBehaviour;
+
     public TextMeshProUGUI Instructions;
 
     void Start()
@@ -26,6 +28,7 @@ public class LCInstructionsPopUp : MonoBehaviour
     public void HideInstructions()
     {
         Instructions.gameObject.SetActive(false); // hide text
+        lockBehaviour.ShowLock();
         enabled = false;
     }
 }
