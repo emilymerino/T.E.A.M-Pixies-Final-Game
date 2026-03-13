@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class LCSelectionManager : MonoBehaviour
 {
+    public LCCombinationChecker combinationChecker;
+
     public List<SpriteRenderer> playersSelection = new List<SpriteRenderer>();
 
     private SpriteRenderer currentButtonLight;
+    public int maxSelections = 6;
     public bool canSelect = false;
 
     public void AddToSelection(SpriteRenderer buttonLight)
@@ -24,6 +27,13 @@ public class LCSelectionManager : MonoBehaviour
 
         playersSelection.Add(buttonLight); // allow duplicates
         Debug.Log(buttonLight.gameObject.name + " added to list.");
+
+        if (playersSelection.Count >= maxSelections)
+        {
+            Debug.Log("Maximum selections reached");
+            combinationChecker.CompareCombinations(combinationChecker.combination.combinationList,
+            combinationChecker.selectionManager.playersSelection);
+        }
     }
 }
 

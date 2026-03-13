@@ -7,7 +7,7 @@ public class LCCombinationChecker : MonoBehaviour
     public LCSelectionManager selectionManager;
     public LCCombination combination;
     public LCLockBehaviour lockBehaviour;
-    public LCSubmitButtonSelection submitButtonSelection;
+    //public LCSubmitButtonSelection submitButtonSelection;
     public LCLockUnlockedBehaviour lockUnlockedBehaviour;
     public LCGameGuideManager gameGuideManager;
 
@@ -40,7 +40,7 @@ public class LCCombinationChecker : MonoBehaviour
         }
         combination.HideCombination();
         lockBehaviour.HideLock();
-        submitButtonSelection.HideSubmitButton();
+        //submitButtonSelection.HideSubmitButton();
         lockUnlockedBehaviour.ShowLockUnlocked();
         gameGuideManager.HideInPlayInstructions();
         gameGuideManager.ShowYouGotIt();
