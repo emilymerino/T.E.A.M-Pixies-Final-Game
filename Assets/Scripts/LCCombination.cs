@@ -6,7 +6,6 @@ public class LCCombination : MonoBehaviour
 {
     public LCSelectionManager selectionManager;
     public LCPlayerSelection playerSelection;
-    //public LCSubmitButtonSelection submitButtonSelection;
     public LCGameGuideManager gameGuideManager;
 
     public List<SpriteRenderer> combinationList;
@@ -70,7 +69,6 @@ public class LCCombination : MonoBehaviour
             if (buttonLight != null)
             {
                 buttonLight.enabled = false;
-                //submitButtonSelection.ShowSubmitButton();
                 selectionManager.playersSelection.Clear();
                 gameGuideManager.HideWatchCombination();
                 gameGuideManager.ShowInPlayInstructions();
