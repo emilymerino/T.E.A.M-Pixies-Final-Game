@@ -9,6 +9,7 @@ public class LCCombinationChecker : MonoBehaviour
     public LCLockBehaviour lockBehaviour;
     public LCSubmitButtonSelection submitButtonSelection;
     public LCLockUnlockedBehaviour lockUnlockedBehaviour;
+    public LCGameGuideManager gameGuideManager;
 
     public bool CompareCombinations(List<SpriteRenderer> combinationList, List<SpriteRenderer> playersSelection)
     {
@@ -21,6 +22,7 @@ public class LCCombinationChecker : MonoBehaviour
         {
             combination.HideCombination();
             combination.HideNotCombinationList();
+            gameGuideManager.ShowNotQuite("Not quite, try again", 3f);
             Debug.Log("Lists are different lengths");
             return false;
         }
@@ -31,6 +33,7 @@ public class LCCombinationChecker : MonoBehaviour
             {
                 combination.HideCombination();
                 combination.HideNotCombinationList();
+                gameGuideManager.ShowNotQuite("Not quite, try again", 3f);
                 Debug.Log("Lists are not the same");
                 return false;
             }
@@ -39,6 +42,8 @@ public class LCCombinationChecker : MonoBehaviour
         lockBehaviour.HideLock();
         submitButtonSelection.HideSubmitButton();
         lockUnlockedBehaviour.ShowLockUnlocked();
+        gameGuideManager.HideInPlayInstructions();
+        gameGuideManager.ShowYouGotIt();
         Debug.Log("Lists are the same");
         return true;
     }

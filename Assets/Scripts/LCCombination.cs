@@ -7,6 +7,7 @@ public class LCCombination : MonoBehaviour
     public LCSelectionManager selectionManager;
     public LCPlayerSelection playerSelection;
     public LCSubmitButtonSelection submitButtonSelection;
+    public LCGameGuideManager gameGuideManager;
 
     public List<SpriteRenderer> combinationList;
     public List<SpriteRenderer> notCombinationList;
@@ -71,6 +72,8 @@ public class LCCombination : MonoBehaviour
                 light.enabled = false;
                 submitButtonSelection.ShowSubmitButton();
                 selectionManager.playersSelection.Clear();
+                gameGuideManager.HideWatchCombination();
+                gameGuideManager.ShowInPlayInstructions();
             }
         }
     }
