@@ -9,6 +9,7 @@ public class LCCombinationChecker : MonoBehaviour
     public LCLockBehaviour lockBehaviour;
     public LCLockUnlockedBehaviour lockUnlockedBehaviour;
     public LCGameGuideManager gameGuideManager;
+    public LCStatusLightsBehaviour statusLightsBehaviour;
 
     public bool CompareCombinations(List<SpriteRenderer> combinationList, List<SpriteRenderer> playersSelection)
     {
@@ -21,6 +22,8 @@ public class LCCombinationChecker : MonoBehaviour
         {
             combination.HideCombination();
             combination.HideNotCombinationList();
+            statusLightsBehaviour.HideStatusLights();
+            statusLightsBehaviour.ShowLockedStatusLights(3f);
             gameGuideManager.ShowNotQuite("Not quite, try again", 3f);
             Debug.Log("Lists are different lengths");
             return false;
@@ -32,6 +35,8 @@ public class LCCombinationChecker : MonoBehaviour
             {
                 combination.HideCombination();
                 combination.HideNotCombinationList();
+                statusLightsBehaviour.HideStatusLights();
+                statusLightsBehaviour.ShowLockedStatusLights(3f);
                 gameGuideManager.ShowNotQuite("Not quite, try again", 3f);
                 Debug.Log("Lists are not the same");
                 return false;
@@ -41,6 +46,7 @@ public class LCCombinationChecker : MonoBehaviour
         lockBehaviour.HideLock();
         lockUnlockedBehaviour.ShowLockUnlocked();
         gameGuideManager.HideInPlayInstructions();
+        statusLightsBehaviour.HideStatusLights();
         gameGuideManager.ShowYouGotIt();
         Debug.Log("Lists are the same");
         return true;

@@ -5,6 +5,7 @@ using UnityEngine;
 public class LCSelectionManager : MonoBehaviour
 {
     public LCCombinationChecker combinationChecker;
+    public LCStatusLightsBehaviour statusLightsBehaviour;
 
     public List<SpriteRenderer> playersSelection = new List<SpriteRenderer>();
 
@@ -27,6 +28,7 @@ public class LCSelectionManager : MonoBehaviour
 
         playersSelection.Add(buttonLight); // allow duplicates
         Debug.Log(buttonLight.gameObject.name + " added to list.");
+        statusLightsBehaviour.ShowStatusLights();
 
         if (playersSelection.Count >= maxSelections)
         {

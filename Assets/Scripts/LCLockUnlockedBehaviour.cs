@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LCLockUnlockedBehaviour : MonoBehaviour
 {
+    public LCStatusLightsBehaviour statusLightsBehaviour;
+
     public SpriteRenderer LockUnlocked;
 
     private void Start()
@@ -17,6 +19,7 @@ public class LCLockUnlockedBehaviour : MonoBehaviour
     public void ShowLockUnlocked()
     {
         LockUnlocked.gameObject.SetActive(true);
+        statusLightsBehaviour.ShowUnlockedStatusLights();
     }
 
     public void HideLockUnlocked()
