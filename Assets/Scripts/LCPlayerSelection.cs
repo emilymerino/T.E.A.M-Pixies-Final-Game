@@ -9,7 +9,7 @@ public class LCPlayerSelection : MonoBehaviour
 
     public float displayDuration = 1f;
     private SpriteRenderer light;
-    private bool isSelected = false;
+    public bool isSelected = false;
 
     void Start()
     {
@@ -26,17 +26,6 @@ public class LCPlayerSelection : MonoBehaviour
         if (!selectionManager.canSelect)
             return;
 
-        isSelected = !isSelected; // Toggle selection state
-
-        if (isSelected)
-        {
-            selectionManager.AddToSelection(light);
-            light.enabled = true;
-        }
-        else
-        {
-            selectionManager.RemoveFromSelection(light);
-            light.enabled = false;
-        }
+        selectionManager.AddToSelection(light);
     }
 }
