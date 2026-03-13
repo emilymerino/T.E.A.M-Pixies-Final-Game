@@ -6,24 +6,24 @@ public class LCSelectionManager : MonoBehaviour
 {
     public List<SpriteRenderer> playersSelection = new List<SpriteRenderer>();
 
-    private SpriteRenderer currentLight;
+    private SpriteRenderer currentButtonLight;
     public bool canSelect = false;
 
-    public void AddToSelection(SpriteRenderer light)
+    public void AddToSelection(SpriteRenderer buttonLight)
     {
         if (!canSelect) return;
 
-        if (currentLight != null) // turn off previous light
+        if (currentButtonLight != null) // turn off previous button light
         {
-            currentLight.enabled = false;
+            currentButtonLight.enabled = false;
         }
 
         // set new light
-        currentLight = light;
-        currentLight.enabled = true;
+        currentButtonLight = buttonLight;
+        currentButtonLight.enabled = true;
 
-        playersSelection.Add(light); // allow duplicates
-        Debug.Log(light.gameObject.name + " added to list.");
+        playersSelection.Add(buttonLight); // allow duplicates
+        Debug.Log(buttonLight.gameObject.name + " added to list.");
     }
 }
 

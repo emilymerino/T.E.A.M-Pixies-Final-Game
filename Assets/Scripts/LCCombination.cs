@@ -19,11 +19,11 @@ public class LCCombination : MonoBehaviour
     {
         if (combinationList == null) return;
 
-        foreach (SpriteRenderer light in combinationList)
+        foreach (SpriteRenderer buttonLight in combinationList)
         {
-            if (light != null)
+            if (buttonLight != null)
             {
-                light.enabled = false; // starts hidden
+                buttonLight.enabled = false; // starts hidden
             }
         }
         StartCoroutine(DelayAction(2.0f));
@@ -40,11 +40,11 @@ public class LCCombination : MonoBehaviour
     {
         for (int i = 0; i < combinationList.Count; i++)
         {
-            foreach (SpriteRenderer light in combinationList)
+            foreach (SpriteRenderer buttonLight in combinationList)
             {
-                if (light != null)
+                if (buttonLight != null)
                 {
-                    light.enabled = false; // starts hidden
+                    buttonLight.enabled = false; // starts hidden
                 }
             }
 
@@ -65,11 +65,11 @@ public class LCCombination : MonoBehaviour
 
     public void HideCombination()
     {
-        foreach (SpriteRenderer light in combinationList)
+        foreach (SpriteRenderer buttonLight in combinationList)
         {
-            if (light != null)
+            if (buttonLight != null)
             {
-                light.enabled = false;
+                buttonLight.enabled = false;
                 submitButtonSelection.ShowSubmitButton();
                 selectionManager.playersSelection.Clear();
                 gameGuideManager.HideWatchCombination();
@@ -80,11 +80,11 @@ public class LCCombination : MonoBehaviour
 
     public void HideNotCombinationList()
     {
-        foreach (SpriteRenderer light in notCombinationList)
+        foreach (SpriteRenderer buttonLight in notCombinationList)
         {
-            if (light != null)
+            if (buttonLight != null)
             {
-                light.enabled = false;
+                buttonLight.enabled = false;
                 selectionManager.playersSelection.Clear();
             }
         }

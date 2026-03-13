@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 133817297}
   - component: {fileID: 133817298}
   m_Layer: 0
-  m_Name: Light (3)
+  m_Name: ButtonLight (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1000,7 +1000,7 @@ GameObject:
   - component: {fileID: 852799466}
   - component: {fileID: 852799467}
   m_Layer: 0
-  m_Name: Light (1)
+  m_Name: ButtonLight (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1251,7 +1251,7 @@ GameObject:
   - component: {fileID: 982653006}
   - component: {fileID: 982653007}
   m_Layer: 0
-  m_Name: Light (8)
+  m_Name: ButtonLight (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1896,7 +1896,7 @@ GameObject:
   - component: {fileID: 1208644689}
   - component: {fileID: 1208644688}
   m_Layer: 0
-  m_Name: Light (6)
+  m_Name: ButtonLight (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2043,7 +2043,7 @@ GameObject:
   - component: {fileID: 1323943662}
   - component: {fileID: 1323943661}
   m_Layer: 0
-  m_Name: Light (4)
+  m_Name: ButtonLight (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2190,7 +2190,7 @@ GameObject:
   - component: {fileID: 1342296759}
   - component: {fileID: 1342296760}
   m_Layer: 0
-  m_Name: Light (2)
+  m_Name: ButtonLight (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2380,7 +2380,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1723749835}
   m_Layer: 0
-  m_Name: NotCombinationLights
+  m_Name: NotCombination
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2636,7 +2636,7 @@ GameObject:
   - component: {fileID: 1799553557}
   - component: {fileID: 1799553556}
   m_Layer: 0
-  m_Name: Light (7)
+  m_Name: ButtonLight (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2875,7 +2875,7 @@ GameObject:
   - component: {fileID: 1951073476}
   - component: {fileID: 1951073477}
   m_Layer: 0
-  m_Name: Light (9)
+  m_Name: ButtonLight (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3270,7 +3270,7 @@ GameObject:
   - component: {fileID: 2063322595}
   - component: {fileID: 2063322596}
   m_Layer: 0
-  m_Name: Light (5)
+  m_Name: ButtonLight (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

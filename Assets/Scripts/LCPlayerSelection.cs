@@ -8,16 +8,16 @@ public class LCPlayerSelection : MonoBehaviour
     public LCSelectionManager selectionManager;
 
     public float displayDuration = 1f;
-    private SpriteRenderer light;
+    private SpriteRenderer buttonLight;
     public bool isSelected = false;
 
     void Start()
     {
-        light = GetComponent<SpriteRenderer>();
+        buttonLight = GetComponent<SpriteRenderer>();
 
-        if (light != null)
+        if (buttonLight != null)
         {
-            light.enabled = false; // starts hidden
+            buttonLight.enabled = false; // starts hidden
         }
     }
 
@@ -26,6 +26,6 @@ public class LCPlayerSelection : MonoBehaviour
         if (!selectionManager.canSelect)
             return;
 
-        selectionManager.AddToSelection(light);
+        selectionManager.AddToSelection(buttonLight);
     }
 }
