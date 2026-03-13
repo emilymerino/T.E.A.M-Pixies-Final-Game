@@ -33,9 +33,19 @@ public class LCSelectionManager : MonoBehaviour
         if (playersSelection.Count >= maxSelections)
         {
             Debug.Log("Maximum selections reached");
-            combinationChecker.CompareCombinations(combinationChecker.combination.combinationList,
-            combinationChecker.selectionManager.playersSelection);
+
+             StartCoroutine(CompareAfterDelay());
         }
+    }
+
+    IEnumerator CompareAfterDelay()
+    {
+        yield return new WaitForSeconds(2f); // keep last light on for 2 seconds
+
+        combinationChecker.CompareCombinations(
+            combinationChecker.combination.combinationList,
+            playersSelection
+        );
     }
 }
 
