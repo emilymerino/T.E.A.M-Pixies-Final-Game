@@ -8,16 +8,13 @@ public class MouseHighlight : MonoBehaviour
 {
     private Material[] materials;
     private Color[] originalColors;
+    private Bloom bloom;
 
     [SerializeField] private Color highlightColor = new Color(0.5f, 0.5f, 0.5f, 1f);
-
-    // reference to global volume (drag in inspector)
     [SerializeField] private Volume globalVolume;
-    private Bloom bloom;
 
     void Start()
     {
-        // get materials
         Renderer renderer = GetComponent<Renderer>();
         materials = renderer.materials;
 
@@ -39,6 +36,7 @@ public class MouseHighlight : MonoBehaviour
         // get bloom from global volume
         if (globalVolume != null && globalVolume.profile.TryGet(out bloom))
         {
+            bloom.active = false;
             Debug.Log("Bloom found");
         }
     }
@@ -54,7 +52,7 @@ public class MouseHighlight : MonoBehaviour
             mat.SetColor("_EmissionColor", highlightColor);
         }
 
-        // turn ON bloom (like checking box)
+        // turn on bloom
         if (bloom != null)
         {
             bloom.active = true;
