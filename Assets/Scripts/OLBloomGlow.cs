@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
-public class MouseHighlight : MonoBehaviour
+public class OLBloomGlow : MonoBehaviour
 {
     private Material[] materials;
     private Color[] originalColors;
