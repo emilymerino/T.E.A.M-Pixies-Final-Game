@@ -389,6 +389,10 @@ MonoBehaviour:
   clueDetailIcon: {fileID: 1770284612}
   clueDetailDescription: {fileID: 682594514}
   clueDetailBackground: {fileID: 1770284612}
+  allowedScenes:
+  - Beginning Scene
+  - Middle Story Scene
+  - Ending Story Scene
 --- !u!4 &168682601
 Transform:
   m_ObjectHideFlags: 0
@@ -926,9 +930,9 @@ Canvas:
   m_GameObject: {fileID: 618953447}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_RenderMode: 1
+  m_Camera: {fileID: 1874217277}
+  m_PlaneDistance: 1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -1519,9 +1523,9 @@ Canvas:
   m_GameObject: {fileID: 780666601}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_RenderMode: 1
+  m_Camera: {fileID: 1874217277}
+  m_PlaneDistance: 1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -2444,6 +2448,10 @@ MonoBehaviour:
   clueDetailIcon: {fileID: 0}
   clueDetailDescription: {fileID: 0}
   clueDetailBackground: {fileID: 0}
+  allowedScenes:
+  - Beginning Scene
+  - Middle Story Scene
+  - Ending Story Scene
 --- !u!4 &1484711340
 Transform:
   m_ObjectHideFlags: 0
