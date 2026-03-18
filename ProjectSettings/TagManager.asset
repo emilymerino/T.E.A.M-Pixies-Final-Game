@@ -13,12 +13,12 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Mouse
   - Water
   - UI
   - 
-  - GlowLeft
-  - GlowRight
+  - 
+  - 
   - 
   - 
   - 
