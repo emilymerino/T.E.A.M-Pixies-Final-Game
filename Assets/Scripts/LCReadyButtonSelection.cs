@@ -5,14 +5,16 @@ using UnityEngine;
 public class LCReadyButtonSelection : MonoBehaviour
 {
     public LCInstructionsPopUp instructionsPopUp;
+
     public SpriteRenderer ReadyButton;
     public bool isSelected = false;
 
     void Start()
     {
         if (ReadyButton == null)
+        {
             ReadyButton = GetComponent<SpriteRenderer>();
-
+        }
         ReadyButton.gameObject.SetActive(false);
     }
 

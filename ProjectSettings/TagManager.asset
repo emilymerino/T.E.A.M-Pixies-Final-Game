@@ -8,11 +8,12 @@ TagManager:
   - Minigame Name
   - Selectable
   - Pattern
+  - SchoolDoors
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Mouse
   - Water
   - UI
   - 
