@@ -7,7 +7,7 @@ public class SWSceneChange : MonoBehaviour
 {
     private void OnMouseDown()
     {
-        SceneManager.LoadScene("LockCodeScene");
+        SceneManager.LoadScene("ClassroomInteractionScene");
     }
 }
 
