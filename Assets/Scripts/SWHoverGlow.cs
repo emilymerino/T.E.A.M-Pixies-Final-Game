@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class SWHoverGlow : MonoBehaviour
 {
-    public SWIndicatorPopUp indicatorPopUp;
-
     public SpriteRenderer SchoolDoorsGlow;
 
     void Start()
@@ -16,7 +14,6 @@ public class SWHoverGlow : MonoBehaviour
     void OnMouseEnter()
     {
         SchoolDoorsGlow.gameObject.SetActive(true);
-        indicatorPopUp.ShowIndicator();
         Debug.Log("Enter");
     }
 

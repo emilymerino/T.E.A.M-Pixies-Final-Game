@@ -1,20 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 public class SWIndicatorPopUp : MonoBehaviour
 {
-    public GameObject Indicator;
+    public SpriteRenderer Indicator;
+    public Sprite alertSprite;
 
     public void Start()
     {
-        Indicator.gameObject.SetActive(false); // starts hidden
+        Indicator.enabled = false;
+        ShowIndicator(alertSprite, 3f);
     }
 
-    public void ShowIndicator()
+    public void ShowIndicator(Sprite image, float delay)
     {
-        Indicator.gameObject.SetActive(true);
-        Debug.Log("Enter");
+        StopAllCoroutines();
+        StartCoroutine(ShowSpriteRoutine(image, delay));
+    }
+
+    private IEnumerator ShowSpriteRoutine(Sprite image, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        Indicator.sprite = image;
+        Indicator.enabled = true; // stay on
     }
 }
