@@ -1769,7 +1769,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1711882451
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1850,7 +1850,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Lightening: {fileID: 1711882451}
-  alertLightening: {fileID: 21300000, guid: 0f3b749d888114da4b0cb46bc931ede8, type: 3}
+  alertLightening: {fileID: 21300000, guid: 07cea7965978c457fbdd5edb86a048c2, type: 3}
 --- !u!1 &1721792122
 GameObject:
   m_ObjectHideFlags: 0
@@ -2342,7 +2342,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 14df3e834ac5945fdb3fa19877d4ca52, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cd041313139a04265ab07a8dbbef5a42, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
