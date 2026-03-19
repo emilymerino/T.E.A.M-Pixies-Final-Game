@@ -9,6 +9,7 @@ TagManager:
   - Selectable
   - Pattern
   - SchoolDoors
+  - TornNoteGlow
   layers:
   - Default
   - TransparentFX

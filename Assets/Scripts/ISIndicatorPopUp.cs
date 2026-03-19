@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SWIndicatorPopUp : MonoBehaviour
+public class ISIndicatorPopUp : MonoBehaviour
 {
     public SpriteRenderer Indicator;
-    public Sprite alertSprite;
+    public Sprite alertIndicator;
 
     public void Start()
     {
         Indicator.enabled = false;
-        ShowIndicator(alertSprite, 3f);
+        ShowIndicator(alertIndicator, 3f);
     }
 
     public void ShowIndicator(Sprite image, float delay)

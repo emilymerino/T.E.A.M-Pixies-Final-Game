@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SWHoverGlow : MonoBehaviour
+public class ISHoverGlow : MonoBehaviour
 {
     public SpriteRenderer Sprite;
 
