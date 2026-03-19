@@ -32,4 +32,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ThanksForPlayingScene.unity
     guid: d8d3875bd56574f3d839398826d066cd
+  - enabled: 1
+    path: Assets/Scenes/SchoolWalkInteractionScene.unity
+    guid: 8c035bebc39d649e28fe9968873e7666
+  - enabled: 1
+    path: Assets/Scenes/FirstClassroomInteractionScene.unity
+    guid: 31a0e23a096094381aced619a1e15900
   m_configObjects: {}

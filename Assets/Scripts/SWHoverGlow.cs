@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class SWHoverGlow : MonoBehaviour
 {
-    public SpriteRenderer SchoolDoorsGlow;
+    public SpriteRenderer Sprite;
 
     void Start()
     {
-        SchoolDoorsGlow.gameObject.SetActive(false); // starts hidden
+        Sprite.gameObject.SetActive(false); // starts hidden
     }
 
     void OnMouseEnter()
     {
-        SchoolDoorsGlow.gameObject.SetActive(true);
+        Sprite.gameObject.SetActive(true);
         Debug.Log("Enter");
     }
 
     void OnMouseExit()
     {
-        SchoolDoorsGlow.gameObject.SetActive(false);
+        Sprite.gameObject.SetActive(false);
         Debug.Log("Exit");
     }
 }
