@@ -936,7 +936,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 02a4a68cb4d884c02ab934273f3b107f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: da91d48e6309b48eb93b74e3a0435892, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -974,7 +974,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93ca16b7a0bd846ff82ee9797ac9df17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highlightColor: {r: 1, g: 0.9561806, b: 0, a: 1}
+  highlightColor: {r: 1, g: 1, b: 1, a: 1}
   globalVolume: {fileID: 1310960964}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
