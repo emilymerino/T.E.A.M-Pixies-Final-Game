@@ -8,8 +8,11 @@ TagManager:
   - Minigame Name
   - Selectable
   - Pattern
-  - SchoolDoors
-  - TornNoteGlow
+  - Lou
+  - Archie
+  - Quinton
+  - MissEvelyn
+  - Zeke
   layers:
   - Default
   - TransparentFX
