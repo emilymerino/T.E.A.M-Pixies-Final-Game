@@ -9,11 +9,15 @@ public class ISSceneChange : MonoBehaviour
     {
         if (CompareTag("SchoolDoors"))
         {
-            SceneManager.LoadScene("FirstClassroomInteractionScene");
+            SceneManager.LoadScene("FirstOutsideStudentCouncilInteractionScene");
         }
-        else if (CompareTag("OpenedBathroomDoor"))
+        else if (CompareTag("FirstStudentCouncilDoor"))
         {
-            SceneManager.LoadScene("InsideBathroomInteractionScene");
+            SceneManager.LoadScene("EnterStudentCouncilInteractionScene");
+        }
+        else if (CompareTag("FirstOpenedBathroomDoor"))
+        {
+            SceneManager.LoadScene("FirstInsideBathroomInteractionScene");
         }
         else if (CompareTag("TornNote"))
         {
@@ -21,7 +25,7 @@ public class ISSceneChange : MonoBehaviour
         }
         else if (CompareTag("Locker"))
         {
-            SceneManager.LoadScene("InfrontLockerInteractionScene");
+            SceneManager.LoadScene("InfrontOfLockerInteractionScene");
         }
         else if (CompareTag("Lock"))
         {
@@ -31,9 +35,25 @@ public class ISSceneChange : MonoBehaviour
         {
             SceneManager.LoadScene("BehindTheMessScene");
         }
-        else if (CompareTag("StudentCouncilDoor"))
+        else if (CompareTag("SecondStudentCouncilDoor"))
+        {
+            SceneManager.LoadScene("FirstConversationsInteractionScene");
+        }
+        else if (CompareTag("StorageRoomDoor"))
+        {
+            SceneManager.LoadScene("BehindTheMessScene");
+        }
+        else if (CompareTag("StorageRoomDoor"))
+        {
+            SceneManager.LoadScene("BehindTheMessScene");
+        }
+        else if (CompareTag("ThirdStudentCouncilDoor"))
         {
             SceneManager.LoadScene("SecondConversationsInteractionScene");
+        }
+        else if (CompareTag("SecondOpenedBathroomDoor"))
+        {
+            SceneManager.LoadScene("SecondInsideBathroomInteractionScene");
         }
     }
 }

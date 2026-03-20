@@ -39,15 +39,42 @@ EditorBuildSettings:
     path: Assets/Scenes/FirstConversationsInteractionScene.unity
     guid: 31a0e23a096094381aced619a1e15900
   - enabled: 1
-    path: Assets/Scenes/OutsideBathroomInteractionScene.unity
+    path: Assets/Scenes/FirstOutsideBathroomInteractionScene.unity
     guid: 9ae3011a1fe0e4e889793ed4a9e97fdf
   - enabled: 1
-    path: Assets/Scenes/InsideBathroomInteractionScene.unity
+    path: Assets/Scenes/FirstInsideBathroomInteractionScene.unity
     guid: be4e7dd2f95bd4905a2935fc55e48358
   - enabled: 1
-    path: Assets/Scenes/InfrontLockerInteractionScene.unity
+    path: Assets/Scenes/InfrontOfLockerInteractionScene.unity
     guid: 47938522036b34ec7b7e70d0dcaca3d7
   - enabled: 1
     path: Assets/Scenes/SecondConversationsInteractionScene.unity
     guid: 4ebb1a3d5d1ca47eab7e789ee7ec79b0
+  - enabled: 1
+    path: Assets/Scenes/FirstOutsideStudentCouncilInteractionScene.unity
+    guid: b7120db1c389844eeb592d616a52529e
+  - enabled: 1
+    path: Assets/Scenes/GuessTheVampireInteractionScene.unity
+    guid: ccb75d209fd2c4b27bf2ced759e09254
+  - enabled: 1
+    path: Assets/Scenes/HallwayOfLockers.unity
+    guid: 65db2082552b54a1c93d5474f19be7d3
+  - enabled: 1
+    path: Assets/Scenes/OutsideStorageRoomInteractionScene.unity
+    guid: f42acaca2b68c4d398a71e7ad8381c8b
+  - enabled: 1
+    path: Assets/Scenes/SecondInsideBathroomInteractionScene.unity
+    guid: 4468aed0e4614415e8478a00b3978fec
+  - enabled: 1
+    path: Assets/Scenes/SecondOutsideBathroomInteractionScene.unity
+    guid: 045ce9b518af0460692b58d3fe247db3
+  - enabled: 1
+    path: Assets/Scenes/SecondOutsideStudentCouncilInteractionScene.unity
+    guid: 8b7a86f356dcb4d2097cda11cfa7e1bd
+  - enabled: 1
+    path: Assets/Scenes/EnterStudentCouncilInteractionScene.unity
+    guid: cfc3251b8142741eaa68c91adc86a567
+  - enabled: 1
+    path: Assets/Scenes/ThirdOutsideStudentCouncilInteractionScene.unity
+    guid: 3f2ae925e9d4b49618d05cb69d0bb7f4
   m_configObjects: {}
