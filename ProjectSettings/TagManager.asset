@@ -13,6 +13,11 @@ TagManager:
   - Quinton
   - MissEvelyn
   - Zeke
+  - OpenedBathroomDoor
+  - TornNote
+  - SchoolDoors
+  - Locker
+  - Lock
   layers:
   - Default
   - TransparentFX

@@ -7,7 +7,26 @@ public class IBSceneChange : MonoBehaviour
 {
     private void OnMouseDown()
     {
-        SceneManager.LoadScene("TornNoteScene");
+        if (CompareTag("SchoolDoors"))
+        {
+            SceneManager.LoadScene("FirstClassroomInteractionScene");
+        }
+        else if (CompareTag("OpenedBathroomDoor"))
+        {
+            SceneManager.LoadScene("InsideBathroomInteractionScene");
+        }
+        else if (CompareTag("TornNote"))
+        {
+            SceneManager.LoadScene("TornNoteScene");
+        }
+        else if (CompareTag("Locker"))
+        {
+            SceneManager.LoadScene("InfrontLockerInteractionScene");
+        }
+        else if (CompareTag("Lock"))
+        {
+            SceneManager.LoadScene("LockCodeScene");
+        }
     }
 }
 
