@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class IBSceneChange : MonoBehaviour
+public class ISSceneChange : MonoBehaviour
 {
     private void OnMouseDown()
     {
@@ -26,6 +26,10 @@ public class IBSceneChange : MonoBehaviour
         else if (CompareTag("Lock"))
         {
             SceneManager.LoadScene("LockCodeScene");
+        }
+        else if (CompareTag("StorageRoomDoor"))
+        {
+            SceneManager.LoadScene("BehindTheMessScene");
         }
     }
 }
