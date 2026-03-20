@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FallingPaper3
+  m_Name: FallingPaper (3)
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -24,9 +24,9 @@ AnimationClip:
       value: {fileID: 21300000, guid: c7508f5fcde1b4cf3b84677efdc56d4e, type: 3}
     - time: 2
       value: {fileID: 21300000, guid: ddedb8fef06eb4680a567e7d56ad4058, type: 3}
-    - time: 4
+    - time: 4.0833335
       value: {fileID: 21300000, guid: e873600ed9e864d36ab06aa120a99acc, type: 3}
-    - time: 6.0833335
+    - time: 6
       value: {fileID: 21300000, guid: 96806b0694c8c496b9e13efce4e74686, type: 3}
     attribute: m_Sprite
     path: 
@@ -59,7 +59,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 6.1666665
+    m_StopTime: 6.0833335
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
