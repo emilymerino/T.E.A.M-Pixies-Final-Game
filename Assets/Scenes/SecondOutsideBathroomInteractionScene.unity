@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 371177488}
   m_Layer: 0
   m_Name: BathroomDoorOpened
-  m_TagString: OpenedBathroomDoor
+  m_TagString: SecondOpenedBathroomDoor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
