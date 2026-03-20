@@ -19,6 +19,7 @@ TagManager:
   - Locker
   - Lock
   - StorageRoomDoor
+  - StudentCouncilDoor
   layers:
   - Default
   - TransparentFX

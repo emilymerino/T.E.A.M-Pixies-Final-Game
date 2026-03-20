@@ -31,6 +31,10 @@ public class ISSceneChange : MonoBehaviour
         {
             SceneManager.LoadScene("BehindTheMessScene");
         }
+        else if (CompareTag("StudentCouncilDoor"))
+        {
+            SceneManager.LoadScene("SecondConversationsInteractionScene");
+        }
     }
 }
 
