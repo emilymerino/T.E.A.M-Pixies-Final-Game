@@ -8,7 +8,21 @@ TagManager:
   - Minigame Name
   - Selectable
   - Pattern
+  - Lou
+  - Archie
+  - Quinton
+  - MissEvelyn
+  - Zeke
+  - TornNote
   - SchoolDoors
+  - Locker
+  - Lock
+  - StorageRoomDoor
+  - FirstStudentCouncilDoor
+  - FirstOpenedBathroomDoor
+  - SecondStudentCouncilDoor
+  - ThirdStudentCouncilDoor
+  - SecondOpenedBathroomDoor
   layers:
   - Default
   - TransparentFX
