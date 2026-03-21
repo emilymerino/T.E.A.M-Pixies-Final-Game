@@ -647,6 +647,7 @@ GameObject:
   - component: {fileID: 1383816791}
   - component: {fileID: 1383816790}
   - component: {fileID: 1383816789}
+  - component: {fileID: 1383816793}
   m_Layer: 5
   m_Name: MouseAnimation
   m_TagString: Untagged
@@ -754,6 +755,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1383816793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383816788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1bca87a901d94a07b0766546706485a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sparklePrefab: {fileID: 4028942679044235101, guid: 1b0a6a355994340a8a93bd98dbc4780f, type: 3}
+  sparkleInterval: 1
+  bloodTrailOffset: {x: -24, y: -24}
 --- !u!1 &1416295737
 GameObject:
   m_ObjectHideFlags: 0
