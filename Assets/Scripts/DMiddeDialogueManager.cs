@@ -65,7 +65,7 @@ public class MiddeDialogueManager : MonoBehaviour
         textBox.SetActive(true);
         mainText.SetActive(true);
 
-        yield return StartCoroutine(currentDialogue("", 6, "You pocket the note and rush back to the meeting room."));
+        yield return StartCoroutine(currentDialogue("", "You pocket the note and rush back to the meeting room."));
 
         yield return new WaitForSeconds(2);
 
@@ -75,17 +75,17 @@ public class MiddeDialogueManager : MonoBehaviour
 
         classroom.SetActive(true);
         bathroom.SetActive(false);
-        yield return StartCoroutine(currentDialogue("", 7, "You pull open the door. You see that the student council meeting has started."));
+        yield return StartCoroutine(currentDialogue("", "You pull open the door. You see that the student council meeting has started."));
         missEvelyn.SetActive(true);
-        yield return StartCoroutine(currentDialogue("Miss Evelyn", 4, "You're late."));
+        yield return StartCoroutine(currentDialogue("Miss Evelyn", "You're late."));
         missEvelyn.SetActive(false);
-        yield return StartCoroutine(currentDialogue("You", 6, "M-Mei was murdered by a vampire in the bathroom."));
-        yield return StartCoroutine(currentDialogue("", 5, "The room falls silent. Lou drops her pen."));
+        yield return StartCoroutine(currentDialogue("You", "M-Mei was murdered by a vampire in the bathroom."));
+        yield return StartCoroutine(currentDialogue("", "The room falls silent. Lou drops her pen."));
         lou.SetActive(true);
-        yield return StartCoroutine(currentDialogue("Lou", 4, "Wait- murdered?"));
+        yield return StartCoroutine(currentDialogue("Lou", "Wait- murdered?"));
         lou.SetActive(false);
         missEvelyn.SetActive(true);
-        yield return StartCoroutine(currentDialogue("Miss Evelyn", 6, "Let's not jump to dramatic conclusions."));
+        yield return StartCoroutine(currentDialogue("Miss Evelyn", "Let's not jump to dramatic conclusions."));
 
 
         yield return new WaitForSeconds(2);
@@ -96,13 +96,13 @@ public class MiddeDialogueManager : MonoBehaviour
 
         missEvelyn.SetActive(false);
         archie.SetActive(true);
-        yield return StartCoroutine(currentDialogue("Archie", 7, "Hm... I heard a noise down the hall earlier around 10 minutes ago."));
+        yield return StartCoroutine(currentDialogue("Archie", "Hm... I heard a noise down the hall earlier around 10 minutes ago."));
         archie.SetActive(false);
         quinton.SetActive(true);
-        yield return StartCoroutine(currentDialogue("Quinton", 7, "I was helping Miss Evelyn during that time."));
+        yield return StartCoroutine(currentDialogue("Quinton", "I was helping Miss Evelyn during that time."));
         quinton.SetActive(false);
         zeke.SetActive(true);
-        yield return StartCoroutine(currentDialogue("Zeke", 7, "The vampire thing worries me. Hey Lou, aren't you allergic to garlic?"));
+        yield return StartCoroutine(currentDialogue("Zeke", "The vampire thing worries me. Hey Lou, aren't you allergic to garlic?"));
 
 
         yield return new WaitForSeconds(2);
@@ -112,12 +112,12 @@ public class MiddeDialogueManager : MonoBehaviour
 
 
         zeke.SetActive(false);
-        yield return StartCoroutine(currentDialogue("", 8, "The room erupted into choas. Everyone was acting weird, you can't seem to trust anyone."));
+        yield return StartCoroutine(currentDialogue("", "The room erupted into choas. Everyone was acting weird, you can't seem to trust anyone."));
 
         classroom.SetActive(false);
         lockers.SetActive(true);
-        yield return StartCoroutine(currentDialogue("", 8, "You quietly step out the room. Your eye catches something peeking through the cracks of a nearby locker."));
-        yield return StartCoroutine(currentDialogue("", 10, "You take a closer look and you realize it's a bloody sleeve of the council blazer. You have to see what's inside this locker."));
+        yield return StartCoroutine(currentDialogue("", "You quietly step out the room. Your eye catches something peeking through the cracks of a nearby locker."));
+        yield return StartCoroutine(currentDialogue("", "You take a closer look and you realize it's a bloody sleeve of the council blazer. You have to see what's inside this locker."));
         //SceneManager.LoadSceneAsync("[Next Scene]");
 
         // Load Next Scene
@@ -127,24 +127,12 @@ public class MiddeDialogueManager : MonoBehaviour
         }
     }
 
-    IEnumerator currentDialogue(string name, int num, string dialogue)
+    IEnumerator currentDialogue(string name, string dialogue)
     {
-        int time = 0;
         mainText.GetComponent<TMP_Text>().text = dialogue;
         charName.GetComponent<TMP_Text>().text = name;
 
-        while (time < num)
-        {
-            if (skip == true)
-            {
-                skip = false;
-                Debug.Log("Skipped dialogue");
-                yield break;
-            }
-            yield return new WaitForSeconds(1);
-            time++;
-        }
-        Debug.Log("Finished dialogue");
-        yield break;
+        Debug.Log("Skipped dialogue");
+        yield return new WaitUntil(() => skip == true);
     }
 }
