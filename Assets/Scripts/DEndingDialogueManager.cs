@@ -47,20 +47,23 @@ public class EndingDialogueManager : MonoBehaviour
         yield return new WaitForSeconds(1);
         textBox.SetActive(true);
         mainText.SetActive(true);
-        yield return StartCoroutine(currentDialogue("", 8, "There's a note in the pocket of the blazer, “Meeting you about the missing transfers. This ends tonight. - Mei”"));
+        yield return StartCoroutine(currentDialogue("", "There's a note in the pocket of the blazer, “Meeting you about the missing transfers. This ends tonight. - Mei”"));
+        skip = false;
 
-
-        yield return new WaitForSeconds(2);
+        //yield return new WaitForSeconds(2);
 
         // unlock clue
-        ClueManager.Instance.UnlockClue(Clue8); 
+        //ClueManager.Instance.UnlockClue(Clue8);
 
 
-        yield return StartCoroutine(currentDialogue("", 8, "You shut the locker door and glance down the hallway. You can see an open door leading to the storage room."));
+        yield return StartCoroutine(currentDialogue("", "You shut the locker door and glance down the hallway. You can see an open door leading to the storage room."));
+        skip = false;
         lockers.SetActive(false);
         storage.SetActive(true);
-        yield return StartCoroutine(currentDialogue("", 8, "You remember that the torn note mentioned that room and you march in to see the mess around you."));
-        yield return StartCoroutine(currentDialogue("", 8, "You're certain that underneath this mess, there's a clue hidden here."));
+        yield return StartCoroutine(currentDialogue("", "You remember that the torn note mentioned that room and you march in to see the mess around you."));
+        skip = false;
+        yield return StartCoroutine(currentDialogue("", "You're certain that underneath this mess, there's a clue hidden here."));
+        skip = false;
         //SceneManager.LoadSceneAsync("[Next Scene]");
 
         // Load Next Scene
@@ -70,25 +73,13 @@ public class EndingDialogueManager : MonoBehaviour
         }
     }
 
-    IEnumerator currentDialogue(string name, int num, string dialogue)
+    IEnumerator currentDialogue(string name, string dialogue)
     {
-        int time = 0;
         mainText.GetComponent<TMP_Text>().text = dialogue;
         charName.GetComponent<TMP_Text>().text = name;
 
-        while (time < num)
-        {
-            if (skip == true)
-            {
-                skip = false;
-                Debug.Log("Skipped dialogue");
-                yield break;
-            }
-            yield return new WaitForSeconds(1);
-            time++;
-        }
-        Debug.Log("Finished dialogue");
-        yield break;
+        Debug.Log("Skipped dialogue");
+        yield return new WaitUntil(() => skip == true);
     }
 
 }
