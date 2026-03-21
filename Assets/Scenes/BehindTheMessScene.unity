@@ -301,7 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94066a6d63c9d3a4d80e7df9f9c84372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneName: ThanksForPlayingScene
+  nextSceneName: AfterBehindTheMess
   delayBeforeLoading: 0
 --- !u!4 &285090899
 Transform:

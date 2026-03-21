@@ -24,7 +24,7 @@ public class MiddeDialogueManager : MonoBehaviour
     public GameObject lockers;
 
     [SerializeField] GameObject textBox;
-    [SerializeField] private SMDialogueAutoNext autoNext;
+    //[SerializeField] private SMDialogueAutoNext autoNext;
 
     public ClueData Clue1;
     public ClueData Clue2;
@@ -121,10 +121,10 @@ public class MiddeDialogueManager : MonoBehaviour
         //SceneManager.LoadSceneAsync("[Next Scene]");
 
         // Load Next Scene
-        if (autoNext != null)
-        {
-            autoNext.LoadNextScene();
-        }
+        //if (autoNext != null)
+        //{
+        //    autoNext.LoadNextScene();
+        //}
     }
 
     IEnumerator currentDialogue(string name, string dialogue)
