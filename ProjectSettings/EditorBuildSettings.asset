@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: a8c597daf35284b208acbe798de21ccb
   - enabled: 1
-    path: Assets/Scenes/Main Menu.unity
+    path: Assets/Scenes/DialogueScenes/Main Menu.unity
     guid: 29b0d5881ccaa478f84320023093d95e
   - enabled: 0
     path: Assets/Scenes/Beginning Scene.unity
@@ -36,7 +36,7 @@ EditorBuildSettings:
     path: Assets/Scenes/DialogueScenes/AfterBehindTheMess.unity
     guid: 77408a12baeb44c308fbc228cd697342
   - enabled: 1
-    path: Assets/Scenes/ThanksForPlayingScene.unity
+    path: Assets/Scenes/DialogueScenes/ThanksForPlayingScene.unity
     guid: d8d3875bd56574f3d839398826d066cd
   - enabled: 1
     path: Assets/Scenes/InteractionScenes/OutsideSchoolInteractionScene.unity
