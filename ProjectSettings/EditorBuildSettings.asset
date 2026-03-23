@@ -84,6 +84,6 @@ EditorBuildSettings:
     path: Assets/Scenes/InteractionScenes/ThirdOutsideStudentCouncilInteractionScene.unity
     guid: 3f2ae925e9d4b49618d05cb69d0bb7f4
   - enabled: 1
-    path: Assets/Scenes/DialogueScenes/OutsideDialogue.unity
+    path: Assets/Scenes/DialogueScenes/1-OutsideDialogue.unity
     guid: 67e7dd900338241f5b272bde36a5c700
   m_configObjects: {}
