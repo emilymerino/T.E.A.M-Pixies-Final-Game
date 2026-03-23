@@ -7,38 +7,29 @@ public class SWLighteningBehaviour : MonoBehaviour
     public SpriteRenderer Lightening;
     public Sprite alertLightening;
 
-    public void Start()
+    public float loopDelay = 3f;     // time between flashes
+    public float flashDuration = 0.1f; // how long it stays visible
+
+    void Start()
     {
         Lightening.enabled = false;
-        ShowLightening(alertLightening, 3f);
+        StartCoroutine(LightningLoop());
     }
 
-    public void ShowLightening(Sprite image, float delay)
+    private IEnumerator LightningLoop()
     {
-        StopAllCoroutines();
-        StartCoroutine(ShowSpriteRoutine(image, delay));
-    }
+        while (true) // infinite loop
+        {
+            yield return new WaitForSeconds(loopDelay);
 
-    private IEnumerator ShowSpriteRoutine(Sprite image, float delay)
-    {
-        yield return new WaitForSeconds(delay);
+            // show
+            Lightening.sprite = alertLightening;
+            Lightening.enabled = true;
 
-        Lightening.sprite = image;
-        Lightening.enabled = true; // stay on
-        HideLightening(alertLightening, 0.1f);
-    }
+            yield return new WaitForSeconds(flashDuration);
 
-    public void HideLightening(Sprite image, float duration)
-    {
-        StopAllCoroutines();
-        StartCoroutine(ShowSprite2Routine(image, duration));
-    }
-
-    private IEnumerator ShowSprite2Routine(Sprite image, float duration)
-    {
-        yield return new WaitForSeconds(duration); // wait for certain time
-
-        Lightening.sprite = image;
-        Lightening.enabled = false; // stay off
+            // hide
+            Lightening.enabled = false;
+        }
     }
 }
