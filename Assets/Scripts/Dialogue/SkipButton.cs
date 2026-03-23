@@ -39,4 +39,18 @@ public class SkipButton : MonoBehaviour
         Debug.Log("Skipped");
 
     }
+
+    public void firstConversationsSkip()
+    {
+        GetComponent<FirstConversationsDialogue>().skipped = true;
+        Debug.Log("Skipped");
+
+    }
+
+    public void firstSelectionSkip()
+    {
+        GetComponent<FCSelection>().skipped = true;
+        Debug.Log("Skipped");
+
+    }
 }

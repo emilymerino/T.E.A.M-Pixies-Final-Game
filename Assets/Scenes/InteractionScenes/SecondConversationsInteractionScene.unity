@@ -716,7 +716,7 @@ GameObject:
   - component: {fileID: 740963185}
   m_Layer: 0
   m_Name: Zeke
-  m_TagString: Untagged
+  m_TagString: Zeke
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -995,7 +995,7 @@ GameObject:
   - component: {fileID: 957533879}
   m_Layer: 0
   m_Name: Quinton
-  m_TagString: Untagged
+  m_TagString: Quinton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1391,7 +1391,7 @@ GameObject:
   - component: {fileID: 1083002623}
   m_Layer: 0
   m_Name: MissEvelyn
-  m_TagString: Untagged
+  m_TagString: MissEvelyn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1535,7 +1535,7 @@ GameObject:
   - component: {fileID: 1145835007}
   m_Layer: 0
   m_Name: Archie
-  m_TagString: Untagged
+  m_TagString: Archie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1847,7 +1847,7 @@ GameObject:
   - component: {fileID: 1855740209}
   m_Layer: 0
   m_Name: Lou
-  m_TagString: Untagged
+  m_TagString: Lou
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
