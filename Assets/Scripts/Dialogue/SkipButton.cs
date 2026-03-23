@@ -25,4 +25,11 @@ public class SkipButton : MonoBehaviour
         Debug.Log("Skipped");
 
     }
+
+    public void afterTornNoteSkip()
+    {
+        GetComponent<AfterTornNoteDialogue>().skipped = true;
+        Debug.Log("Skipped");
+
+    }
 }
