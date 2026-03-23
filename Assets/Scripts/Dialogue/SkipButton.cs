@@ -25,4 +25,32 @@ public class SkipButton : MonoBehaviour
         Debug.Log("Skipped");
 
     }
+
+    public void afterTornNoteSkip()
+    {
+        GetComponent<AfterTornNoteDialogue>().skipped = true;
+        Debug.Log("Skipped");
+
+    }
+
+    public void hallwayOfLockersSkip()
+    {
+        GetComponent<HallwayOfLockersDialogue>().skipped = true;
+        Debug.Log("Skipped");
+
+    }
+
+    public void firstConversationsSkip()
+    {
+        GetComponent<FirstConversationsDialogue>().skipped = true;
+        Debug.Log("Skipped");
+
+    }
+
+    public void firstSelectionSkip()
+    {
+        GetComponent<FCSelection>().skipped = true;
+        Debug.Log("Skipped");
+
+    }
 }
