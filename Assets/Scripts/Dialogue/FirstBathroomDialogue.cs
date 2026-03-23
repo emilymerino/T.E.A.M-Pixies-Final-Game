@@ -56,7 +56,7 @@ public class FirstBathroomDialogue : MonoBehaviour
         yield return StartCoroutine(currentDialogue("Intercom", "*Crackle*"));
         yield return StartCoroutine(currentDialogue("", "With the school placed on lockdown, no one could leave."));
         yield return StartCoroutine(currentDialogue("", "Eloise looks around the bathroom. No one is there but Mei; the perpetrator ran away before she could find them."));
-        yield return StartCoroutine(currentDialogue("", "Maybe there was clue left behind that she could use."));
+        yield return StartCoroutine(currentDialogue("", "Maybe there was a clue left behind that she could use."));
     }
 
     IEnumerator currentDialogue(string name, string dialogue)
