@@ -18,4 +18,11 @@ public class SkipButton : MonoBehaviour
         Debug.Log("Skipped");
 
     }
+
+    public void classroomSkip()
+    {
+        GetComponent<ClassroomDialogue>().skipped = true;
+        Debug.Log("Skipped");
+
+    }
 }

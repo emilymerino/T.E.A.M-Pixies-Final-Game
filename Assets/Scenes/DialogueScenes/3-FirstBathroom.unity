@@ -940,7 +940,7 @@ GameObject:
   - component: {fileID: 1258155200}
   - component: {fileID: 1258155199}
   m_Layer: 0
-  m_Name: OutdoorNoFallingLeaves
+  m_Name: Bathroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MinigameScenes/TornNoteScene.unity
     guid: 49e7a169ee6be7d418c888ca1b834e9a
   - enabled: 1
-    path: Assets/Scenes/DialogueScenes/AfterTornNote.unity
+    path: Assets/Scenes/DialogueScenes/4-AfterTornNote.unity
     guid: bdacdc2dead4646c98691bfab5a8f54c
   - enabled: 0
     path: Assets/Scenes/Middle Story Scene.unity
