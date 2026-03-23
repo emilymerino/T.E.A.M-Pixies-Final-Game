@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Clue3
   m_EditorClassIdentifier: 
   clueID: 3
-  clueName: Pat Seen Near Storage Room
+  clueName: Locker Findings
   description: Pat the janitor was the closest person to be seen near the storage
     room after Mei was discovered.
   icon: {fileID: 21300000, guid: bbb7588b892f5a64d9185695c4375c14, type: 3}
