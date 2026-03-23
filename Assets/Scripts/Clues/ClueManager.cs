@@ -22,7 +22,7 @@ public class ClueManager : MonoBehaviour
     public Image clueDetailBackground;
 
 
-    public string[] allowedScenes = { "Beginning Scene", "Middle Story Scene", "Ending Story Scene" };
+    public string[] allowedScenes = { "FirstInsideBathroomInteractionScene" };
 
     private List<ClueData> foundClues = new List<ClueData>();
 
