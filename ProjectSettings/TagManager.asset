@@ -23,6 +23,7 @@ TagManager:
   - SecondStudentCouncilDoor
   - ThirdStudentCouncilDoor
   - SecondOpenedBathroomDoor
+  - DropBox
   layers:
   - Default
   - TransparentFX
