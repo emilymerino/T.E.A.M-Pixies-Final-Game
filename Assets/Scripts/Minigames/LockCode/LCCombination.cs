@@ -7,6 +7,8 @@ public class LCCombination : MonoBehaviour
     public LCSelectionManager selectionManager;
     public LCPlayerSelection playerSelection;
     public LCGameGuideManager gameGuideManager;
+    public LCViewCombinationButton viewCombinationButton;
+    public LCStatusLightsBehaviour statusLightsBehaviour;
 
     public List<SpriteRenderer> combinationList;
     public List<SpriteRenderer> notCombinationList;
@@ -14,18 +16,19 @@ public class LCCombination : MonoBehaviour
     private int currentIndex = 0;
     public float displayDuration = 1f;
 
-    void Start()
+    public void PlayCombination()
     {
-        if (combinationList == null) return;
+        StopAllCoroutines();
+        currentIndex = 0;
+        selectionManager.canSelect = false;
 
-        foreach (SpriteRenderer buttonLight in combinationList)
+        if (statusLightsBehaviour != null)
         {
-            if (buttonLight != null)
-            {
-                buttonLight.enabled = false; // starts hidden
-            }
+            statusLightsBehaviour.ResetStatusLights();
         }
-        StartCoroutine(DelayAction(2.0f));
+        HideNotCombinationList();
+        selectionManager.playersSelection.Clear();
+        StartCoroutine(ShowCombination());
     }
 
     public IEnumerator DelayAction(float delayTime)
@@ -59,6 +62,7 @@ public class LCCombination : MonoBehaviour
             }
         }
         HideCombination(); // makes sures combination hidden after shown
+        viewCombinationButton.ShowViewCombinationButton();
         selectionManager.canSelect = true; // enable clicks 
     }
 
