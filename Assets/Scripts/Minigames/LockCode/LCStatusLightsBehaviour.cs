@@ -104,4 +104,28 @@ public class LCStatusLightsBehaviour : MonoBehaviour
             }
         }
     }
+
+    public void ResetStatusLights()
+    {
+        foreach (SpriteRenderer light in statusLightsList) // turn off normal lights
+
+        {
+            if (light != null)
+                light.enabled = false;
+        }
+
+        foreach (SpriteRenderer light in unlockedStatusLightsList) // turn off unlocked lights
+        {
+            if (light != null)
+                light.enabled = false;
+        }
+
+        foreach (SpriteRenderer light in lockedStatusLightsList) // turn off locked lights
+        {
+            if (light != null)
+                light.enabled = false;
+        }
+        currentIndex = 0;
+        selectionManager.playersSelection.Clear();
+    }
 }
