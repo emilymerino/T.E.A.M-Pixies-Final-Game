@@ -6,13 +6,15 @@ public class SWLighteningBehaviour : MonoBehaviour
 {
     public SpriteRenderer Lightening;
     public Sprite alertLightening;
+    public SpriteRenderer LighteningCast;
 
-    public float loopDelay = 3f;     // time between flashes
+    public float loopDelay = 4f;     // time between flashes
     public float flashDuration = 0.1f; // how long it stays visible
 
     void Start()
     {
         Lightening.enabled = false;
+        LighteningCast.enabled = false;
         StartCoroutine(LightningLoop());
     }
 
@@ -25,11 +27,13 @@ public class SWLighteningBehaviour : MonoBehaviour
             // show
             Lightening.sprite = alertLightening;
             Lightening.enabled = true;
+            LighteningCast.enabled = true;
 
             yield return new WaitForSeconds(flashDuration);
 
             // hide
             Lightening.enabled = false;
+            LighteningCast.enabled = false;
         }
     }
 }

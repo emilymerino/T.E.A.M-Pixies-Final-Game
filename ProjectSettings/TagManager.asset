@@ -23,6 +23,7 @@ TagManager:
   - SecondStudentCouncilDoor
   - ThirdStudentCouncilDoor
   - SecondOpenedBathroomDoor
+  - LighteningCast
   layers:
   - Default
   - TransparentFX
