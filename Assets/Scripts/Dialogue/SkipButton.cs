@@ -32,4 +32,11 @@ public class SkipButton : MonoBehaviour
         Debug.Log("Skipped");
 
     }
+
+    public void hallwayOfLockersSkip()
+    {
+        GetComponent<HallwayOfLockersDialogue>().skipped = true;
+        Debug.Log("Skipped");
+
+    }
 }

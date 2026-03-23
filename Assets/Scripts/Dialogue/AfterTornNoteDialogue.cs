@@ -44,7 +44,7 @@ public class AfterTornNoteDialogue : MonoBehaviour
     }
 
 
-        IEnumerator currentDialogue(string name, string dialogue)
+    IEnumerator currentDialogue(string name, string dialogue)
     {
         mainText.GetComponent<TMP_Text>().text = dialogue;
         charName.GetComponent<TMP_Text>().text = name;
