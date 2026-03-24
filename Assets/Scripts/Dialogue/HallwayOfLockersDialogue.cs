@@ -15,8 +15,6 @@ public class HallwayOfLockersDialogue : MonoBehaviour
     public GameObject lockerGlow;
     public GameObject locker;
     public GameObject lockerModified;
-    public GameObject insideLocker;
-    public GameObject openLocker;
     public GameObject exclamationMark;
 
 
@@ -30,8 +28,6 @@ public class HallwayOfLockersDialogue : MonoBehaviour
         lockerGlow.SetActive(false);
         locker.SetActive(false);
         lockerModified.SetActive(false);
-        insideLocker.SetActive(false);
-        openLocker.SetActive(false);
         exclamationMark.SetActive(false);
 
 
@@ -55,8 +51,6 @@ public class HallwayOfLockersDialogue : MonoBehaviour
         lockerGlow.SetActive(true);
         locker.SetActive(true);
         lockerModified.SetActive(true);
-        insideLocker.SetActive(true);
-        openLocker.SetActive(true);
         exclamationMark.SetActive(true);
     }
 
