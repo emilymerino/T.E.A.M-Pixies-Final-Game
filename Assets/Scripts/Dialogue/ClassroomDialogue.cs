@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ClassroomDialogue : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class ClassroomDialogue : MonoBehaviour
     public GameObject charName;
 
     public bool skipped = false;
+
+    public bool dialogueFinished = false;
+    public string nextSceneName = "6-OBathroom";
 
     public GameObject eloise;
     public GameObject meiStern;
@@ -61,6 +65,7 @@ public class ClassroomDialogue : MonoBehaviour
         yield return StartCoroutine(currentDialogue("", "Rain began tapping softly against the glass, then quickly turned into a relentless downpour. Eloise closes her eyes for a moment."));
         yield return StartCoroutine(currentDialogue("", "The quiet was then shattered by a blood-curdling scream. It came from the bathroom."));
         yield return StartCoroutine(currentDialogue("", "Hurried footsteps fled in the opposite direction, someone was running away."));
+        dialogueFinished = true;
         yield return StartCoroutine(currentDialogue("", "Eloise’s stomach dropped. She rushes into the dim hallway."));
     }
 
@@ -76,6 +81,11 @@ public class ClassroomDialogue : MonoBehaviour
 
         skipped = false;
         Debug.Log("Skipped dialogue");
+        if (dialogueFinished)
+        {
+            SceneManager.LoadScene(nextSceneName);
+        }
+
         yield break;
 
     }

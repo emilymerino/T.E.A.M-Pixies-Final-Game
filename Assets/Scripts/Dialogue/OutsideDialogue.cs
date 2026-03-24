@@ -14,7 +14,7 @@ public class OutsideDialogue : MonoBehaviour
     public bool skipped = false;
 
     public bool dialogueFinished = false;
-    public string nextSceneName = "FirstOutsideStudentCouncilInteractionScene";
+    public string nextSceneName = "3-Outside";
 
     public GameObject mei;
     public GameObject eloise;

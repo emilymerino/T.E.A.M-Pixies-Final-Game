@@ -22,16 +22,32 @@ public class SkipButton : MonoBehaviour
 
     public void firstBathroomSkip()
     {
-        GetComponent<FirstBathroomDialogue>().skipped = true;
-        Debug.Log("Skipped");
+        FirstBathroomDialogue dialogue = GetComponent<FirstBathroomDialogue>();
 
+        if (dialogue.dialogueFinished)
+        {
+            SceneManager.LoadScene(dialogue.nextSceneName);
+        }
+        else
+        {
+            dialogue.skipped = true;
+            Debug.Log("Skipped");
+        }
     }
 
     public void classroomSkip()
     {
-        GetComponent<ClassroomDialogue>().skipped = true;
-        Debug.Log("Skipped");
+        ClassroomDialogue dialogue = GetComponent<ClassroomDialogue>();
 
+        if (dialogue.dialogueFinished)
+        {
+            SceneManager.LoadScene(dialogue.nextSceneName);
+        }
+        else
+        {
+            dialogue.skipped = true;
+            Debug.Log("Skipped");
+        }
     }
 
     public void afterTornNoteSkip()

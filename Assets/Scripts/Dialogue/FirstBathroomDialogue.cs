@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FirstBathroomDialogue : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class FirstBathroomDialogue : MonoBehaviour
     public GameObject charName;
 
     public bool skipped = false;
+
+    public bool dialogueFinished = false;
+    public string nextSceneName = "8-IBathroom";
 
     public GameObject eloiseScared;
     public GameObject eloiseSuspicious;
@@ -56,6 +60,7 @@ public class FirstBathroomDialogue : MonoBehaviour
         yield return StartCoroutine(currentDialogue("Intercom", "*Crackle*"));
         yield return StartCoroutine(currentDialogue("", "With the school placed on lockdown, no one could leave."));
         yield return StartCoroutine(currentDialogue("", "Eloise looks around the bathroom. No one is there but Mei; the perpetrator ran away before she could find them."));
+        dialogueFinished = true;
         yield return StartCoroutine(currentDialogue("", "Maybe there was a clue left behind that she could use."));
     }
 
@@ -71,6 +76,11 @@ public class FirstBathroomDialogue : MonoBehaviour
 
         skipped = false;
         Debug.Log("Skipped dialogue");
+        if (dialogueFinished)
+        {
+            SceneManager.LoadScene(nextSceneName);
+        }
+
         yield break;
 
     }

@@ -9,19 +9,19 @@ public class ISSceneChange : MonoBehaviour
     {
         if (CompareTag("SchoolDoors"))
         {
-            SceneManager.LoadScene("FirstOutsideStudentCouncilInteractionScene");
+            SceneManager.LoadScene("4-OClassroom");
         }
         else if (CompareTag("FirstStudentCouncilDoor"))
         {
-            SceneManager.LoadScene("EnterStudentCouncilInteractionScene");
+            SceneManager.LoadScene("5-Classroom");
         }
         else if (CompareTag("FirstOpenedBathroomDoor"))
         {
-            SceneManager.LoadScene("FirstInsideBathroomInteractionScene");
+            SceneManager.LoadScene("7-FirstBathroom");
         }
         else if (CompareTag("TornNote"))
         {
-            SceneManager.LoadScene("TornNoteScene");
+            SceneManager.LoadScene("9-TornNote");
         }
         else if (CompareTag("Locker"))
         {
