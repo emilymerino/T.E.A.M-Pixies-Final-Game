@@ -52,8 +52,17 @@ public class SkipButton : MonoBehaviour
 
     public void afterTornNoteSkip()
     {
-        GetComponent<AfterTornNoteDialogue>().skipped = true;
-        Debug.Log("Skipped");
+        AfterTornNoteDialogue dialogue = GetComponent<AfterTornNoteDialogue>();
+
+        if (dialogue.dialogueFinished)
+        {
+            SceneManager.LoadScene(dialogue.nextSceneName);
+        }
+        else
+        {
+            dialogue.skipped = true;
+            Debug.Log("Skipped");
+        }
 
     }
 
