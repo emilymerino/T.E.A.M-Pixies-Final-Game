@@ -54,10 +54,23 @@ public class SkipButton : MonoBehaviour
 
     }
 
+    public void insideStorageRoomSkip()
+    {
+        GetComponent<InsideStorageRoomDialogue>().skipped = true;
+        Debug.Log("Skipped");
+    }
+
     public void afterBehindTheMessSkip()
     {
         GetComponent<AfterBehindTheMessDialogue>().skipped = true;
         Debug.Log("Skipped");
+    }
+
+    public void secondConversationsSkip()
+    {
+        GetComponent<SecondConversationsDialogue>().skipped = true;
+        Debug.Log("Skipped");
+
     }
 
     public void rightGuessEndingSkip()
