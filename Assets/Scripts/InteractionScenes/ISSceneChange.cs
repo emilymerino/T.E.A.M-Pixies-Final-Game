@@ -25,11 +25,11 @@ public class ISSceneChange : MonoBehaviour
         }
         else if (CompareTag("Locker"))
         {
-            SceneManager.LoadScene("InfrontOfLockerInteractionScene");
+            SceneManager.LoadScene("12-InfrontOfLockers");
         }
         else if (CompareTag("Lock"))
         {
-            SceneManager.LoadScene("LockCodeScene");
+            SceneManager.LoadScene("13-LockCode");
         }
         else if (CompareTag("StorageRoomDoor"))
         {

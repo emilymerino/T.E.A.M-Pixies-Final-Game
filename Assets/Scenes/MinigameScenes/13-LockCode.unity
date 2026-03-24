@@ -1295,6 +1295,7 @@ MonoBehaviour:
   WatchCombination: {fileID: 34832614}
   InPlayInstructions: {fileID: 1017404216}
   YouGotIt: {fileID: 200662229}
+  nextSceneName: 14-AfterLockCode
   NotQuite: {fileID: 332040343}
 --- !u!4 &740894115
 Transform:
