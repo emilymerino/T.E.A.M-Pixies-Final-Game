@@ -16,4 +16,4 @@ MonoBehaviour:
   clueName: Second talk with Zeke
   description: "Zeke hid the fact that he saw suspicious transfers and accuses Archie
     of having something to do with Mei\u2019s death."
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 284994125a51641e1a0544f5a761f59f, type: 3}
