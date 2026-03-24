@@ -31,17 +31,17 @@ public class ISSceneChange : MonoBehaviour
         {
             SceneManager.LoadScene("13-LockCode");
         }
-        else if (CompareTag("StorageRoomDoor"))
-        {
-            SceneManager.LoadScene("BehindTheMessScene");
-        }
         else if (CompareTag("SecondStudentCouncilDoor"))
         {
-            SceneManager.LoadScene("FirstConversationsInteractionScene");
+            SceneManager.LoadScene("16-FirstConversations");
         }
         else if (CompareTag("StorageRoomDoor"))
         {
-            SceneManager.LoadScene("BehindTheMessScene");
+            SceneManager.LoadScene("17-OutsideStorageRoom");
+        }
+        else if (CompareTag("InsideStorageRoom"))
+        {
+            SceneManager.LoadScene("18-InsideStorageRoom");
         }
         else if (CompareTag("StorageRoomDoor"))
         {

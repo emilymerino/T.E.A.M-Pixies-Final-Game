@@ -75,8 +75,17 @@ public class SkipButton : MonoBehaviour
 
     public void afterLockCodeSkip()
     {
-        GetComponent<AfterLockCodeDialogue>().skipped = true;
-        Debug.Log("Skipped");
+        AfterLockCodeDialogue dialogue = GetComponent<AfterLockCodeDialogue>();
+
+        if (dialogue.dialogueFinished)
+        {
+            SceneManager.LoadScene(dialogue.nextSceneName);
+        }
+        else
+        {
+            dialogue.skipped = true;
+            Debug.Log("Skipped");
+        }
 
     }
 
