@@ -32,7 +32,7 @@ public class BMCleanupManager : MonoBehaviour
 
             if (loveLetterClick != null)
             {
-                loveLetterClick.EnableLetterClick();
+                loveLetterClick.RevealLetter();
             }
         }
     }

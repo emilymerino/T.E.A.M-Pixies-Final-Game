@@ -5,6 +5,7 @@ using UnityEngine;
 public class BMDraggableItem : MonoBehaviour
 {
     private Vector3 offset;
+    private Vector3 originalPosition;
     private Camera mainCamera;
     private bool isOverBox = false;
     private bool hasBeenCollected = false;
@@ -16,10 +17,13 @@ public class BMDraggableItem : MonoBehaviour
     void Start()
     {
         mainCamera = Camera.main;
+        originalPosition = transform.position;
     }
 
     void OnMouseDown()
     {
+        if (hasBeenCollected) return;
+
         Vector3 mouseWorldPos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         mouseWorldPos.z = 0f;
         offset = transform.position - mouseWorldPos;
@@ -54,6 +58,11 @@ public class BMDraggableItem : MonoBehaviour
 
             gameObject.SetActive(false);
         }
+        else
+        {
+            transform.position = originalPosition;
+        }
+
     }
 
     void OnTriggerEnter2D(Collider2D other)
