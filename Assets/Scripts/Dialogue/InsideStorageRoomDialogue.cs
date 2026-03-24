@@ -31,6 +31,8 @@ public class InsideStorageRoomDialogue : MonoBehaviour
         textBox.SetActive(true);
         mainText.SetActive(true);
 
+        yield return StartCoroutine(currentDialogue("", "Upon opening the door, all she can see is a sea of things scattered around. The room was a mess."));
+        yield return StartCoroutine(currentDialogue("", "Something had to be in this room. Whoever made this mess wanted to cover something up."));
     }
 
     IEnumerator currentDialogue(string name, string dialogue)
