@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Clue9
   m_EditorClassIdentifier: 
   clueID: 9
-  clueName: Locker Belonged To Zeke
-  description: 'The locker with the blood stained blazer and crumpled note belonged
-    to Zeke. '
+  clueName: 'Storage Room Findings '
+  description: "Found financial documents that showed a record of purchasing blood
+    packets. There was also a love letter sent by Archie to Mei. He\u2019s upset
+    about Mei meeting Quinton."
   icon: {fileID: 21300000, guid: bbb7588b892f5a64d9185695c4375c14, type: 3}

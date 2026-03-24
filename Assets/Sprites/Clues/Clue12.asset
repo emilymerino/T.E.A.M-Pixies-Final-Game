@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90c23aebb535e084c9eee00d30ae9348, type: 3}
   m_Name: Clue12
   m_EditorClassIdentifier: 
-  clueID: 
-  clueName: 
-  description: 
+  clueID: 12
+  clueName: Second talk with Quinton
+  description: Archie saw Quinton in the hallway and glared at him angrily.
   icon: {fileID: 0}
