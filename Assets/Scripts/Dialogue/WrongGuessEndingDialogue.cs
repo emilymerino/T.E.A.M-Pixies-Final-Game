@@ -82,7 +82,7 @@ public class WrongGuessEndingDialogue : MonoBehaviour
         yield return StartCoroutine(currentDialogue("", "Eloise storms out the room and heads back to the bathroom to investigate. There has to be something she missed."));
     }
 
-        IEnumerator currentDialogue(string name, string dialogue)
+    IEnumerator currentDialogue(string name, string dialogue)
     {
         mainText.GetComponent<TMP_Text>().text = dialogue;
         charName.GetComponent<TMP_Text>().text = name;
