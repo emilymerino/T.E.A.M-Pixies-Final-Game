@@ -55,10 +55,21 @@ public class SkipButton : MonoBehaviour
 
     }
 
-    public void firstSelectionSkip()
+    public void afterBehindTheMessSkip()
     {
-        GetComponent<FCSelection>().skipped = true;
+        GetComponent<AfterBehindTheMessDialogue>().skipped = true;
         Debug.Log("Skipped");
+    }
 
+    public void rightGuessEndingSkip()
+    {
+        GetComponent<RightGuessEndingDialogue>().skipped = true;
+        Debug.Log("Skipped");
+    }
+
+    public void wrongGuessEndingSkip()
+    {
+        GetComponent<WrongGuessEndingDialogue>().skipped = true;
+        Debug.Log("Skipped");
     }
 }
