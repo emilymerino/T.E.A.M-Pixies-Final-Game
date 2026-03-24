@@ -16,4 +16,4 @@ MonoBehaviour:
   clueName: Second talk with Archie
   description: "Archie\u2019s pointing fingers at Quinton, and seems visibly uncomfortable
     when questioned. "
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 03424f68c5c5a45ddaa4507e850cac52, type: 3}
