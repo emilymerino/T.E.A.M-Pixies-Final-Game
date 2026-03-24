@@ -40,6 +40,13 @@ public class SkipButton : MonoBehaviour
 
     }
 
+    public void afterLockCodeSkip()
+    {
+        GetComponent<AfterLockCodeDialogue>().skipped = true;
+        Debug.Log("Skipped");
+
+    }
+
     public void firstConversationsSkip()
     {
         GetComponent<FirstConversationsDialogue>().skipped = true;
