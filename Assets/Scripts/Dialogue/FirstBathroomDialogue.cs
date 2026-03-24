@@ -18,6 +18,7 @@ public class FirstBathroomDialogue : MonoBehaviour
 
     public GameObject eloiseScared;
     public GameObject eloiseSuspicious;
+    public ClueData clue1;
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +51,9 @@ public class FirstBathroomDialogue : MonoBehaviour
         yield return StartCoroutine(currentDialogue("Eloise", " No, this can’t be. Someone- or something attacked Mei. A vampire?"));
         eloiseScared.SetActive(false);
         yield return StartCoroutine(currentDialogue("", "Under her fingernails were torn threads of the school’s uniform."));
+
+        ClueManager.Instance.UnlockClue(clue1); // unlocked first clue
+
         eloiseSuspicious.SetActive(true);
         yield return StartCoroutine(currentDialogue("Eloise", "Poor Mei, she fought until the very end."));
         yield return StartCoroutine(currentDialogue("Eloise", "Whoever did this is still here."));
