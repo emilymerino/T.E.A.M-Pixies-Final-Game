@@ -1,0 +1,78 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
+
+public class HallwayOfLockersDialogue : MonoBehaviour
+{
+    public GameObject fadeTransition;
+    [SerializeField] GameObject textBox;
+    public GameObject mainText;
+    public GameObject charName;
+
+    public bool skipped = false;
+
+    public GameObject lockerGlow;
+    public GameObject locker;
+    public GameObject lockerModified;
+    public GameObject insideLocker;
+    public GameObject openLocker;
+    public GameObject exclamationMark;
+
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        fadeTransition.SetActive(true);
+        mainText.SetActive(false);
+        textBox.SetActive(false);
+
+        lockerGlow.SetActive(false);
+        locker.SetActive(false);
+        lockerModified.SetActive(false);
+        insideLocker.SetActive(false);
+        openLocker.SetActive(false);
+        exclamationMark.SetActive(false);
+
+
+        StartCoroutine(DialogueStart());
+    }
+
+    IEnumerator DialogueStart()
+    {
+        yield return new WaitForSeconds(2);
+        fadeTransition.SetActive(false);
+        yield return new WaitForSeconds(1);
+        textBox.SetActive(true);
+        mainText.SetActive(true);
+
+        yield return StartCoroutine(currentDialogue("", "Eloise hurriedly makes her way back to the meeting room."));
+        yield return StartCoroutine(currentDialogue("", "However, before she makes it back, something catches her eye."));
+
+        textBox.SetActive(false);
+        mainText.SetActive(false);
+
+        lockerGlow.SetActive(true);
+        locker.SetActive(true);
+        lockerModified.SetActive(true);
+        insideLocker.SetActive(true);
+        openLocker.SetActive(true);
+        exclamationMark.SetActive(true);
+    }
+
+        IEnumerator currentDialogue(string name, string dialogue)
+    {
+        mainText.GetComponent<TMP_Text>().text = dialogue;
+        charName.GetComponent<TMP_Text>().text = name;
+
+        while (skipped == false)
+        {
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        skipped = false;
+        Debug.Log("Skipped dialogue");
+        yield break;
+
+    }
+}

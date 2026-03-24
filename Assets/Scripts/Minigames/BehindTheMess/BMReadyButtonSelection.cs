@@ -5,6 +5,7 @@ using UnityEngine;
 public class BMReadyButtonSelection : MonoBehaviour
 {
     public BMInstructionsPopUp instructionsPopUp;
+    public BMGameStartController gameStartController;
     public SpriteRenderer ReadyButton;
     public bool isSelected = false;
 
@@ -23,6 +24,7 @@ public class BMReadyButtonSelection : MonoBehaviour
             isSelected = true;
             Debug.Log("Button Selected");
             HideReadyButton();
+            gameStartController.StartMinigame();
         }
     }
 
