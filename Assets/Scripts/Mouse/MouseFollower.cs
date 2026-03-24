@@ -12,10 +12,6 @@ public class MouseFollower : MonoBehaviour
 
     void Update()
     {
-        if (Camera.main == null) return;
-
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePos.z = 0;
-        transform.position = mousePos;
+        transform.position = Input.mousePosition; // correct for UI
     }
 }

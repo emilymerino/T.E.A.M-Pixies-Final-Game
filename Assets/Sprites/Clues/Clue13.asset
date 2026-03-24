@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90c23aebb535e084c9eee00d30ae9348, type: 3}
   m_Name: Clue13
   m_EditorClassIdentifier: 
-  clueID: 
-  clueName: 
-  description: 
+  clueID: 13
+  clueName: Second talk with Archie
+  description: "Archie\u2019s pointing fingers at Quinton, and seems visibly uncomfortable
+    when questioned. "
   icon: {fileID: 0}

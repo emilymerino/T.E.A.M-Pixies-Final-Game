@@ -999,7 +999,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -61.167725, y: 221.37207, z: -127.43286, w: 0}
+  m_margin: {x: -61.167725, y: 221.37207, z: -58.688736, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1398,6 +1398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myButton: {fileID: 1053224549}
   clue1: {fileID: 11400000, guid: 083e6a50ccd17a24298ec75dfb76ae97, type: 2}
+  clue2: {fileID: 11400000, guid: 5cdd83fa71f388c419d96d07e631ac76, type: 2}
 --- !u!114 &1053224549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2425,7 +2426,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1822394839
 RectTransform:
   m_ObjectHideFlags: 0

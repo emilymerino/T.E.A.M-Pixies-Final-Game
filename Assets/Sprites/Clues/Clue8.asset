@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Clue8
   m_EditorClassIdentifier: 
   clueID: 8
-  clueName: Locker Findings
-  description: 'A blood stained blazer and a crumpled sticky note with this written
-    on it: "Meeting you about the missing transfers. This end tonight."'
+  clueName: First talk with Archie
+  description: "Things didn\u2019t end well between Archie and Mei, they possibly
+    had a bad argument."
   icon: {fileID: 21300000, guid: bbb7588b892f5a64d9185695c4375c14, type: 3}
