@@ -10,8 +10,6 @@ public class FirstConversationsDialogue : MonoBehaviour
     [SerializeField] GameObject textBox;
     public GameObject mainText;
     public GameObject charName;
-    public GameObject startingNextButton;
-    public GameObject interactionNextButton;
 
     public bool skipped = false;
 
@@ -32,11 +30,19 @@ public class FirstConversationsDialogue : MonoBehaviour
     public bool zekeTalked;
     public bool missEvelynTalked;
 
-    public GameObject eloise;
-    public GameObject lou;
-    public GameObject archie;
-    public GameObject quinton;
-    public GameObject zeke;
+
+    public GameObject eloiseNeutral;
+    public GameObject eloiseSuspicious;
+    public GameObject eloiseUpset;
+    public GameObject louNeutral;
+    public GameObject louLookingOff;
+    public GameObject louNervous;
+    public GameObject archieNeutral;
+    public GameObject archieSurprised;
+    public GameObject quintonNeutral;
+    public GameObject quintonShocked;
+    public GameObject zekeNeutral;
+    public GameObject zekeNervous;
     public GameObject missEvelynNeutral;
     public GameObject missEvelynStern;
 
@@ -46,8 +52,6 @@ public class FirstConversationsDialogue : MonoBehaviour
         fadeTransition.SetActive(true);
         mainText.SetActive(false);
         textBox.SetActive(false);
-        startingNextButton.SetActive(true);
-        interactionNextButton.SetActive(false);
 
         louInteraction.SetActive(false);
         archieInteraction.SetActive(false);
@@ -66,26 +70,29 @@ public class FirstConversationsDialogue : MonoBehaviour
         zekeTalked = false;
         missEvelynTalked = false;
 
-        eloise.SetActive(false);
-        lou.SetActive(false);
-        archie.SetActive(false);
-        quinton.SetActive(false);
-        zeke.SetActive(false);
+        eloiseNeutral.SetActive(false);
+        eloiseSuspicious.SetActive(false);
+        eloiseUpset.SetActive(false);
+        louNeutral.SetActive(false);
+        louLookingOff.SetActive(false);
+        louNervous.SetActive(false);
+        archieNeutral.SetActive(false);
+        archieSurprised.SetActive(false);
+        quintonNeutral.SetActive(false);
+        quintonShocked.SetActive(false);
+        zekeNeutral.SetActive(false);
+        zekeNervous.SetActive(false);
         missEvelynNeutral.SetActive(false);
         missEvelynStern.SetActive(false);
 
 
         StartCoroutine(DialogueStart());
-        StartCoroutine(continueStory());
-        //***Load next scene after player talks to all characters***
     }
 
     IEnumerator continueStory()
     {
         mainText.SetActive(false);
         textBox.SetActive(false);
-        startingNextButton.SetActive(false);
-        interactionNextButton.SetActive(true);
 
         louInteraction.SetActive(true);
         archieInteraction.SetActive(true);
@@ -98,15 +105,8 @@ public class FirstConversationsDialogue : MonoBehaviour
         zekeGlow.SetActive(true);
         missEvelynGlow.SetActive(true);
 
-        yield return new WaitUntil(() => louTalked && archieTalked && quintonTalked && zekeTalked && missEvelynTalked);
-    }
 
-    IEnumerator DialogueStart()
-    {
-        fadeTransition.SetActive(true);
-        mainText.SetActive(false);
-        textBox.SetActive(false);
-        interactionNextButton.SetActive(false);
+        yield return new WaitUntil(() => louTalked && archieTalked && quintonTalked && zekeTalked && missEvelynTalked);
 
         louInteraction.SetActive(false);
         archieInteraction.SetActive(false);
@@ -119,22 +119,18 @@ public class FirstConversationsDialogue : MonoBehaviour
         zekeGlow.SetActive(false);
         missEvelynGlow.SetActive(false);
 
-        louTalked = false;
-        archieTalked = false;
-        quintonTalked = false;
-        zekeTalked = false;
-        missEvelynTalked = false;
+        mainText.SetActive(true);
+        textBox.SetActive(true);
 
-        eloise.SetActive(false);
-        lou.SetActive(false);
-        archie.SetActive(false);
-        quinton.SetActive(false);
-        zeke.SetActive(false);
-        missEvelynNeutral.SetActive(false);
-        missEvelynStern.SetActive(false);
+        eloiseSuspicious.SetActive(true);
+        yield return StartCoroutine(currentDialogue("Eloise", "<i>Someone's lying. I don’t have enough information to go off of.</i>"));
+        yield return StartCoroutine(currentDialogue("Eloise", "<i> I need to go to the storage room mentioned on Quinton's note. There has to be something there.</i>"));
+        eloiseSuspicious.SetActive(false);
+        yield return StartCoroutine(currentDialogue("", "Eloise sneaks out of the meeting room and heads straight to the storage room, hoping to find answers."));
+    }
 
-
-
+    IEnumerator DialogueStart()
+    {
         yield return new WaitForSeconds(2);
         fadeTransition.SetActive(false);
         yield return new WaitForSeconds(1);
@@ -145,24 +141,24 @@ public class FirstConversationsDialogue : MonoBehaviour
         yield return StartCoroutine(currentDialogue("", "It seemed like the meeting already started."));
         missEvelynNeutral.SetActive(true);
         yield return StartCoroutine(currentDialogue("Miss Evelyn", "You're late."));
-        eloise.SetActive(true);
+        eloiseUpset.SetActive(true);
         missEvelynNeutral.SetActive(false);
         yield return StartCoroutine(currentDialogue("Eloise", "Mei... Mei was murdered."));
-        eloise.SetActive(false);
+        eloiseUpset.SetActive(false);
         yield return StartCoroutine(currentDialogue("", "The room froze."));
         yield return StartCoroutine(currentDialogue("", "A beat passes before the room explodes."));
-        lou.SetActive(true);
+        louNervous.SetActive(true);
         yield return StartCoroutine(currentDialogue("Lou", "Wait… like actually murdered?"));
-        lou.SetActive(false);
-        quinton.SetActive(true);
+        louNervous.SetActive(false);
+        quintonShocked.SetActive(true);
         yield return StartCoroutine(currentDialogue("Quinton", "That’s not funny, Eloise."));
-        quinton.SetActive(false);
-        archie.SetActive(true);
+        quintonShocked.SetActive(false);
+        archieSurprised.SetActive(true);
         yield return StartCoroutine(currentDialogue("Archie", "This can’t be real…"));
-        archie.SetActive(false);
-        zeke.SetActive(true);
+        archieSurprised.SetActive(false);
+        zekeNervous.SetActive(true);
         yield return StartCoroutine(currentDialogue("Zeke", "Are you serious?"));
-        zeke.SetActive(false);
+        zekeNervous.SetActive(false);
         missEvelynStern.SetActive(true);
         yield return StartCoroutine(currentDialogue("Miss Evelyn", "Everyone, quiet."));
         missEvelynStern.SetActive(false);
@@ -172,6 +168,10 @@ public class FirstConversationsDialogue : MonoBehaviour
         missEvelynNeutral.SetActive(false);
         yield return StartCoroutine(currentDialogue("", "Everyone nervously shifts where they are, not one of them wanting to break the tense silence."));
         yield return StartCoroutine(currentDialogue("", "Maybe this is a good time to talk to them one-on-one and get information."));
+
+        StartCoroutine(continueStory());
+
+        //***Load next scene after player talks to all characters***
     }
 
     IEnumerator currentDialogue(string name, string dialogue)
@@ -190,4 +190,300 @@ public class FirstConversationsDialogue : MonoBehaviour
 
     }
 
+    //Character Conversations
+
+    public IEnumerator louConversation()
+    {
+        louInteraction.SetActive(false);
+        archieInteraction.SetActive(false);
+        quintonInteraction.SetActive(false);
+        zekeInteraction.SetActive(false);
+        missEvelynInteraction.SetActive(false);
+        louGlow.SetActive(false);
+        archieGlow.SetActive(false);
+        quintonGlow.SetActive(false);
+        zekeGlow.SetActive(false);
+        missEvelynGlow.SetActive(false);
+
+        eloiseNeutral.SetActive(true);
+        yield return StartCoroutine(currentDialogue("Eloise", "What were you up to before the meeting?"));
+        eloiseNeutral.SetActive(false);
+        louNeutral.SetActive(true);
+        yield return StartCoroutine(currentDialogue("Lou", "I was in the west corridor putting some stuff away in my locker."));
+        eloiseSuspicious.SetActive(true);
+        louNeutral.SetActive(false);
+        yield return StartCoroutine(currentDialogue("Eloise", "<i>Hm... That's close to where the bathroom is.</i>"));
+        eloiseSuspicious.SetActive(false);
+        louNeutral.SetActive(true);
+        yield return StartCoroutine(currentDialogue("Lou", "Before you ask, I did see Mei. We briefly exchanged glances."));
+        eloiseNeutral.SetActive(true);
+        louNeutral.SetActive(false);
+        yield return StartCoroutine(currentDialogue("Eloise", "What did she look like?"));
+        eloiseNeutral.SetActive(false);
+        louNeutral.SetActive(true);
+        yield return StartCoroutine(currentDialogue("Lou", "Focused. Determined, like she'd already made up her mind about something."));
+        yield return StartCoroutine(currentDialogue("Lou", "She was holding some sort of agenda close to her chest, like she didn't want anyone to see it."));
+        eloiseNeutral.SetActive(true);
+        louNeutral.SetActive(false);
+        yield return StartCoroutine(currentDialogue("Eloise", "Did she say anything to you?"));
+        eloiseNeutral.SetActive(false);
+        louLookingOff.SetActive(true);
+        yield return StartCoroutine(currentDialogue("Lou", "No. She just walked past."));
+        louLookingOff.SetActive(false);
+        louTalked = true;
+
+        louInteraction.SetActive(true);
+        archieInteraction.SetActive(true);
+        quintonInteraction.SetActive(true);
+        zekeInteraction.SetActive(true);
+        missEvelynInteraction.SetActive(true);
+        louGlow.SetActive(true);
+        archieGlow.SetActive(true);
+        quintonGlow.SetActive(true);
+        zekeGlow.SetActive(true);
+        missEvelynGlow.SetActive(true);
+
+        Debug.Log("Finished Lou's conversation");
+    }
+
+    public IEnumerator archieConversation()
+    {
+        louInteraction.SetActive(false);
+        archieInteraction.SetActive(false);
+        quintonInteraction.SetActive(false);
+        zekeInteraction.SetActive(false);
+        missEvelynInteraction.SetActive(false);
+        louGlow.SetActive(false);
+        archieGlow.SetActive(false);
+        quintonGlow.SetActive(false);
+        zekeGlow.SetActive(false);
+        missEvelynGlow.SetActive(false);
+
+        eloiseNeutral.SetActive(true);
+        yield return StartCoroutine(currentDialogue("Eloise", "Where were you before the meeting?"));
+        eloiseNeutral.SetActive(false);
+        archieNeutral.SetActive(true);
+        yield return StartCoroutine(currentDialogue("Archie", "East corridor by myself. I know how that looks."));
+        yield return StartCoroutine(currentDialogue("Archie", "Doesn’t help that I lost track of time and came late."));
+        eloiseNeutral.SetActive(true);
+        archieNeutral.SetActive(false);
+        yield return StartCoroutine(currentDialogue("Eloise", "When did you last speak to Mei?"));
+        eloiseNeutral.SetActive(false);
+        archieNeutral.SetActive(true);
+        yield return StartCoroutine(currentDialogue("Archie", " Yesterday. I said some things I shouldn't have. I've been trying to clear my head ever since."));
+        yield return StartCoroutine(currentDialogue("Archie", "I just… can’t believe this happened."));
+        eloiseNeutral.SetActive(true);
+        archieNeutral.SetActive(false);
+        yield return StartCoroutine(currentDialogue("Eloise", "Yeah... me too."));
+        eloiseNeutral.SetActive(false);
+        archieTalked = true;
+
+        louInteraction.SetActive(true);
+        archieInteraction.SetActive(true);
+        quintonInteraction.SetActive(true);
+        zekeInteraction.SetActive(true);
+        missEvelynInteraction.SetActive(true);
+        louGlow.SetActive(true);
+        archieGlow.SetActive(true);
+        quintonGlow.SetActive(true);
+        zekeGlow.SetActive(true);
+        missEvelynGlow.SetActive(true);
+
+        Debug.Log("Finished Archie's conversation");
+    }
+
+    public IEnumerator quintonConversation()
+    {
+        louInteraction.SetActive(false);
+        archieInteraction.SetActive(false);
+        quintonInteraction.SetActive(false);
+        zekeInteraction.SetActive(false);
+        missEvelynInteraction.SetActive(false);
+        louGlow.SetActive(false);
+        archieGlow.SetActive(false);
+        quintonGlow.SetActive(false);
+        zekeGlow.SetActive(false);
+        missEvelynGlow.SetActive(false);
+
+        eloiseSuspicious.SetActive(true);
+        yield return StartCoroutine(currentDialogue("Eloise", "Where were you before the meeting?"));
+        eloiseSuspicious.SetActive(false);
+        quintonShocked.SetActive(true);
+        yield return StartCoroutine(currentDialogue("Quinton", "Wait, wait. Slow down!"));
+        quintonShocked.SetActive(false);
+        quintonNeutral.SetActive(true);
+        yield return StartCoroutine(currentDialogue("Quinton", "I met her earlier this week."));
+        yield return StartCoroutine(currentDialogue("Quinton", "But it was just to check some numbers on the council’s accounts. Something wasn’t adding up."));
+        eloiseSuspicious.SetActive(true);
+        quintonNeutral.SetActive(false);
+        yield return StartCoroutine(currentDialogue("Eloise", "Oh come on, Quinton"));
+        eloiseSuspicious.SetActive(false);
+        quintonNeutral.SetActive(true);
+        yield return StartCoroutine(currentDialogue("Quinton", "She started acting weird with me. I feel like she found something out that she shouldn’t have, and told me she wasn’t going to confront it herself. That’s all."));
+        eloiseNeutral.SetActive(true);
+        quintonNeutral.SetActive(false);
+        yield return StartCoroutine(currentDialogue("Eloise", "Confront who?"));
+        eloiseNeutral.SetActive(false);
+        quintonNeutral.SetActive(true);
+        yield return StartCoroutine(currentDialogue("Quinton", "She didn’t tell me."));
+        quintonNeutral.SetActive(false);
+        quintonTalked = true;
+
+        louInteraction.SetActive(true);
+        archieInteraction.SetActive(true);
+        quintonInteraction.SetActive(true);
+        zekeInteraction.SetActive(true);
+        missEvelynInteraction.SetActive(true);
+        louGlow.SetActive(true);
+        archieGlow.SetActive(true);
+        quintonGlow.SetActive(true);
+        zekeGlow.SetActive(true);
+        missEvelynGlow.SetActive(true);
+
+        Debug.Log("Finished Quinton's conversation");
+    }
+
+    public IEnumerator zekeConversation()
+    {
+        louInteraction.SetActive(false);
+        archieInteraction.SetActive(false);
+        quintonInteraction.SetActive(false);
+        zekeInteraction.SetActive(false);
+        missEvelynInteraction.SetActive(false);
+        louGlow.SetActive(false);
+        archieGlow.SetActive(false);
+        quintonGlow.SetActive(false);
+        zekeGlow.SetActive(false);
+        missEvelynGlow.SetActive(false);
+
+        eloiseNeutral.SetActive(true);
+        yield return StartCoroutine(currentDialogue("Eloise", "So you’re in charge of the funds aren't you?"));
+        eloiseNeutral.SetActive(false);
+        zekeNeutral.SetActive(true);
+        yield return StartCoroutine(currentDialogue("Zeke", "Y-yes… I manage the approvals."));
+        eloiseSuspicious.SetActive(true);
+        zekeNeutral.SetActive(false);
+        yield return StartCoroutine(currentDialogue("Eloise", "Seems like you were trying to cover your tracks."));
+        eloiseSuspicious.SetActive(false);
+        zekeNervous.SetActive(true);
+        yield return StartCoroutine(currentDialogue("Zeke", "I… I didn’t mean to. I thought the notes were fine… I didn’t realize they were unusual."));
+        eloiseSuspicious.SetActive(true);
+        zekeNervous.SetActive(false);
+        yield return StartCoroutine(currentDialogue("Eloise", "<i>He’s not normally this nervous… Something is definitely up.</i>"));
+        eloiseSuspicious.SetActive(false);
+        zekeTalked = true;
+
+        louInteraction.SetActive(true);
+        archieInteraction.SetActive(true);
+        quintonInteraction.SetActive(true);
+        zekeInteraction.SetActive(true);
+        missEvelynInteraction.SetActive(true);
+        louGlow.SetActive(true);
+        archieGlow.SetActive(true);
+        quintonGlow.SetActive(true);
+        zekeGlow.SetActive(true);
+        missEvelynGlow.SetActive(true);
+
+        Debug.Log("Finished Zeke's conversation");
+    }
+
+    public IEnumerator missEvelynConversation()
+    {
+        louInteraction.SetActive(false);
+        archieInteraction.SetActive(false);
+        quintonInteraction.SetActive(false);
+        zekeInteraction.SetActive(false);
+        missEvelynInteraction.SetActive(false);
+        louGlow.SetActive(false);
+        archieGlow.SetActive(false);
+        quintonGlow.SetActive(false);
+        zekeGlow.SetActive(false);
+        missEvelynGlow.SetActive(false);
+
+        missEvelynNeutral.SetActive(true);
+        yield return StartCoroutine(currentDialogue("Miss Evelyn", "What did you mean when you said Mei was murdered?"));
+        eloiseUpset.SetActive(true);
+        missEvelynNeutral.SetActive(false);
+        yield return StartCoroutine(currentDialogue("Eloise", "T-There was blood splattered everywhere and she wasn’t moving."));
+        yield return StartCoroutine(currentDialogue("Eloise", "I saw bite marks on her neck… I think someone here did this to her. I think someone here is a vampire."));
+        eloiseUpset.SetActive(false);
+        missEvelynStern.SetActive(true);
+        yield return StartCoroutine(currentDialogue("Miss Evelyn", "A vampire? Don’t jump to dramatic conclusions, Eloise. This is serious."));
+        eloiseSuspicious.SetActive(true);
+        missEvelynStern.SetActive(false);
+        yield return StartCoroutine(currentDialogue("Eloise", "I am serious!"));
+        eloiseSuspicious.SetActive(false);
+        missEvelynStern.SetActive(true);
+        yield return StartCoroutine(currentDialogue("Miss Evelyn", "Vampires. The fictional creatures who sucks human blood, the ones that are afraid of garlic, the ones that burn from the sun and silver."));
+        yield return StartCoroutine(currentDialogue("Miss Evelyn", "You do know how ridiculous you sound, right?"));
+        eloiseSuspicious.SetActive(true);
+        missEvelynStern.SetActive(false);
+        yield return StartCoroutine(currentDialogue("Eloise", "Whatever. Don’t believe me for all I care. I’ll figure out who did this on my own."));
+        eloiseSuspicious.SetActive(false);
+        missEvelynNeutral.SetActive(true);
+        yield return StartCoroutine(currentDialogue("Miss Evelyn", "Normally, I’d advise you to refrain from doing such a thing and wait for the authorities to arrive."));
+        yield return StartCoroutine(currentDialogue("Miss Evelyn", "However, something tells me you will do it anyways. Please do not be rash."));
+        missEvelynNeutral.SetActive(false);
+        missEvelynTalked = true;
+
+        louInteraction.SetActive(true);
+        archieInteraction.SetActive(true);
+        quintonInteraction.SetActive(true);
+        zekeInteraction.SetActive(true);
+        missEvelynInteraction.SetActive(true);
+        louGlow.SetActive(true);
+        archieGlow.SetActive(true);
+        quintonGlow.SetActive(true);
+        zekeGlow.SetActive(true);
+        missEvelynGlow.SetActive(true);
+
+        Debug.Log("Finished Miss Evelyn's conversation");
+    }
+
+    //IEnumerator disableInteractions()
+    //{
+    //    louInteraction.SetActive(false);
+    //    archieInteraction.SetActive(false);
+    //    quintonInteraction.SetActive(false);
+    //    zekeInteraction.SetActive(false);
+    //    missEvelynInteraction.SetActive(false);
+    //    louGlow.SetActive(false);
+    //    archieGlow.SetActive(false);
+    //    quintonGlow.SetActive(false);
+    //    zekeGlow.SetActive(false);
+    //    missEvelynGlow.SetActive(false);
+    //    yield break;
+    //}
+    //IEnumerator enableInteractions()
+    //{
+    //    louInteraction.SetActive(true);
+    //    archieInteraction.SetActive(true);
+    //    quintonInteraction.SetActive(true);
+    //    zekeInteraction.SetActive(true);
+    //    missEvelynInteraction.SetActive(true);
+    //    louGlow.SetActive(true);
+    //    archieGlow.SetActive(true);
+    //    quintonGlow.SetActive(true);
+    //    zekeGlow.SetActive(true);
+    //    missEvelynGlow.SetActive(true);
+    //    yield break;
+    //}
+    //IEnumerator disableSprites()
+    //{
+    //    eloiseNeutral.SetActive(false);
+    //    eloiseSuspicious.SetActive(false);
+    //    eloiseUpset.SetActive(false);
+    //    louNeutral.SetActive(false);
+    //    louLookingOff.SetActive(false);
+    //    louNervous.SetActive(false);
+    //    archieNeutral.SetActive(false);
+    //    archieSurprised.SetActive(false);
+    //    quintonNeutral.SetActive(false);
+    //    quintonShocked.SetActive(false);
+    //    zekeNeutral.SetActive(false);
+    //    zekeNervous.SetActive(false);
+    //    missEvelynNeutral.SetActive(false);
+    //    missEvelynStern.SetActive(false);
+    //    yield break;
+    //}
 }
