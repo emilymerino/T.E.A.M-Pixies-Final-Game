@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clueID: 3
   clueName: Locker Findings
-  description: Pat the janitor was the closest person to be seen near the storage
-    room after Mei was discovered.
+  description: " Found a blood stained council blazer in a locker, a blood stained
+    medical vial, along with a crumpled sticky note given by Mei: \u201CMeeting you
+    about the missing transfers. This ends tonight.\u201D "
   icon: {fileID: 21300000, guid: bbb7588b892f5a64d9185695c4375c14, type: 3}

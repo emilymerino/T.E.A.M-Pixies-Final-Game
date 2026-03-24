@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90c23aebb535e084c9eee00d30ae9348, type: 3}
   m_Name: Clue14
   m_EditorClassIdentifier: 
-  clueID: 
-  clueName: 
-  description: 
+  clueID: 14
+  clueName: Second talk with Zeke
+  description: "Zeke hid the fact that he saw suspicious transfers and accuses Archie
+    of having something to do with Mei\u2019s death."
   icon: {fileID: 0}
