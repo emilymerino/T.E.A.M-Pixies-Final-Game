@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clueID: 1
   clueName: "Uniform fabric under Mei\u2019s nails"
-  description: Poor Mei. Whoever attacked her is still here.
+  description: Poor Mei. Whoever attacked her is still here. There's the school's
+    navy fabric under her finger nails.
   icon: {fileID: 21300000, guid: e6d8651b21cbf4caf998b5e662f58a32, type: 3}
