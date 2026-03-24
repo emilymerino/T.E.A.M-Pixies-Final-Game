@@ -4,15 +4,32 @@ using UnityEngine;
 
 public class FCSelection2 : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnMouseDown()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (gameObject.CompareTag("Lou"))
+        {
+            Debug.Log("You Clicked Lou");
+            
+        }
+        else if (gameObject.CompareTag("Archie"))
+        {
+            Debug.Log("You Clicked Archie");
+            
+        }
+        else if (gameObject.CompareTag("Quinton"))
+        {
+            Debug.Log("You Clicked Quinton");
+            
+        }
+        else if (gameObject.CompareTag("MissEvelyn"))
+        {
+            Debug.Log("You Clicked Miss Evelyn");
+            
+        }
+        else if (gameObject.CompareTag("Zeke"))
+        {
+            Debug.Log("You Clicked Zeke");
+            
+        }
     }
 }
