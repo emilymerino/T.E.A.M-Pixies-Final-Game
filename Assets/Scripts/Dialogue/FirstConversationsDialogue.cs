@@ -53,16 +53,7 @@ public class FirstConversationsDialogue : MonoBehaviour
         mainText.SetActive(false);
         textBox.SetActive(false);
 
-        louInteraction.SetActive(false);
-        archieInteraction.SetActive(false);
-        quintonInteraction.SetActive(false);
-        zekeInteraction.SetActive(false);
-        missEvelynInteraction.SetActive(false);
-        louGlow.SetActive(false);
-        archieGlow.SetActive(false);
-        quintonGlow.SetActive(false);
-        zekeGlow.SetActive(false);
-        missEvelynGlow.SetActive(false);
+        disableInteractions();
 
         louTalked = false;
         archieTalked = false;
@@ -70,63 +61,10 @@ public class FirstConversationsDialogue : MonoBehaviour
         zekeTalked = false;
         missEvelynTalked = false;
 
-        eloiseNeutral.SetActive(false);
-        eloiseSuspicious.SetActive(false);
-        eloiseUpset.SetActive(false);
-        louNeutral.SetActive(false);
-        louLookingOff.SetActive(false);
-        louNervous.SetActive(false);
-        archieNeutral.SetActive(false);
-        archieSurprised.SetActive(false);
-        quintonNeutral.SetActive(false);
-        quintonShocked.SetActive(false);
-        zekeNeutral.SetActive(false);
-        zekeNervous.SetActive(false);
-        missEvelynNeutral.SetActive(false);
-        missEvelynStern.SetActive(false);
+        disableSprites();
 
 
         StartCoroutine(DialogueStart());
-    }
-
-    IEnumerator continueStory()
-    {
-        mainText.SetActive(false);
-        textBox.SetActive(false);
-
-        louInteraction.SetActive(true);
-        archieInteraction.SetActive(true);
-        quintonInteraction.SetActive(true);
-        zekeInteraction.SetActive(true);
-        missEvelynInteraction.SetActive(true);
-        louGlow.SetActive(true);
-        archieGlow.SetActive(true);
-        quintonGlow.SetActive(true);
-        zekeGlow.SetActive(true);
-        missEvelynGlow.SetActive(true);
-
-
-        yield return new WaitUntil(() => louTalked && archieTalked && quintonTalked && zekeTalked && missEvelynTalked);
-
-        louInteraction.SetActive(false);
-        archieInteraction.SetActive(false);
-        quintonInteraction.SetActive(false);
-        zekeInteraction.SetActive(false);
-        missEvelynInteraction.SetActive(false);
-        louGlow.SetActive(false);
-        archieGlow.SetActive(false);
-        quintonGlow.SetActive(false);
-        zekeGlow.SetActive(false);
-        missEvelynGlow.SetActive(false);
-
-        mainText.SetActive(true);
-        textBox.SetActive(true);
-
-        eloiseSuspicious.SetActive(true);
-        yield return StartCoroutine(currentDialogue("Eloise", "<i>Someone's lying. I don’t have enough information to go off of.</i>"));
-        yield return StartCoroutine(currentDialogue("Eloise", "<i> I need to go to the storage room mentioned on Quinton's note. There has to be something there.</i>"));
-        eloiseSuspicious.SetActive(false);
-        yield return StartCoroutine(currentDialogue("", "Eloise sneaks out of the meeting room and heads straight to the storage room, hoping to find answers."));
     }
 
     IEnumerator DialogueStart()
@@ -174,6 +112,28 @@ public class FirstConversationsDialogue : MonoBehaviour
         //***Load next scene after player talks to all characters***
     }
 
+    IEnumerator continueStory()
+    {
+        mainText.SetActive(false);
+        textBox.SetActive(false);
+
+        enabledInteractions();
+
+
+        yield return new WaitUntil(() => louTalked && archieTalked && quintonTalked && zekeTalked && missEvelynTalked);
+
+        disableInteractions();
+
+        mainText.SetActive(true);
+        textBox.SetActive(true);
+
+        eloiseSuspicious.SetActive(true);
+        yield return StartCoroutine(currentDialogue("Eloise", "<i>Someone's lying. I don’t have enough information to go off of.</i>"));
+        yield return StartCoroutine(currentDialogue("Eloise", "<i>I need to go to the storage room mentioned on Quinton's note. There has to be something there.</i>"));
+        eloiseSuspicious.SetActive(false);
+        yield return StartCoroutine(currentDialogue("", "Eloise sneaks out of the meeting room and heads straight to the storage room, hoping to find answers."));
+    }
+
     IEnumerator currentDialogue(string name, string dialogue)
     {
         mainText.GetComponent<TMP_Text>().text = dialogue;
@@ -194,16 +154,7 @@ public class FirstConversationsDialogue : MonoBehaviour
 
     public IEnumerator louConversation()
     {
-        louInteraction.SetActive(false);
-        archieInteraction.SetActive(false);
-        quintonInteraction.SetActive(false);
-        zekeInteraction.SetActive(false);
-        missEvelynInteraction.SetActive(false);
-        louGlow.SetActive(false);
-        archieGlow.SetActive(false);
-        quintonGlow.SetActive(false);
-        zekeGlow.SetActive(false);
-        missEvelynGlow.SetActive(false);
+        disableInteractions();
 
         eloiseNeutral.SetActive(true);
         yield return StartCoroutine(currentDialogue("Eloise", "What were you up to before the meeting?"));
@@ -232,32 +183,14 @@ public class FirstConversationsDialogue : MonoBehaviour
         louLookingOff.SetActive(false);
         louTalked = true;
 
-        louInteraction.SetActive(true);
-        archieInteraction.SetActive(true);
-        quintonInteraction.SetActive(true);
-        zekeInteraction.SetActive(true);
-        missEvelynInteraction.SetActive(true);
-        louGlow.SetActive(true);
-        archieGlow.SetActive(true);
-        quintonGlow.SetActive(true);
-        zekeGlow.SetActive(true);
-        missEvelynGlow.SetActive(true);
+        enabledInteractions();
 
         Debug.Log("Finished Lou's conversation");
     }
 
     public IEnumerator archieConversation()
     {
-        louInteraction.SetActive(false);
-        archieInteraction.SetActive(false);
-        quintonInteraction.SetActive(false);
-        zekeInteraction.SetActive(false);
-        missEvelynInteraction.SetActive(false);
-        louGlow.SetActive(false);
-        archieGlow.SetActive(false);
-        quintonGlow.SetActive(false);
-        zekeGlow.SetActive(false);
-        missEvelynGlow.SetActive(false);
+        disableInteractions();
 
         eloiseNeutral.SetActive(true);
         yield return StartCoroutine(currentDialogue("Eloise", "Where were you before the meeting?"));
@@ -278,32 +211,14 @@ public class FirstConversationsDialogue : MonoBehaviour
         eloiseNeutral.SetActive(false);
         archieTalked = true;
 
-        louInteraction.SetActive(true);
-        archieInteraction.SetActive(true);
-        quintonInteraction.SetActive(true);
-        zekeInteraction.SetActive(true);
-        missEvelynInteraction.SetActive(true);
-        louGlow.SetActive(true);
-        archieGlow.SetActive(true);
-        quintonGlow.SetActive(true);
-        zekeGlow.SetActive(true);
-        missEvelynGlow.SetActive(true);
+        enabledInteractions();
 
         Debug.Log("Finished Archie's conversation");
     }
 
     public IEnumerator quintonConversation()
     {
-        louInteraction.SetActive(false);
-        archieInteraction.SetActive(false);
-        quintonInteraction.SetActive(false);
-        zekeInteraction.SetActive(false);
-        missEvelynInteraction.SetActive(false);
-        louGlow.SetActive(false);
-        archieGlow.SetActive(false);
-        quintonGlow.SetActive(false);
-        zekeGlow.SetActive(false);
-        missEvelynGlow.SetActive(false);
+        disableInteractions();
 
         eloiseSuspicious.SetActive(true);
         yield return StartCoroutine(currentDialogue("Eloise", "Where were you before the meeting?"));
@@ -329,32 +244,14 @@ public class FirstConversationsDialogue : MonoBehaviour
         quintonNeutral.SetActive(false);
         quintonTalked = true;
 
-        louInteraction.SetActive(true);
-        archieInteraction.SetActive(true);
-        quintonInteraction.SetActive(true);
-        zekeInteraction.SetActive(true);
-        missEvelynInteraction.SetActive(true);
-        louGlow.SetActive(true);
-        archieGlow.SetActive(true);
-        quintonGlow.SetActive(true);
-        zekeGlow.SetActive(true);
-        missEvelynGlow.SetActive(true);
+        enabledInteractions();
 
         Debug.Log("Finished Quinton's conversation");
     }
 
     public IEnumerator zekeConversation()
     {
-        louInteraction.SetActive(false);
-        archieInteraction.SetActive(false);
-        quintonInteraction.SetActive(false);
-        zekeInteraction.SetActive(false);
-        missEvelynInteraction.SetActive(false);
-        louGlow.SetActive(false);
-        archieGlow.SetActive(false);
-        quintonGlow.SetActive(false);
-        zekeGlow.SetActive(false);
-        missEvelynGlow.SetActive(false);
+        disableInteractions();
 
         eloiseNeutral.SetActive(true);
         yield return StartCoroutine(currentDialogue("Eloise", "So you’re in charge of the funds aren't you?"));
@@ -373,32 +270,14 @@ public class FirstConversationsDialogue : MonoBehaviour
         eloiseSuspicious.SetActive(false);
         zekeTalked = true;
 
-        louInteraction.SetActive(true);
-        archieInteraction.SetActive(true);
-        quintonInteraction.SetActive(true);
-        zekeInteraction.SetActive(true);
-        missEvelynInteraction.SetActive(true);
-        louGlow.SetActive(true);
-        archieGlow.SetActive(true);
-        quintonGlow.SetActive(true);
-        zekeGlow.SetActive(true);
-        missEvelynGlow.SetActive(true);
+        enabledInteractions();
 
         Debug.Log("Finished Zeke's conversation");
     }
 
     public IEnumerator missEvelynConversation()
     {
-        louInteraction.SetActive(false);
-        archieInteraction.SetActive(false);
-        quintonInteraction.SetActive(false);
-        zekeInteraction.SetActive(false);
-        missEvelynInteraction.SetActive(false);
-        louGlow.SetActive(false);
-        archieGlow.SetActive(false);
-        quintonGlow.SetActive(false);
-        zekeGlow.SetActive(false);
-        missEvelynGlow.SetActive(false);
+        disableInteractions();
 
         missEvelynNeutral.SetActive(true);
         yield return StartCoroutine(currentDialogue("Miss Evelyn", "What did you mean when you said Mei was murdered?"));
@@ -426,6 +305,30 @@ public class FirstConversationsDialogue : MonoBehaviour
         missEvelynNeutral.SetActive(false);
         missEvelynTalked = true;
 
+        enabledInteractions();
+
+        Debug.Log("Finished Miss Evelyn's conversation");
+    }
+
+    //Enable + Disable
+
+    private void disableInteractions()
+    {
+        louInteraction.SetActive(false);
+        archieInteraction.SetActive(false);
+        quintonInteraction.SetActive(false);
+        zekeInteraction.SetActive(false);
+        missEvelynInteraction.SetActive(false);
+        louGlow.SetActive(false);
+        archieGlow.SetActive(false);
+        quintonGlow.SetActive(false);
+        zekeGlow.SetActive(false);
+        missEvelynGlow.SetActive(false);
+
+    }
+
+    private void enabledInteractions()
+    {
         louInteraction.SetActive(true);
         archieInteraction.SetActive(true);
         quintonInteraction.SetActive(true);
@@ -437,53 +340,23 @@ public class FirstConversationsDialogue : MonoBehaviour
         zekeGlow.SetActive(true);
         missEvelynGlow.SetActive(true);
 
-        Debug.Log("Finished Miss Evelyn's conversation");
     }
 
-    //IEnumerator disableInteractions()
-    //{
-    //    louInteraction.SetActive(false);
-    //    archieInteraction.SetActive(false);
-    //    quintonInteraction.SetActive(false);
-    //    zekeInteraction.SetActive(false);
-    //    missEvelynInteraction.SetActive(false);
-    //    louGlow.SetActive(false);
-    //    archieGlow.SetActive(false);
-    //    quintonGlow.SetActive(false);
-    //    zekeGlow.SetActive(false);
-    //    missEvelynGlow.SetActive(false);
-    //    yield break;
-    //}
-    //IEnumerator enableInteractions()
-    //{
-    //    louInteraction.SetActive(true);
-    //    archieInteraction.SetActive(true);
-    //    quintonInteraction.SetActive(true);
-    //    zekeInteraction.SetActive(true);
-    //    missEvelynInteraction.SetActive(true);
-    //    louGlow.SetActive(true);
-    //    archieGlow.SetActive(true);
-    //    quintonGlow.SetActive(true);
-    //    zekeGlow.SetActive(true);
-    //    missEvelynGlow.SetActive(true);
-    //    yield break;
-    //}
-    //IEnumerator disableSprites()
-    //{
-    //    eloiseNeutral.SetActive(false);
-    //    eloiseSuspicious.SetActive(false);
-    //    eloiseUpset.SetActive(false);
-    //    louNeutral.SetActive(false);
-    //    louLookingOff.SetActive(false);
-    //    louNervous.SetActive(false);
-    //    archieNeutral.SetActive(false);
-    //    archieSurprised.SetActive(false);
-    //    quintonNeutral.SetActive(false);
-    //    quintonShocked.SetActive(false);
-    //    zekeNeutral.SetActive(false);
-    //    zekeNervous.SetActive(false);
-    //    missEvelynNeutral.SetActive(false);
-    //    missEvelynStern.SetActive(false);
-    //    yield break;
-    //}
+    private void disableSprites()
+    {
+        eloiseNeutral.SetActive(false);
+        eloiseSuspicious.SetActive(false);
+        eloiseUpset.SetActive(false);
+        louNeutral.SetActive(false);
+        louLookingOff.SetActive(false);
+        louNervous.SetActive(false);
+        archieNeutral.SetActive(false);
+        archieSurprised.SetActive(false);
+        quintonNeutral.SetActive(false);
+        quintonShocked.SetActive(false);
+        zekeNeutral.SetActive(false);
+        zekeNervous.SetActive(false);
+        missEvelynNeutral.SetActive(false);
+        missEvelynStern.SetActive(false);
+    }
 }
