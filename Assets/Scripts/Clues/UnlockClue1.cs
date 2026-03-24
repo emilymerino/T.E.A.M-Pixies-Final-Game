@@ -7,6 +7,7 @@ public class UnlockClue1 : MonoBehaviour
 {
     public Button myButton;
     public ClueData clue1;
+    public ClueData clue2;
 
     void Start()
     {
@@ -22,6 +23,8 @@ public class UnlockClue1 : MonoBehaviour
         if (ClueManager.Instance != null && clue1 != null)
         {
             ClueManager.Instance.UnlockClue(clue1);
+            ClueManager.Instance.UnlockClue(clue2);
+
         }
     }
     

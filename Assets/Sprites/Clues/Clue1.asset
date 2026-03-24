@@ -14,7 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clueID: 1
   clueName: "Uniform fabric under Mei\u2019s nails"
-  description: "Found a note on the crime scene: \u201CMei, meet me in the storage
-    room before the council meeting. I need to talk to you about something important.
-    Please don\u2019t tell anyone about this. "
+  description: Poor Mei. Whoever attacked her is still here.
   icon: {fileID: 21300000, guid: 69e7f8e4a2190594cbee0c65d66739d2, type: 3}
