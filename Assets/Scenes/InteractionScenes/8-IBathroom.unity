@@ -1045,7 +1045,8 @@ MonoBehaviour:
   clueDetailDescription: {fileID: 506355145}
   clueDetailBackground: {fileID: 1271803636}
   allowedScenes:
-  - FirstInsideBathroomInteractionScene
+  - 7
+  - 8-IBathroom
 --- !u!4 &811567382
 Transform:
   m_ObjectHideFlags: 0

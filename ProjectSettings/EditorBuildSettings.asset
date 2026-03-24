@@ -36,7 +36,7 @@ EditorBuildSettings:
     path: Assets/Scenes/DialogueScenes/20-AfterBehindTheMess.unity
     guid: 77408a12baeb44c308fbc228cd697342
   - enabled: 1
-    path: Assets/Scenes/DialogueScenes/28-ThanksForPlayingScene.unity
+    path: Assets/Scenes/DialogueScenes/ThanksForPlayingScene.unity
     guid: d8d3875bd56574f3d839398826d066cd
   - enabled: 1
     path: Assets/Scenes/InteractionScenes/3-Outside.unity
