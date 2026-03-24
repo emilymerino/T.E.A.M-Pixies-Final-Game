@@ -58,4 +58,10 @@ public class SkipButton : MonoBehaviour
         GetComponent<RightGuessEndingDialogue>().skipped = true;
         Debug.Log("Skipped");
     }
+
+    public void wrongGuessEndingSkip()
+    {
+        GetComponent<WrongGuessEndingDialogue>().skipped = true;
+        Debug.Log("Skipped");
+    }
 }
