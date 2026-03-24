@@ -37,23 +37,15 @@ public class ISSceneChange : MonoBehaviour
         }
         else if (CompareTag("StorageRoomDoor"))
         {
-            SceneManager.LoadScene("17-OutsideStorageRoom");
-        }
-        else if (CompareTag("InsideStorageRoom"))
-        {
             SceneManager.LoadScene("18-InsideStorageRoom");
-        }
-        else if (CompareTag("StorageRoomDoor"))
-        {
-            SceneManager.LoadScene("BehindTheMessScene");
         }
         else if (CompareTag("ThirdStudentCouncilDoor"))
         {
-            SceneManager.LoadScene("SecondConversationsInteractionScene");
+            SceneManager.LoadScene("22-SecondConversations");
         }
         else if (CompareTag("SecondOpenedBathroomDoor"))
         {
-            SceneManager.LoadScene("SecondInsideBathroomInteractionScene");
+            SceneManager.LoadScene("27-IBathroom");
         }
     }
 }

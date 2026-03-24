@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class BMLoveLetterClick : MonoBehaviour
 {
     public bool canBeClicked = false;
-    public string nextSceneName = "ThirdOutsideStudentCouncilInteractionScene";
+    public string nextSceneName = "20-AfterBehindTheMess";
     public SpriteRenderer letterRenderer;
 
     void Start()

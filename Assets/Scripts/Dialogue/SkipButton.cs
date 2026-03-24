@@ -123,8 +123,17 @@ public class SkipButton : MonoBehaviour
 
     public void wrongGuessEndingSkip()
     {
-        GetComponent<WrongGuessEndingDialogue>().skipped = true;
-        Debug.Log("Skipped");
+        WrongGuessEndingDialogue dialogue = GetComponent<WrongGuessEndingDialogue>();
+
+        if (dialogue.dialogueFinished)
+        {
+            SceneManager.LoadScene(dialogue.nextSceneName);
+        }
+        else
+        {
+            dialogue.skipped = true;
+            Debug.Log("Skipped");
+        }
     }
 
     public void secondBathroomSkip()
