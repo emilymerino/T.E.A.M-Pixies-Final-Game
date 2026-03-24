@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Clue6
   m_EditorClassIdentifier: 
   clueID: 6
-  clueName: Lou's Allergy to Garlic
-  description: Lou's allergic to garlic. Aren't vampires notoriously known for that?
+  clueName: First talk with Zeke
+  description: "Zeke\u2019s doubling down on not knowing about the missing funds.
+    He seems a little too nervous."
   icon: {fileID: 21300000, guid: bbb7588b892f5a64d9185695c4375c14, type: 3}

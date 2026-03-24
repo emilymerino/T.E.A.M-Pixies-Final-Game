@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Clue4
   m_EditorClassIdentifier: 
   clueID: 4
-  clueName: Miss Evelyn's Odd Behavior
-  description: Miss Evelyn's reaction when I told her about Mei's death is cold.
+  clueName: First talk with Miss Evelyn
+  description: Miss Evelyn acts cold, but gave me some valuable information about
+    vampires. Apparently, they are afraid of garlic, and burn from the sun and silver.
   icon: {fileID: 21300000, guid: bbb7588b892f5a64d9185695c4375c14, type: 3}

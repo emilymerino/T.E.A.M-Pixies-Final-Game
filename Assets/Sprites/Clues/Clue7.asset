@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Clue7
   m_EditorClassIdentifier: 
   clueID: 7
-  clueName: Faint Red Smudge on Zeke's Sleeve
-  description: Zeke's shirt has a red smudge. Looks like blood...
+  clueName: First talk with Quinton
+  description: Quinton is suggesting Mei was planning to confront someone.
   icon: {fileID: 21300000, guid: bbb7588b892f5a64d9185695c4375c14, type: 3}
