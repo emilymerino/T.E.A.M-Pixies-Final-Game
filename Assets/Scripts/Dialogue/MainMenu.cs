@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void GameStart()
     {
-        SceneManager.LoadSceneAsync("Beginning Scene");
+        SceneManager.LoadSceneAsync("1-OutsideDialogue");
     }
 
     public void GameQuit()

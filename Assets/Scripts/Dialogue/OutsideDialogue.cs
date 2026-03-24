@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class OutsideDialogue : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class OutsideDialogue : MonoBehaviour
     public GameObject charName;
 
     public bool skipped = false;
+
+    public bool dialogueFinished = false;
+    public string nextSceneName = "FirstOutsideStudentCouncilInteractionScene";
 
     public GameObject mei;
     public GameObject eloise;
@@ -62,8 +66,8 @@ public class OutsideDialogue : MonoBehaviour
         eloise.SetActive(false);
         yield return StartCoroutine(currentDialogue("Mei", "Hehe, I’m glad. It took forever to find something I liked so I’m happy it worked out."));
         mei.SetActive(false);
+        dialogueFinished = true;
         yield return StartCoroutine(currentDialogue("", "They start making their way to the meeting room."));
-
     }
 
     IEnumerator currentDialogue(string name, string dialogue)
@@ -78,7 +82,12 @@ public class OutsideDialogue : MonoBehaviour
 
         skipped = false;
         Debug.Log("Skipped dialogue");
+        if (dialogueFinished)
+        {
+            SceneManager.LoadScene(nextSceneName);
+        }
+
         yield break;
-        
+
     }
 }

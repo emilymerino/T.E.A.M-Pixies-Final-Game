@@ -1,15 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SkipButton : MonoBehaviour
 {
-
     public void outsideSkip()
     {
-        GetComponent<OutsideDialogue>().skipped = true;
-        Debug.Log("Skipped");
+        OutsideDialogue dialogue = GetComponent<OutsideDialogue>();
 
+        if (dialogue.dialogueFinished)
+        {
+            SceneManager.LoadScene(dialogue.nextSceneName);
+        }
+        else
+        {
+            dialogue.skipped = true;
+            Debug.Log("Skipped");
+        }
     }
 
     public void firstBathroomSkip()
