@@ -174,6 +174,7 @@ MonoBehaviour:
   skipped: 0
   dialogueFinished: 0
   nextSceneName: 17-OutsideStorageRoom
+  typingSpeed: 0.03
   louInteraction: {fileID: 1005544015}
   archieInteraction: {fileID: 751254068}
   quintonInteraction: {fileID: 233234937}
@@ -203,6 +204,11 @@ MonoBehaviour:
   zekeNervous: {fileID: 1771896357}
   missEvelynNeutral: {fileID: 1235656605}
   missEvelynStern: {fileID: 1808007692}
+  clue4: {fileID: 11400000, guid: e0e246944c0ad734783db0f595b1e30a, type: 2}
+  clue5: {fileID: 11400000, guid: f5d2f8437510a7b418406e6ab023b011, type: 2}
+  clue6: {fileID: 11400000, guid: 1202239f6e7b8084bbd4ea3205e50c32, type: 2}
+  clue7: {fileID: 11400000, guid: 6c5056e28e35a37458bb885704a55c17, type: 2}
+  clue8: {fileID: 11400000, guid: dffa46881bbedee408b6d0ffb7344feb, type: 2}
 --- !u!114 &53590914
 MonoBehaviour:
   m_ObjectHideFlags: 0

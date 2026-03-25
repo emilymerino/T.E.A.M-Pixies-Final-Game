@@ -52,6 +52,16 @@ public class FirstConversationsDialogue : MonoBehaviour
     public GameObject missEvelynNeutral;
     public GameObject missEvelynStern;
 
+    // first convo clues
+
+    public ClueData clue4; 
+    public ClueData clue5;
+    public ClueData clue6; 
+    public ClueData clue7; 
+    public ClueData clue8;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -244,8 +254,15 @@ public class FirstConversationsDialogue : MonoBehaviour
         eloiseNeutral.SetActive(false);
         louLookingOff.SetActive(true);
         yield return StartCoroutine(currentDialogue("Lou", "No. She just walked past."));
+
         louLookingOff.SetActive(false);
+
+
+        ClueManager.Instance.UnlockClue(clue5); // lou clue
+
         louTalked = true;
+
+       
 
         enabledInteractions();
         disableText();
@@ -274,8 +291,13 @@ public class FirstConversationsDialogue : MonoBehaviour
         eloiseNeutral.SetActive(true);
         archieNeutral.SetActive(false);
         yield return StartCoroutine(currentDialogue("Eloise", "Yeah... me too."));
+
         eloiseNeutral.SetActive(false);
+
+        ClueManager.Instance.UnlockClue(clue8); // unlocked archie clue
+
         archieTalked = true;
+
 
         enabledInteractions();
         disableText();
@@ -309,7 +331,12 @@ public class FirstConversationsDialogue : MonoBehaviour
         eloiseNeutral.SetActive(false);
         quintonNeutral.SetActive(true);
         yield return StartCoroutine(currentDialogue("Quinton", "She didn’t tell me."));
+
+
         quintonNeutral.SetActive(false);
+
+        ClueManager.Instance.UnlockClue(clue7); // quinton clue
+
         quintonTalked = true;
 
         enabledInteractions();
@@ -338,6 +365,9 @@ public class FirstConversationsDialogue : MonoBehaviour
         zekeNervous.SetActive(false);
         yield return StartCoroutine(currentDialogue("Eloise", "<i>He’s not normally this nervous… Something is definitely up.</i>"));
         eloiseSuspicious.SetActive(false);
+
+        ClueManager.Instance.UnlockClue(clue6); // unlocked archie clue
+
         zekeTalked = true;
 
         enabledInteractions();
@@ -375,6 +405,9 @@ public class FirstConversationsDialogue : MonoBehaviour
         yield return StartCoroutine(currentDialogue("Miss Evelyn", "Normally, I’d advise you to refrain from doing such a thing and wait for the authorities to arrive."));
         yield return StartCoroutine(currentDialogue("Miss Evelyn", "However, something tells me you will do it anyways. Please do not be rash."));
         missEvelynNeutral.SetActive(false);
+
+        ClueManager.Instance.UnlockClue(clue4); // unlocked archie clue
+
         missEvelynTalked = true;
 
         enabledInteractions();

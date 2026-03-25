@@ -764,6 +764,8 @@ MonoBehaviour:
   dialogueFinished: 0
   nextSceneName: 11-Lockers
   eloise: {fileID: 669960174}
+  typingSpeed: 0.03
+  clue2: {fileID: 11400000, guid: 5cdd83fa71f388c419d96d07e631ac76, type: 2}
 --- !u!1 &669960174
 GameObject:
   m_ObjectHideFlags: 0

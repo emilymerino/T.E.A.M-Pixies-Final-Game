@@ -23,7 +23,7 @@ public class ClueManager : MonoBehaviour
 
 
     // all of the scenes that the clue canvas can appear on
-    public string[] allowedScenes = { "7-FirstBathroom", "8-IBathroom", "10-AfterTornNote", "11-Lockers", "12-InfrontOfLocker", "14-AfterLockCode", "15-OClassroom", "16-FirstConversation", "17-OutsideStorageRoom", "18-InsideStorageRoom", "20-AfterBehindtheMess", "21-OClassroom", "22-SecondConversations", "23-GuessTheVampire"};
+    public string[] allowedScenes = { "7-FirstBathroom", "8-IBathroom", "10-AfterTornNote", "11-Lockers", "12-InfrontOfLocker", "14-AfterLockCodeMinigame", "15-OClassroom", "16-FirstConversations", "17-OutsideStorageRoom", "18-InsideStorageRoom", "20-AfterBehindTheMess", "21-OClassroom", "22-SecondConversations", "23-GuessTheVampire" };
 
     private List<ClueData> foundClues = new List<ClueData>();
 
