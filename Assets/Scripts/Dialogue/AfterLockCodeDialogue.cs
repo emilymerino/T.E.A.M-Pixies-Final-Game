@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AfterLockCodeDialogue : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class AfterLockCodeDialogue : MonoBehaviour
     public GameObject charName;
 
     public bool skipped = false;
+
+    public bool dialogueFinished = false;
+    public string nextSceneName = "15-OClassroom";
 
 
     // Start is called before the first frame update
@@ -35,6 +39,7 @@ public class AfterLockCodeDialogue : MonoBehaviour
         yield return StartCoroutine(currentDialogue("", "She looks through the pockets and finds a crumpled sticky note."));
         yield return StartCoroutine(currentDialogue("", "“Meeting you about the missing transfers. This ends tonight.”"));
         yield return StartCoroutine(currentDialogue("", "She also finds a blood stained medical vial in the locker, possibly the vampire hiding their tracks. Mei confronted the vampire and died in the process."));
+        dialogueFinished = true;
         yield return StartCoroutine(currentDialogue("", "Eloise pockets her findings and closes the locker door. She needs to know what exactly happened."));
 
     }
@@ -51,7 +56,11 @@ public class AfterLockCodeDialogue : MonoBehaviour
 
         skipped = false;
         Debug.Log("Skipped dialogue");
-        yield break;
+        if (dialogueFinished)
+        {
+            SceneManager.LoadScene(nextSceneName);
+        }
 
+        yield break;
     }
 }

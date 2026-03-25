@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WrongGuessEndingDialogue : MonoBehaviour
 {
@@ -21,6 +22,9 @@ public class WrongGuessEndingDialogue : MonoBehaviour
     public GameObject quinton;
     public GameObject zeke;
     public GameObject missEvelyn;
+
+    public bool dialogueFinished = false;
+    public string nextSceneName = "26-OBathroom";
 
     // Start is called before the first frame update
     void Start()
@@ -79,6 +83,7 @@ public class WrongGuessEndingDialogue : MonoBehaviour
         eloiseUpset.SetActive(false);
         yield return StartCoroutine(currentDialogue("Eloise", "Fine. I’ll just have to go out and find more clues. I’ll prove that it’s you."));
         eloiseSuspicious.SetActive(false);
+        dialogueFinished = true;
         yield return StartCoroutine(currentDialogue("", "Eloise storms out the room and heads back to the bathroom to investigate. There has to be something she missed."));
     }
 
@@ -94,7 +99,11 @@ public class WrongGuessEndingDialogue : MonoBehaviour
 
         skipped = false;
         Debug.Log("Skipped dialogue");
-        yield break;
+        if (dialogueFinished)
+        {
+            SceneManager.LoadScene(nextSceneName);
+        }
 
+        yield break;
     }
 }
