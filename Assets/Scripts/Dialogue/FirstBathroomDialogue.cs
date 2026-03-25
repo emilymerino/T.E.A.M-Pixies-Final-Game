@@ -14,7 +14,7 @@ public class FirstBathroomDialogue : MonoBehaviour
 
     public GameObject eloiseScared;
     public GameObject eloiseSuspicious;
-    public ClueData clue1;
+    public ClueData clue1; // added nail clue
 
     // Start is called before the first frame update
     void Start()
