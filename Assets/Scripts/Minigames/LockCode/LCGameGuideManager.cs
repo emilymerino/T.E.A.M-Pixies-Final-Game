@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class LCGameGuideManager : MonoBehaviour
 {
     public TextMeshProUGUI WatchCombination;
     public TextMeshProUGUI InPlayInstructions;
     public TextMeshProUGUI YouGotIt;
+    public string nextSceneName;
 
     [SerializeField] private TextMeshProUGUI NotQuite;
 
@@ -58,6 +60,13 @@ public class LCGameGuideManager : MonoBehaviour
     public void ShowYouGotIt()
     {
         YouGotIt.gameObject.SetActive(true);
+        StartCoroutine(LoadNextSceneAfterDelay());
+    }
+
+    IEnumerator LoadNextSceneAfterDelay()
+    {
+        yield return new WaitForSeconds(3f); 
+        SceneManager.LoadScene(nextSceneName);
     }
 
     public void HideYouGotIt()

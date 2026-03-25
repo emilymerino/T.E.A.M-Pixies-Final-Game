@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InsideStorageRoomDialogue : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class InsideStorageRoomDialogue : MonoBehaviour
     public GameObject charName;
 
     public bool skipped = false;
+
+    public bool dialogueFinished = false;
+    public string nextSceneName = "19-BehindtheMess";
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +36,7 @@ public class InsideStorageRoomDialogue : MonoBehaviour
         mainText.SetActive(true);
 
         yield return StartCoroutine(currentDialogue("", "Upon opening the door, all she can see is a sea of things scattered around. The room was a mess."));
+        dialogueFinished = true;
         yield return StartCoroutine(currentDialogue("", "Something had to be in this room. Whoever made this mess wanted to cover something up."));
     }
 
@@ -47,7 +52,11 @@ public class InsideStorageRoomDialogue : MonoBehaviour
 
         skipped = false;
         Debug.Log("Skipped dialogue");
-        yield break;
+        if (dialogueFinished)
+        {
+            SceneManager.LoadScene(nextSceneName);
+        }
 
+        yield break;
     }
 }

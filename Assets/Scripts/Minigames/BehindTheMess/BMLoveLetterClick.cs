@@ -6,7 +6,21 @@ using UnityEngine.SceneManagement;
 public class BMLoveLetterClick : MonoBehaviour
 {
     public bool canBeClicked = false;
-    public string nextSceneName = "ThirdOutsideStudentCouncilInteractionScene";
+    public string nextSceneName = "20-AfterBehindTheMess";
+    public SpriteRenderer letterRenderer;
+
+    void Start()
+    {
+        if (letterRenderer == null)
+        {
+            letterRenderer = GetComponent<SpriteRenderer>();
+        }
+
+        if (letterRenderer != null)
+        {
+            letterRenderer.enabled = false;
+        }
+    }
 
     void OnMouseDown()
     {
@@ -15,8 +29,14 @@ public class BMLoveLetterClick : MonoBehaviour
         SceneManager.LoadScene(nextSceneName);
     }
 
-    public void EnableLetterClick()
+    public void RevealLetter()
     {
+        if (letterRenderer != null)
+        {
+            letterRenderer.enabled = true;
+        }
+
         canBeClicked = true;
+        Debug.Log("Love letter revealed and clickable");
     }
 }
