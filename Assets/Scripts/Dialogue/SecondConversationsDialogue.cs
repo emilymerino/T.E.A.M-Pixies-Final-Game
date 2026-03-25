@@ -52,8 +52,7 @@ public class SecondConversationsDialogue : MonoBehaviour
     void Start()
     {
         fadeInTransition.SetActive(true);
-        mainText.SetActive(false);
-        textBox.SetActive(false);
+        disableText();
 
         disableInteractions();
 
@@ -69,23 +68,61 @@ public class SecondConversationsDialogue : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
+
+            if (hit.collider != null)
+            {
+                if (hit.collider.gameObject.name == "Lou")
+                {
+                    Debug.Log("You Clicked Lou");
+                    StartCoroutine(louConversation());
+                }
+                else if (hit.collider.gameObject.name == "Archie")
+                {
+                    Debug.Log("You Clicked Archie");
+                    StartCoroutine(archieConversation());
+                }
+                else if (hit.collider.gameObject.name == "Quinton")
+                {
+                    Debug.Log("You Clicked Quinton");
+                    StartCoroutine(quintonConversation());
+                }
+                else if (hit.collider.gameObject.name == "Zeke")
+                {
+                    Debug.Log("You Clicked Zeke");
+                    StartCoroutine(zekeConversation());
+                }
+                else if (hit.collider.gameObject.name == "MissEvelyn")
+                {
+                    Debug.Log("You Clicked Miss Evelyn");
+                    StartCoroutine(missEvelynConversation());
+                }
+            }
+        }
+    }
+
     IEnumerator DialogueStart()
     {
         yield return new WaitForSeconds(2);
         fadeInTransition.SetActive(false);
         yield return new WaitForSeconds(1);
-        textBox.SetActive(true);
-        mainText.SetActive(true);
+        enableText();
 
-        yield return StartCoroutine(currentDialogue("", ""));
+        yield return StartCoroutine(currentDialogue("", "Eloise sneaks her way back into the meeting room. Everyone was still hanging around in the same spot they were at previously."));
+        yield return StartCoroutine(currentDialogue("", "They were on edge, the thick air still hung as people took nervous glances at each other."));
+        yield return StartCoroutine(currentDialogue("", "This is a good chance to question everyone once more as they continue to isolate from each other."));
 
         StartCoroutine(continueStory());
     }
 
     IEnumerator continueStory()
     {
-        mainText.SetActive(false);
-        textBox.SetActive(false);
+        disableText();
 
         enabledInteractions();
 
@@ -94,8 +131,7 @@ public class SecondConversationsDialogue : MonoBehaviour
 
         disableInteractions();
 
-        mainText.SetActive(true);
-        textBox.SetActive(true);
+        enableText();
 
         eloiseSuspicious.SetActive(true);
         yield return StartCoroutine(currentDialogue("Eloise", "<i>The missing funds… the blood packets… the lies… Mei uncovered something before she died.</i>"));
@@ -129,6 +165,7 @@ public class SecondConversationsDialogue : MonoBehaviour
     public IEnumerator louConversation()
     {
         disableInteractions();
+        enableText();
 
         yield return StartCoroutine(currentDialogue("", "Lou was absentmindedly fidgeting with her left hand."));
         eloiseNeutral.SetActive(true);
@@ -163,6 +200,7 @@ public class SecondConversationsDialogue : MonoBehaviour
         louTalked = true;
 
         enabledInteractions();
+        disableText();
 
         Debug.Log("Finished Lou's conversation");
     }
@@ -170,6 +208,7 @@ public class SecondConversationsDialogue : MonoBehaviour
     public IEnumerator archieConversation()
     {
         disableInteractions();
+        enableText();
 
         eloiseNeutral.SetActive(true);
         yield return StartCoroutine(currentDialogue("Eloise", "I found this love letter you wrote to Mei."));
@@ -183,7 +222,7 @@ public class SecondConversationsDialogue : MonoBehaviour
         archieDarken.SetActive(true);
         yield return StartCoroutine(currentDialogue("Archie", "I… I don’t know."));
         eloiseNeutral.SetActive(true);
-        archieSurprised.SetActive(false);
+        archieDarken.SetActive(false);
         yield return StartCoroutine(currentDialogue("Eloise", "You seemed angry with her."));
         eloiseNeutral.SetActive(false);
         archieDarken.SetActive(true);
@@ -205,6 +244,7 @@ public class SecondConversationsDialogue : MonoBehaviour
         archieTalked = true;
 
         enabledInteractions();
+        disableText();
 
         Debug.Log("Finished Archie's conversation");
     }
@@ -212,6 +252,7 @@ public class SecondConversationsDialogue : MonoBehaviour
     public IEnumerator quintonConversation()
     {
         disableInteractions();
+        enableText();
 
         quintonNeutral.SetActive(true);
         yield return StartCoroutine(currentDialogue("Quinton", "Hey Eloise, need something again?"));
@@ -239,6 +280,7 @@ public class SecondConversationsDialogue : MonoBehaviour
         quintonTalked = true;
 
         enabledInteractions();
+        disableText();
 
         Debug.Log("Finished Quinton's conversation");
     }
@@ -246,15 +288,16 @@ public class SecondConversationsDialogue : MonoBehaviour
     public IEnumerator zekeConversation()
     {
         disableInteractions();
+        enableText();
 
         eloiseNeutral.SetActive(true);
         yield return StartCoroutine(currentDialogue("Eloise", "Hey, look at this."));
-        yield return StartCoroutine(currentDialogue("", "Eloise slides the records from the storage room in front of Zeke."));
         eloiseNeutral.SetActive(false);
+        yield return StartCoroutine(currentDialogue("", "Eloise slides the records from the storage room in front of Zeke."));
         zekeNervous.SetActive(true);
         yield return StartCoroutine(currentDialogue("Zeke", "Ah… These are…"));
         eloiseSuspicious.SetActive(true);
-        zekeNeutral.SetActive(false);
+        zekeNervous.SetActive(false);
         yield return StartCoroutine(currentDialogue("Eloise", "I find it hard to believe something like this would go unnoticed, especially by someone like you."));
         eloiseSuspicious.SetActive(false);
         zekeNervous.SetActive(true);
@@ -285,6 +328,7 @@ public class SecondConversationsDialogue : MonoBehaviour
         zekeTalked = true;
 
         enabledInteractions();
+        disableText();
 
         Debug.Log("Finished Zeke's conversation");
     }
@@ -292,6 +336,7 @@ public class SecondConversationsDialogue : MonoBehaviour
     public IEnumerator missEvelynConversation()
     {
         disableInteractions();
+        enableText();
 
         eloiseNeutral.SetActive(true);
         yield return StartCoroutine(currentDialogue("Eloise", "…"));
@@ -320,10 +365,13 @@ public class SecondConversationsDialogue : MonoBehaviour
         yield return StartCoroutine(currentDialogue("Miss Evelyn", "Mei had been asking questions about the council accounts for weeks. Sharp girl. Whatever she found, she kept it to herself."));
         yield return StartCoroutine(currentDialogue("Miss Evelyn", "Quinton had been spending a lot of time with her lately too. Checking numbers, he said. I didn't think much of it at the time."));
         eloiseSuspicious.SetActive(true);
+        missEvelyn.SetActive(false);
         yield return StartCoroutine(currentDialogue("Eloise", "<i>Oh, I’m sure you didn’t…</i>"));
         eloiseSuspicious.SetActive(false);
         missEvelynTalked = true;
+
         enabledInteractions();
+        disableText();
 
         Debug.Log("Finished Miss Evelyn's conversation");
     }
@@ -359,6 +407,19 @@ public class SecondConversationsDialogue : MonoBehaviour
         missEvelynGlow.SetActive(true);
 
     }
+
+    private void enableText()
+    {
+        textBox.SetActive(true);
+        mainText.SetActive(true);
+    }
+
+    private void disableText()
+    {
+        textBox.SetActive(false);
+        mainText.SetActive(false);
+    }
+
     private void disableSprites()
     {
         eloiseNeutral.SetActive(false);

@@ -54,8 +54,7 @@ public class FirstConversationsDialogue : MonoBehaviour
     void Start()
     {
         fadeTransition.SetActive(true);
-        mainText.SetActive(false);
-        textBox.SetActive(false);
+        disableText();
 
         disableInteractions();
 
@@ -71,13 +70,50 @@ public class FirstConversationsDialogue : MonoBehaviour
         StartCoroutine(DialogueStart());
     }
 
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
+
+            if (hit.collider != null)
+            {
+                if (hit.collider.gameObject.name == "Lou")
+                {
+                    Debug.Log("You Clicked Lou");
+                    StartCoroutine(louConversation());
+                }
+                else if (hit.collider.gameObject.name == "Archie")
+                {
+                    Debug.Log("You Clicked Archie");
+                    StartCoroutine(archieConversation());
+                }
+                else if (hit.collider.gameObject.name == "Quinton")
+                {
+                    Debug.Log("You Clicked Quinton");
+                    StartCoroutine(quintonConversation());
+                }
+                else if (hit.collider.gameObject.name == "Zeke")
+                {
+                    Debug.Log("You Clicked Zeke");
+                    StartCoroutine(zekeConversation());
+                }
+                else if (hit.collider.gameObject.name == "MissEvelyn")
+                {
+                    Debug.Log("You Clicked Miss Evelyn");
+                    StartCoroutine(missEvelynConversation());
+                }
+            }
+        }
+    }
+
     IEnumerator DialogueStart()
     {
         yield return new WaitForSeconds(2);
         fadeTransition.SetActive(false);
         yield return new WaitForSeconds(1);
-        textBox.SetActive(true);
-        mainText.SetActive(true);
+        enableText();
 
         yield return StartCoroutine(currentDialogue("", "When Eloise enters back into the meeting room, everyone turned their heads towards the door."));
         yield return StartCoroutine(currentDialogue("", "It seemed like the meeting already started."));
@@ -118,8 +154,7 @@ public class FirstConversationsDialogue : MonoBehaviour
 
     IEnumerator continueStory()
     {
-        mainText.SetActive(false);
-        textBox.SetActive(false);
+        disableText();
 
         enabledInteractions();
 
@@ -128,8 +163,7 @@ public class FirstConversationsDialogue : MonoBehaviour
 
         disableInteractions();
 
-        mainText.SetActive(true);
-        textBox.SetActive(true);
+        enableText();
 
         eloiseSuspicious.SetActive(true);
         yield return StartCoroutine(currentDialogue("Eloise", "<i>Someone's lying. I don’t have enough information to go off of.</i>"));
@@ -164,6 +198,7 @@ public class FirstConversationsDialogue : MonoBehaviour
     public IEnumerator louConversation()
     {
         disableInteractions();
+        enableText();
 
         eloiseNeutral.SetActive(true);
         yield return StartCoroutine(currentDialogue("Eloise", "What were you up to before the meeting?"));
@@ -193,6 +228,7 @@ public class FirstConversationsDialogue : MonoBehaviour
         louTalked = true;
 
         enabledInteractions();
+        disableText();
 
         Debug.Log("Finished Lou's conversation");
     }
@@ -200,6 +236,7 @@ public class FirstConversationsDialogue : MonoBehaviour
     public IEnumerator archieConversation()
     {
         disableInteractions();
+        enableText();
 
         eloiseNeutral.SetActive(true);
         yield return StartCoroutine(currentDialogue("Eloise", "Where were you before the meeting?"));
@@ -221,6 +258,7 @@ public class FirstConversationsDialogue : MonoBehaviour
         archieTalked = true;
 
         enabledInteractions();
+        disableText();
 
         Debug.Log("Finished Archie's conversation");
     }
@@ -228,6 +266,7 @@ public class FirstConversationsDialogue : MonoBehaviour
     public IEnumerator quintonConversation()
     {
         disableInteractions();
+        enableText();
 
         eloiseSuspicious.SetActive(true);
         yield return StartCoroutine(currentDialogue("Eloise", "Where were you before the meeting?"));
@@ -254,6 +293,7 @@ public class FirstConversationsDialogue : MonoBehaviour
         quintonTalked = true;
 
         enabledInteractions();
+        disableText();
 
         Debug.Log("Finished Quinton's conversation");
     }
@@ -261,6 +301,7 @@ public class FirstConversationsDialogue : MonoBehaviour
     public IEnumerator zekeConversation()
     {
         disableInteractions();
+        enableText();
 
         eloiseNeutral.SetActive(true);
         yield return StartCoroutine(currentDialogue("Eloise", "So you’re in charge of the funds aren't you?"));
@@ -280,6 +321,7 @@ public class FirstConversationsDialogue : MonoBehaviour
         zekeTalked = true;
 
         enabledInteractions();
+        disableText();
 
         Debug.Log("Finished Zeke's conversation");
     }
@@ -287,6 +329,7 @@ public class FirstConversationsDialogue : MonoBehaviour
     public IEnumerator missEvelynConversation()
     {
         disableInteractions();
+        enableText();
 
         missEvelynNeutral.SetActive(true);
         yield return StartCoroutine(currentDialogue("Miss Evelyn", "What did you mean when you said Mei was murdered?"));
@@ -315,6 +358,7 @@ public class FirstConversationsDialogue : MonoBehaviour
         missEvelynTalked = true;
 
         enabledInteractions();
+        disableText();
 
         Debug.Log("Finished Miss Evelyn's conversation");
     }
@@ -349,6 +393,18 @@ public class FirstConversationsDialogue : MonoBehaviour
         zekeGlow.SetActive(true);
         missEvelynGlow.SetActive(true);
 
+    }
+
+    private void enableText()
+    {
+        textBox.SetActive(true);
+        mainText.SetActive(true);
+    }
+
+    private void disableText()
+    {
+        textBox.SetActive(false);
+        mainText.SetActive(false);
     }
 
     private void disableSprites()

@@ -299,6 +299,8 @@ MonoBehaviour:
   mainText: {fileID: 2026285167}
   charName: {fileID: 1126300268}
   skipped: 0
+  dialogueFinished: 0
+  nextSceneName: 23-GuessTheVampire
   louInteraction: {fileID: 1855740207}
   archieInteraction: {fileID: 1145835005}
   quintonInteraction: {fileID: 957533877}
@@ -318,10 +320,10 @@ MonoBehaviour:
   eloiseSuspicious: {fileID: 517579955}
   louNeutral: {fileID: 1127157345}
   louLookingOff: {fileID: 253209886}
-  louNervous: {fileID: 0}
+  louNervous: {fileID: 1746329547}
   archieNeutral: {fileID: 1246016449}
   archieSurprised: {fileID: 1247996206}
-  archieDarken: {fileID: 0}
+  archieDarken: {fileID: 55796073}
   quintonNeutral: {fileID: 1552027339}
   quintonShocked: {fileID: 815702278}
   zekeNeutral: {fileID: 1116231110}
@@ -507,7 +509,7 @@ GameObject:
   - component: {fileID: 268198282}
   - component: {fileID: 268198281}
   m_Layer: 5
-  m_Name: Next (Interaction)
+  m_Name: Next
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1349,7 +1351,7 @@ GameObject:
   - component: {fileID: 736720891}
   - component: {fileID: 736720890}
   m_Layer: 5
-  m_Name: Textbox (Interaction)
+  m_Name: 'Textbox '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2255,6 +2257,7 @@ RectTransform:
   - {fileID: 517579956}
   - {fileID: 1127157346}
   - {fileID: 253209887}
+  - {fileID: 1746329548}
   - {fileID: 1246016450}
   - {fileID: 1247996207}
   - {fileID: 55796074}
@@ -2650,7 +2653,7 @@ GameObject:
   - component: {fileID: 1126300271}
   - component: {fileID: 1126300270}
   m_Layer: 5
-  m_Name: Name (Interaction)
+  m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3593,6 +3596,81 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -8.119995}
   m_SizeDelta: {x: 1000, y: 1063}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1746329547
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1746329548}
+  - component: {fileID: 1746329550}
+  - component: {fileID: 1746329549}
+  m_Layer: 5
+  m_Name: LouNervous
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1746329548
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746329547}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1028967456}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -8.119995}
+  m_SizeDelta: {x: 1000, y: 1063}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1746329549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746329547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: c7c29031c2a9d4f68a0fb09e71f0fe0c, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1746329550
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746329547}
+  m_CullTransparentMesh: 1
 --- !u!1 &1855740207
 GameObject:
   m_ObjectHideFlags: 0
@@ -3892,7 +3970,7 @@ GameObject:
   - component: {fileID: 2026285170}
   - component: {fileID: 2026285169}
   m_Layer: 5
-  m_Name: Text (Interaction)
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
