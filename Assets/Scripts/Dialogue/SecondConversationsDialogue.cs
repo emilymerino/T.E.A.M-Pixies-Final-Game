@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SecondConversationsDialogue : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class SecondConversationsDialogue : MonoBehaviour
     public GameObject charName;
 
     public bool skipped = false;
+
+    public bool dialogueFinished = false;
+    public string nextSceneName = "23-GuessTheVampire";
 
     public GameObject louInteraction;
     public GameObject archieInteraction;
@@ -94,6 +98,7 @@ public class SecondConversationsDialogue : MonoBehaviour
         eloiseSuspicious.SetActive(true);
         yield return StartCoroutine(currentDialogue("Eloise", "<i>The missing funds… the blood packets… the lies… Mei uncovered something before she died.</i>"));
         yield return StartCoroutine(currentDialogue("Eloise", "<i>One of you is hiding the truth.</i>"));
+        dialogueFinished = true;
         yield return StartCoroutine(currentDialogue("", "<i>And I think I finally know who the vampire is.</i>"));
     }
 
@@ -109,8 +114,12 @@ public class SecondConversationsDialogue : MonoBehaviour
 
         skipped = false;
         Debug.Log("Skipped dialogue");
-        yield break;
+        if (dialogueFinished)
+        {
+            SceneManager.LoadScene(nextSceneName);
+        }
 
+        yield break;
     }
 
     //Character Conversations
