@@ -9,51 +9,43 @@ public class ISSceneChange : MonoBehaviour
     {
         if (CompareTag("SchoolDoors"))
         {
-            SceneManager.LoadScene("FirstOutsideStudentCouncilInteractionScene");
+            SceneManager.LoadScene("4-OClassroom");
         }
         else if (CompareTag("FirstStudentCouncilDoor"))
         {
-            SceneManager.LoadScene("EnterStudentCouncilInteractionScene");
+            SceneManager.LoadScene("5-Classroom");
         }
         else if (CompareTag("FirstOpenedBathroomDoor"))
         {
-            SceneManager.LoadScene("FirstInsideBathroomInteractionScene");
+            SceneManager.LoadScene("7-FirstBathroom");
         }
         else if (CompareTag("TornNote"))
         {
-            SceneManager.LoadScene("TornNoteScene");
+            SceneManager.LoadScene("9-TornNote");
         }
         else if (CompareTag("Locker"))
         {
-            SceneManager.LoadScene("InfrontOfLockerInteractionScene");
+            SceneManager.LoadScene("12-InfrontOfLockers");
         }
         else if (CompareTag("Lock"))
         {
-            SceneManager.LoadScene("LockCodeScene");
-        }
-        else if (CompareTag("StorageRoomDoor"))
-        {
-            SceneManager.LoadScene("BehindTheMessScene");
+            SceneManager.LoadScene("13-LockCode");
         }
         else if (CompareTag("SecondStudentCouncilDoor"))
         {
-            SceneManager.LoadScene("FirstConversationsInteractionScene");
+            SceneManager.LoadScene("16-FirstConversations");
         }
         else if (CompareTag("StorageRoomDoor"))
         {
-            SceneManager.LoadScene("BehindTheMessScene");
-        }
-        else if (CompareTag("StorageRoomDoor"))
-        {
-            SceneManager.LoadScene("BehindTheMessScene");
+            SceneManager.LoadScene("18-InsideStorageRoom");
         }
         else if (CompareTag("ThirdStudentCouncilDoor"))
         {
-            SceneManager.LoadScene("SecondConversationsInteractionScene");
+            SceneManager.LoadScene("22-SecondConversations");
         }
         else if (CompareTag("SecondOpenedBathroomDoor"))
         {
-            SceneManager.LoadScene("SecondInsideBathroomInteractionScene");
+            SceneManager.LoadScene("27-IBathroom");
         }
     }
 }

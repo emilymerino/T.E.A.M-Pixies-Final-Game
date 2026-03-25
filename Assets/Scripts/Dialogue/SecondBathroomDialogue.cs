@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SecondBathroomDialogue : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class SecondBathroomDialogue : MonoBehaviour
     public GameObject bathroomLights;
 
     public bool skipped = false;
+
+    public bool dialogueFinished = false;
+    public string nextSceneName = "1-MainMenu";
 
     public GameObject eloise;
     public GameObject lou;
@@ -67,7 +71,7 @@ public class SecondBathroomDialogue : MonoBehaviour
         yield return new WaitForSeconds(3);
         endingText.SetActive(true);
         yield return new WaitForSeconds(5);
-        //Return to main menu
+        dialogueFinished = true;
     }
 
     IEnumerator currentDialogue(string name, string dialogue)
@@ -82,7 +86,11 @@ public class SecondBathroomDialogue : MonoBehaviour
 
         skipped = false;
         Debug.Log("Skipped dialogue");
-        yield break;
+        if (dialogueFinished)
+        {
+            SceneManager.LoadScene(nextSceneName);
+        }
 
+        yield break;
     }
 }

@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FirstConversationsDialogue : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class FirstConversationsDialogue : MonoBehaviour
     public GameObject charName;
 
     public bool skipped = false;
+
+    public bool dialogueFinished = false;
+    public string nextSceneName = "17-OutsideStorageRoom";
 
     public GameObject louInteraction;
     public GameObject archieInteraction;
@@ -131,6 +135,7 @@ public class FirstConversationsDialogue : MonoBehaviour
         yield return StartCoroutine(currentDialogue("Eloise", "<i>Someone's lying. I don’t have enough information to go off of.</i>"));
         yield return StartCoroutine(currentDialogue("Eloise", "<i>I need to go to the storage room mentioned on Quinton's note. There has to be something there.</i>"));
         eloiseSuspicious.SetActive(false);
+        dialogueFinished = true;
         yield return StartCoroutine(currentDialogue("", "Eloise sneaks out of the meeting room and heads straight to the storage room, hoping to find answers."));
     }
 
@@ -146,8 +151,12 @@ public class FirstConversationsDialogue : MonoBehaviour
 
         skipped = false;
         Debug.Log("Skipped dialogue");
-        yield break;
+        if (dialogueFinished)
+        {
+            SceneManager.LoadScene(nextSceneName);
+        }
 
+        yield break;
     }
 
     //Character Conversations
