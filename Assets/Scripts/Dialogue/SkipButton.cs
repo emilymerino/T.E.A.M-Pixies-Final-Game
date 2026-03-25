@@ -190,7 +190,7 @@ public class SkipButton : MonoBehaviour
 
     public void secondBathroomSkip()
     {
-        SecondConversationsDialogue dialogue = GetComponent<SecondConversationsDialogue>();
+        SecondBathroomDialogue dialogue = GetComponent<SecondBathroomDialogue>();
 
         if (dialogue.dialogueFinished)
         {
