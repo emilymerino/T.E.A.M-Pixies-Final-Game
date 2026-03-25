@@ -301,6 +301,7 @@ MonoBehaviour:
   skipped: 0
   dialogueFinished: 0
   nextSceneName: 23-GuessTheVampire
+  typingSpeed: 0.03
   louInteraction: {fileID: 1855740207}
   archieInteraction: {fileID: 1145835005}
   quintonInteraction: {fileID: 957533877}
@@ -329,6 +330,11 @@ MonoBehaviour:
   zekeNeutral: {fileID: 1116231110}
   zekeNervous: {fileID: 1659055779}
   missEvelyn: {fileID: 962982527}
+  clue10: {fileID: 11400000, guid: 6ecc27d46addd2b49a69d6e42487b6e0, type: 2}
+  clue11: {fileID: 11400000, guid: 73e92364974800040962c07a723c31f3, type: 2}
+  clue12: {fileID: 11400000, guid: 82e78b3b89a1c1142b8e84cba36d395b, type: 2}
+  clue13: {fileID: 11400000, guid: 8fd5fc380b70637498ee3465f6086f7f, type: 2}
+  clue14: {fileID: 11400000, guid: 8af0f13a27d7c4543ac3ca14cd99daf6, type: 2}
 --- !u!4 &29814077
 Transform:
   m_ObjectHideFlags: 0

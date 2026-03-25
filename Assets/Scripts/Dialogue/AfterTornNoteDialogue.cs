@@ -20,6 +20,8 @@ public class AfterTornNoteDialogue : MonoBehaviour
 
     public float typingSpeed = 0.03f;
 
+    public ClueData clue2; // torn note pop up
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +49,9 @@ public class AfterTornNoteDialogue : MonoBehaviour
         yield return StartCoroutine(currentDialogue("Eloise", "Q...?"));
         yield return StartCoroutine(currentDialogue("Eloise", " I only know one person who's name starts with a Q... I'll have to talk to him about this when I see him."));
         dialogueFinished = true;
+
+        ClueManager.Instance.UnlockClue(clue2); // unlocked second clue
+
         yield return StartCoroutine(currentDialogue("Eloise", " I need to get back to the student council room quickly."));
     }
 

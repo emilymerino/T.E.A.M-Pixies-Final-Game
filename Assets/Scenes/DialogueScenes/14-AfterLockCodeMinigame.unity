@@ -305,6 +305,8 @@ MonoBehaviour:
   skipped: 0
   dialogueFinished: 0
   nextSceneName: 15-OClassroom
+  typingSpeed: 0.03
+  clue3: {fileID: 11400000, guid: 82fb9d12dd605fc4087d583437406656, type: 2}
 --- !u!4 &256222677
 Transform:
   m_ObjectHideFlags: 0
