@@ -8,13 +8,11 @@ public class SecondBathroomDialogue : MonoBehaviour
 {
     public GameObject fadeInTransition;
     public GameObject fadeOutTransition;
+    public GameObject fadeInAndOut;
     [SerializeField] GameObject textBox;
     public GameObject mainText;
     public GameObject charName;
     public GameObject endingText;
-
-    public GameObject bathroomAnimated;
-    public GameObject bathroomLights;
 
     public bool skipped = false;
 
@@ -29,12 +27,10 @@ public class SecondBathroomDialogue : MonoBehaviour
     {
         fadeInTransition.SetActive(true);
         fadeOutTransition.SetActive(false);
+        fadeInAndOut.SetActive(false);
         mainText.SetActive(false);
         textBox.SetActive(false);
         endingText.SetActive(false);
-
-        bathroomAnimated.SetActive(false);
-        bathroomLights.SetActive(false);
 
         eloise.SetActive(false);
         lou.SetActive(false);
@@ -52,8 +48,7 @@ public class SecondBathroomDialogue : MonoBehaviour
         mainText.SetActive(true);
 
         yield return StartCoroutine(currentDialogue("", "Eloise looks around the bathroom once more but only Mei's lifeless body could be seen."));
-        bathroomAnimated.SetActive(true);
-        bathroomLights.SetActive(true);
+        fadeInAndOut.SetActive(true);
         yield return StartCoroutine(currentDialogue("", "A sudden sound of the door opening catches Eloise off-guard. But before she could react, a sharp pain sinks into her neck."));
         lou.SetActive(true);
         yield return StartCoroutine(currentDialogue("Lou", "Don’t take it too personal. You’re just being too noisy for your own good."));
@@ -66,12 +61,12 @@ public class SecondBathroomDialogue : MonoBehaviour
         eloise.SetActive(false);
         fadeOutTransition.SetActive(true);
         yield return StartCoroutine(currentDialogue("", "Eloise’s vision goes black."));
-        mainText.SetActive(false);
+        dialogueFinished = true;
         textBox.SetActive(false);
-        yield return new WaitForSeconds(3);
+        mainText.SetActive(false);
+        yield return new WaitForSeconds(2);
         endingText.SetActive(true);
         yield return new WaitForSeconds(5);
-        dialogueFinished = true;
     }
 
     IEnumerator currentDialogue(string name, string dialogue)

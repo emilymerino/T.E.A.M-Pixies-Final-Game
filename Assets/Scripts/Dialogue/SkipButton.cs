@@ -73,6 +73,13 @@ public class SkipButton : MonoBehaviour
 
     }
 
+    public void infrontOfLockerSkip()
+    {
+        GetComponent<InfrontOfLockersDialogue>().skipped = true;
+        Debug.Log("Skipped");
+
+    }
+
     public void afterLockCodeSkip()
     {
         AfterLockCodeDialogue dialogue = GetComponent<AfterLockCodeDialogue>();
@@ -183,7 +190,7 @@ public class SkipButton : MonoBehaviour
 
     public void secondBathroomSkip()
     {
-        SecondConversationsDialogue dialogue = GetComponent<SecondConversationsDialogue>();
+        SecondBathroomDialogue dialogue = GetComponent<SecondBathroomDialogue>();
 
         if (dialogue.dialogueFinished)
         {
