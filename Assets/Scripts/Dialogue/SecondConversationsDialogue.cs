@@ -363,7 +363,7 @@ public class SecondConversationsDialogue : MonoBehaviour
         yield return StartCoroutine(currentDialogue("Zeke", "I-If anything, Archie was probably the one who murdered Mei. Weirdly enough, he’s been hovering around her recently so I bet he has something to do with it."));
         zekeNeutral.SetActive(false);
 
-        ClueManager.Instance.UnlockClue(clue13); // zeke clue
+        ClueManager.Instance.UnlockClue(clue14); // zeke clue
 
         zekeTalked = true;
 
