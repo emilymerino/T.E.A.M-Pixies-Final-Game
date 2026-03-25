@@ -17,6 +17,8 @@ public class HallwayOfLockersDialogue : MonoBehaviour
     public GameObject lockerModified;
     public GameObject exclamationMark;
 
+    public float typingSpeed = 0.03f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -54,19 +56,36 @@ public class HallwayOfLockersDialogue : MonoBehaviour
         exclamationMark.SetActive(true);
     }
 
-        IEnumerator currentDialogue(string name, string dialogue)
+    IEnumerator currentDialogue(string name, string dialogue)
     {
-        mainText.GetComponent<TMP_Text>().text = dialogue;
-        charName.GetComponent<TMP_Text>().text = name;
+        TMP_Text mainTMP = mainText.GetComponent<TMP_Text>();
+        TMP_Text nameTMP = charName.GetComponent<TMP_Text>();
 
-        while (skipped == false)
+        nameTMP.text = name;
+        mainTMP.text = "";
+
+        skipped = false;
+
+        for (int i = 0; i < dialogue.Length; i++)
         {
-            yield return new WaitForSeconds(0.1f);
+            if (skipped)
+            {
+                mainTMP.text = dialogue;
+                break;
+            }
+
+            mainTMP.text += dialogue[i];
+            yield return new WaitForSeconds(typingSpeed);
+        }
+
+        skipped = false;
+
+        while (!skipped)
+        {
+            yield return null;
         }
 
         skipped = false;
         Debug.Log("Skipped dialogue");
-        yield break;
-
     }
 }

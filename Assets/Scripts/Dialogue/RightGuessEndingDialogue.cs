@@ -17,6 +17,8 @@ public class RightGuessEndingDialogue : MonoBehaviour
 
     public bool dialogueFinished = false;
     public string nextSceneName = "1-MainMenu";
+    
+    public float typingSpeed = 0.03f;
 
     public GameObject eloiseNeutral;
     public GameObject eloiseSuspicious;
@@ -190,27 +192,40 @@ public class RightGuessEndingDialogue : MonoBehaviour
         yield return new WaitForSeconds(2);
         endingText.SetActive(true);
         yield return new WaitForSeconds(5);
-        
+        SceneManager.LoadScene(nextSceneName);
     }
 
     IEnumerator currentDialogue(string name, string dialogue)
     {
-        mainText.GetComponent<TMP_Text>().text = dialogue;
-        charName.GetComponent<TMP_Text>().text = name;
+        TMP_Text mainTMP = mainText.GetComponent<TMP_Text>();
+        TMP_Text nameTMP = charName.GetComponent<TMP_Text>();
 
-        while (skipped == false)
+        nameTMP.text = name;
+        mainTMP.text = "";
+
+        skipped = false;
+
+        for (int i = 0; i < dialogue.Length; i++)
         {
-            yield return new WaitForSeconds(0.1f);
+            if (skipped)
+            {
+                mainTMP.text = dialogue;
+                break;
+            }
+
+            mainTMP.text += dialogue[i];
+            yield return new WaitForSeconds(typingSpeed);
+        }
+
+        skipped = false;
+
+        while (!skipped)
+        {
+            yield return null;
         }
 
         skipped = false;
         Debug.Log("Skipped dialogue");
-        if (dialogueFinished)
-        {
-            SceneManager.LoadScene(nextSceneName);
-        }
-
-        yield break;
     }
 
 }
