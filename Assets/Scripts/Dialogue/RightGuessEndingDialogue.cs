@@ -11,6 +11,7 @@ public class RightGuessEndingDialogue : MonoBehaviour
     [SerializeField] GameObject textBox;
     public GameObject mainText;
     public GameObject charName;
+    public GameObject endingText;
 
     public bool skipped = false;
 
@@ -38,6 +39,7 @@ public class RightGuessEndingDialogue : MonoBehaviour
         fadeOutTransition.SetActive(false);
         mainText.SetActive(false);
         textBox.SetActive(false);
+        endingText.SetActive(false);
 
         eloiseNeutral.SetActive(false);
         eloiseSuspicious.SetActive(false);
@@ -181,8 +183,14 @@ public class RightGuessEndingDialogue : MonoBehaviour
         yield return StartCoroutine(currentDialogue("", "Think about Mei, think about Lou, think about how she found those clues and connected them together herself."));
         yield return StartCoroutine(currentDialogue("", "Eloise never knew what she wanted to be in the future, but a clearer image was starting to form."));
         yield return StartCoroutine(currentDialogue("Eloise", "<i>A detective…</i>"));
-        dialogueFinished = true;
         yield return StartCoroutine(currentDialogue("Eloise", "<i>I wonder if Mei would be proud of me if I decided to continue down this path.</i>"));
+        dialogueFinished = true;
+        textBox.SetActive(false);
+        mainText.SetActive(false);
+        yield return new WaitForSeconds(2);
+        endingText.SetActive(true);
+        yield return new WaitForSeconds(5);
+        
     }
 
     IEnumerator currentDialogue(string name, string dialogue)
