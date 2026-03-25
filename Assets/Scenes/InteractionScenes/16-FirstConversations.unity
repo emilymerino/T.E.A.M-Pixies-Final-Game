@@ -567,7 +567,6 @@ GameObject:
   - component: {fileID: 233234941}
   - component: {fileID: 233234940}
   - component: {fileID: 233234939}
-  - component: {fileID: 233234942}
   m_Layer: 0
   m_Name: Quinton
   m_TagString: Quinton
@@ -700,19 +699,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &233234942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 233234937}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4333827b4fe2b403195e87285e5602a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  conversation: {fileID: 0}
 --- !u!1 &277738876
 GameObject:
   m_ObjectHideFlags: 0
@@ -2013,7 +1999,6 @@ GameObject:
   - component: {fileID: 711203794}
   - component: {fileID: 711203793}
   - component: {fileID: 711203792}
-  - component: {fileID: 711203795}
   m_Layer: 0
   m_Name: Zeke
   m_TagString: Zeke
@@ -2146,19 +2131,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &711203795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 711203790}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4333827b4fe2b403195e87285e5602a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  conversation: {fileID: 0}
 --- !u!1 &731696777
 GameObject:
   m_ObjectHideFlags: 0
@@ -2239,7 +2211,6 @@ GameObject:
   - component: {fileID: 751254072}
   - component: {fileID: 751254071}
   - component: {fileID: 751254070}
-  - component: {fileID: 751254073}
   m_Layer: 0
   m_Name: Archie
   m_TagString: Archie
@@ -2372,19 +2343,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &751254073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 751254068}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4333827b4fe2b403195e87285e5602a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  conversation: {fileID: 0}
 --- !u!1 &790677095
 GameObject:
   m_ObjectHideFlags: 0
@@ -3265,7 +3223,6 @@ GameObject:
   - component: {fileID: 1282108037}
   - component: {fileID: 1282108036}
   - component: {fileID: 1282108035}
-  - component: {fileID: 1282108038}
   m_Layer: 0
   m_Name: MissEvelyn
   m_TagString: MissEvelyn
@@ -3398,19 +3355,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1282108038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1282108033}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4333827b4fe2b403195e87285e5602a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  conversation: {fileID: 0}
 --- !u!1 &1450440585
 GameObject:
   m_ObjectHideFlags: 0
