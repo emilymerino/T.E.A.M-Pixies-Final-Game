@@ -268,6 +268,8 @@ GameObject:
   - component: {fileID: 195354582}
   - component: {fileID: 195354581}
   - component: {fileID: 195354580}
+  - component: {fileID: 195354585}
+  - component: {fileID: 195354584}
   m_Layer: 0
   m_Name: MissEvelynCircle
   m_TagString: Untagged
@@ -400,6 +402,66 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1116626195}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &195354584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195354579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e551d2e34db10724cac53abc0d6686f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCorrectChoice: 0
+  correctSceneName: 24-RightGuessEnding
+  wrongSceneName: 25-WrongGuessEndingDialogue
+--- !u!61 &195354585
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195354579}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 10.68, y: 10.46}
+    newSize: {x: 10.68, y: 10.46}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 10.68, y: 10.46}
+  m_EdgeRadius: 0
 --- !u!1 &230631939
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,6 +558,8 @@ GameObject:
   - component: {fileID: 277400080}
   - component: {fileID: 277400079}
   - component: {fileID: 277400078}
+  - component: {fileID: 277400083}
+  - component: {fileID: 277400082}
   m_Layer: 0
   m_Name: QuintonCircle
   m_TagString: Untagged
@@ -628,6 +692,66 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1116626195}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &277400082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277400077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e551d2e34db10724cac53abc0d6686f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCorrectChoice: 0
+  correctSceneName: 24-RightGuessEnding
+  wrongSceneName: 25-WrongGuessEndingDialogue
+--- !u!61 &277400083
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277400077}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 10.68, y: 10.46}
+    newSize: {x: 10.68, y: 10.46}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 10.68, y: 10.46}
+  m_EdgeRadius: 0
 --- !u!1 &286410721
 GameObject:
   m_ObjectHideFlags: 0
@@ -790,6 +914,8 @@ GameObject:
   - component: {fileID: 346961897}
   - component: {fileID: 346961896}
   - component: {fileID: 346961895}
+  - component: {fileID: 346961900}
+  - component: {fileID: 346961899}
   m_Layer: 0
   m_Name: ArchieCircle
   m_TagString: Untagged
@@ -922,6 +1048,66 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1116626195}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &346961899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346961894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e551d2e34db10724cac53abc0d6686f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCorrectChoice: 0
+  correctSceneName: 24-RightGuessEnding
+  wrongSceneName: 25-WrongGuessEndingDialogue
+--- !u!61 &346961900
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346961894}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 10.68, y: 10.46}
+    newSize: {x: 10.68, y: 10.46}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 10.68, y: 10.46}
+  m_EdgeRadius: 0
 --- !u!1 &370030876
 GameObject:
   m_ObjectHideFlags: 0
@@ -2539,6 +2725,8 @@ GameObject:
   - component: {fileID: 1291121113}
   - component: {fileID: 1291121112}
   - component: {fileID: 1291121111}
+  - component: {fileID: 1291121116}
+  - component: {fileID: 1291121115}
   m_Layer: 0
   m_Name: ZekeCircle
   m_TagString: Untagged
@@ -2671,6 +2859,66 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1116626195}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1291121115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291121110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e551d2e34db10724cac53abc0d6686f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCorrectChoice: 0
+  correctSceneName: 24-RightGuessEnding
+  wrongSceneName: 25-WrongGuessEndingDialogue
+--- !u!61 &1291121116
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291121110}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 10.68, y: 10.46}
+    newSize: {x: 10.68, y: 10.46}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 10.68, y: 10.46}
+  m_EdgeRadius: 0
 --- !u!1 &1345064954
 GameObject:
   m_ObjectHideFlags: 0
@@ -3340,6 +3588,8 @@ GameObject:
   - component: {fileID: 2134840217}
   - component: {fileID: 2134840216}
   - component: {fileID: 2134840215}
+  - component: {fileID: 2134840220}
+  - component: {fileID: 2134840219}
   m_Layer: 0
   m_Name: LouCircle
   m_TagString: Untagged
@@ -3472,6 +3722,66 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1116626195}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2134840219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134840214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e551d2e34db10724cac53abc0d6686f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCorrectChoice: 1
+  correctSceneName: 24-RightGuessEnding
+  wrongSceneName: 25-WrongGuessEndingDialogue
+--- !u!61 &2134840220
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134840214}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 10.68, y: 10.46}
+    newSize: {x: 10.68, y: 10.46}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 10.68, y: 10.46}
+  m_EdgeRadius: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
