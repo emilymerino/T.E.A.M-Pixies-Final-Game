@@ -5,24 +5,35 @@ using UnityEngine;
 public class BloodEffect : MonoBehaviour
 {
     public GameObject sparklePrefab;
-    public float sparkleInterval;
+    public Transform canvas; // drag your Canvas here
+    public float sparkleInterval = 0.05f;
     public Vector2 bloodTrailOffset = Vector2.zero;
+
     private float bloodTrailDelay;
 
     void Update()
     {
         bloodTrailDelay += Time.deltaTime;
+
         if (bloodTrailDelay >= sparkleInterval)
         {
             Vector3 mousePosition = Input.mousePosition;
-            mousePosition.x = mousePosition.x + bloodTrailOffset.x;
-            mousePosition.y = mousePosition.y + bloodTrailOffset.y;
-            Ray mouseRay = Camera.main.ScreenPointToRay(mousePosition);
-            GameObject sparkle = Instantiate(sparklePrefab);
 
-            sparkle.transform.position = new Vector3(mouseRay.origin.x, mouseRay.origin.y, 0f);
+            // apply offset
+            mousePosition.x += bloodTrailOffset.x;
+            mousePosition.y += bloodTrailOffset.y;
 
-            bloodTrailDelay -= sparkleInterval;
+            // spawn inside canvas
+            GameObject sparkle = Instantiate(sparklePrefab, canvas);
+
+            // set UI position
+            RectTransform rect = sparkle.GetComponent<RectTransform>();
+            rect.position = mousePosition;
+
+            // make sure it renders on top
+            sparkle.transform.SetAsFirstSibling();
+
+            bloodTrailDelay = 0f;
         }
     }
 }
