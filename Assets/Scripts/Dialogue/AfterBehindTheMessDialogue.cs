@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AfterBehindTheMessDialogue : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class AfterBehindTheMessDialogue : MonoBehaviour
     public GameObject charName;
 
     public bool skipped = false;
+
+    public bool dialogueFinished = false;
+    public string nextSceneName = "21-OClassroom";
 
     void Start()
     {
@@ -36,8 +40,8 @@ public class AfterBehindTheMessDialogue : MonoBehaviour
         yield return StartCoroutine(currentDialogue("", "Though this was an odd love letter considering there’s an angry blurb at the end that talks about how upset Archie was to see Mei with Quinton last week."));
         yield return StartCoroutine(currentDialogue("", "It was an… interesting read."));
         yield return StartCoroutine(currentDialogue("", "Eloise pockets the stuff she has found. With new items, she's sure she’ll get more information from certain people."));
+        dialogueFinished = true;
         yield return StartCoroutine(currentDialogue("", "She makes her way back to the meeting room. She’ll make sure to catch whoever did this to Mei."));
-
     }
 
     IEnumerator currentDialogue(string name, string dialogue)
@@ -52,7 +56,11 @@ public class AfterBehindTheMessDialogue : MonoBehaviour
 
         skipped = false;
         Debug.Log("Skipped dialogue");
-        yield break;
+        if (dialogueFinished)
+        {
+            SceneManager.LoadScene(nextSceneName);
+        }
 
+        yield break;
     }
 }
