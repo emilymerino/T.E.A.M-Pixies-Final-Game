@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AfterTornNoteDialogue : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class AfterTornNoteDialogue : MonoBehaviour
     public GameObject charName;
 
     public bool skipped = false;
+
+    public bool dialogueFinished = false;
+    public string nextSceneName = "11-Lockers";
 
     public GameObject eloise;
 
@@ -40,6 +44,7 @@ public class AfterTornNoteDialogue : MonoBehaviour
         eloise.SetActive(true);
         yield return StartCoroutine(currentDialogue("Eloise", "Q...?"));
         yield return StartCoroutine(currentDialogue("Eloise", " I only know one person who's name starts with a Q... I'll have to talk to him about this when I see him."));
+        dialogueFinished = true;
         yield return StartCoroutine(currentDialogue("Eloise", " I need to get back to the student council room quickly."));
     }
 
@@ -56,7 +61,11 @@ public class AfterTornNoteDialogue : MonoBehaviour
 
         skipped = false;
         Debug.Log("Skipped dialogue");
-        yield break;
+        if (dialogueFinished)
+        {
+            SceneManager.LoadScene(nextSceneName);
+        }
 
+        yield break;
     }
 }

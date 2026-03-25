@@ -62,7 +62,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DialogueScenes/10-AfterTornNote.unity
     guid: bdacdc2dead4646c98691bfab5a8f54c
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/DialogueScenes/14-AfterLockCode.unity
     guid: 9676b2b70511a4e6cb8bfe88f3e5ae58
   - enabled: 1
@@ -86,7 +86,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MinigameScenes/19-BehindTheMess.unity
     guid: eb6fe1838ae409446b7a9809617219f0
-  - enabled: 1
-    path: Assets/Scenes/DialogueScenes/14-AfterLockCodeMinigame.unity
-    guid: 8cb23dd3d144d400f876021ce9efc503
   m_configObjects: {}
