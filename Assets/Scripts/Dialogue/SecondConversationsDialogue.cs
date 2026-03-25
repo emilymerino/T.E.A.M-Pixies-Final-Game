@@ -420,12 +420,14 @@ public class SecondConversationsDialogue : MonoBehaviour
         quintonInteraction.SetActive(true);
         zekeInteraction.SetActive(true);
         missEvelynInteraction.SetActive(true);
+
+        /*
         louGlow.SetActive(true);
         archieGlow.SetActive(true);
         quintonGlow.SetActive(true);
         zekeGlow.SetActive(true);
         missEvelynGlow.SetActive(true);
-
+        */
     }
 
     private void enableText()
