@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SecondConversationsDialogue : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class SecondConversationsDialogue : MonoBehaviour
     public GameObject charName;
 
     public bool skipped = false;
+
+    public bool dialogueFinished = false;
+    public string nextSceneName = "23-GuessTheVampire";
 
     public GameObject louInteraction;
     public GameObject archieInteraction;
@@ -65,10 +69,11 @@ public class SecondConversationsDialogue : MonoBehaviour
         yield return new WaitForSeconds(1);
         textBox.SetActive(true);
         mainText.SetActive(true);
+        dialogueFinished = true;
 
     }
 
-        IEnumerator currentDialogue(string name, string dialogue)
+    IEnumerator currentDialogue(string name, string dialogue)
     {
         mainText.GetComponent<TMP_Text>().text = dialogue;
         charName.GetComponent<TMP_Text>().text = name;
@@ -80,7 +85,11 @@ public class SecondConversationsDialogue : MonoBehaviour
 
         skipped = false;
         Debug.Log("Skipped dialogue");
-        yield break;
+        if (dialogueFinished)
+        {
+            SceneManager.LoadScene(nextSceneName);
+        }
 
+        yield break;
     }
 }

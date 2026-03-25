@@ -91,34 +91,79 @@ public class SkipButton : MonoBehaviour
 
     public void firstConversationsSkip()
     {
-        GetComponent<FirstConversationsDialogue>().skipped = true;
-        Debug.Log("Skipped");
+        FirstConversationsDialogue dialogue = GetComponent<FirstConversationsDialogue>();
+
+        if (dialogue.dialogueFinished)
+        {
+            SceneManager.LoadScene(dialogue.nextSceneName);
+        }
+        else
+        {
+            dialogue.skipped = true;
+            Debug.Log("Skipped");
+        }
 
     }
 
     public void insideStorageRoomSkip()
     {
-        GetComponent<InsideStorageRoomDialogue>().skipped = true;
-        Debug.Log("Skipped");
+        InsideStorageRoomDialogue dialogue = GetComponent<InsideStorageRoomDialogue>();
+
+        if (dialogue.dialogueFinished)
+        {
+            SceneManager.LoadScene(dialogue.nextSceneName);
+        }
+        else
+        {
+            dialogue.skipped = true;
+            Debug.Log("Skipped");
+        }
     }
 
     public void afterBehindTheMessSkip()
     {
-        GetComponent<AfterBehindTheMessDialogue>().skipped = true;
-        Debug.Log("Skipped");
+        AfterBehindTheMessDialogue dialogue = GetComponent<AfterBehindTheMessDialogue>();
+
+        if (dialogue.dialogueFinished)
+        {
+            SceneManager.LoadScene(dialogue.nextSceneName);
+        }
+        else
+        {
+            dialogue.skipped = true;
+            Debug.Log("Skipped");
+        }
     }
 
     public void secondConversationsSkip()
     {
-        GetComponent<SecondConversationsDialogue>().skipped = true;
-        Debug.Log("Skipped");
+        SecondConversationsDialogue dialogue = GetComponent<SecondConversationsDialogue>();
+
+        if (dialogue.dialogueFinished)
+        {
+            SceneManager.LoadScene(dialogue.nextSceneName);
+        }
+        else
+        {
+            dialogue.skipped = true;
+            Debug.Log("Skipped");
+        }
 
     }
 
     public void rightGuessEndingSkip()
     {
-        GetComponent<RightGuessEndingDialogue>().skipped = true;
-        Debug.Log("Skipped");
+        RightGuessEndingDialogue dialogue = GetComponent<RightGuessEndingDialogue>();
+
+        if (dialogue.dialogueFinished)
+        {
+            SceneManager.LoadScene(dialogue.nextSceneName);
+        }
+        else
+        {
+            dialogue.skipped = true;
+            Debug.Log("Skipped");
+        }
     }
 
     public void wrongGuessEndingSkip()
@@ -138,7 +183,16 @@ public class SkipButton : MonoBehaviour
 
     public void secondBathroomSkip()
     {
-        GetComponent<SecondBathroomDialogue>().skipped = true;
-        Debug.Log("Skipped");
+        SecondConversationsDialogue dialogue = GetComponent<SecondConversationsDialogue>();
+
+        if (dialogue.dialogueFinished)
+        {
+            SceneManager.LoadScene(dialogue.nextSceneName);
+        }
+        else
+        {
+            dialogue.skipped = true;
+            Debug.Log("Skipped");
+        }
     }
 }
