@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canBeClicked: 0
-  nextSceneName: ThirdOutsideStudentCouncilInteractionScene
+  nextSceneName: 20-AfterBehindTheMess
   letterRenderer: {fileID: 9914464}
 --- !u!61 &9914467
 BoxCollider2D:
