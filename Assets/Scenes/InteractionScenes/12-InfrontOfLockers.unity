@@ -1910,7 +1910,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0758003ce5bb04f20b100f771ee13a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 374712742}
+  glowSprite: {fileID: 374712742}
 --- !u!61 &1987805304
 BoxCollider2D:
   m_ObjectHideFlags: 0

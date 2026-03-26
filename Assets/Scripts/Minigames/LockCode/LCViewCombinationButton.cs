@@ -6,7 +6,9 @@ public class LCViewCombinationButton : MonoBehaviour
 {
     public LCCombination combination;
 
+    private ISHoverGlow hoverGlow;
     public SpriteRenderer ViewCombinationButton;
+    
     public bool isSelected = false;
 
     void Start()
@@ -15,6 +17,13 @@ public class LCViewCombinationButton : MonoBehaviour
         {
             ViewCombinationButton = GetComponent<SpriteRenderer>();
         }
+
+        hoverGlow = GetComponent<ISHoverGlow>();
+        if (hoverGlow != null)
+        {
+            hoverGlow.HideGlow();
+        }
+
         ViewCombinationButton.gameObject.SetActive(false);
     }
 
@@ -36,8 +45,13 @@ public class LCViewCombinationButton : MonoBehaviour
         Debug.Log("Button Shown");
     }
 
-    public void HideReadyButton()
+    public void HideViewCombinationButton()
     {
+        if (hoverGlow != null)
+        {
+            hoverGlow.HideGlow();
+        }
+
         ViewCombinationButton.gameObject.SetActive(false);
         Debug.Log("Button Hidden");
     }
