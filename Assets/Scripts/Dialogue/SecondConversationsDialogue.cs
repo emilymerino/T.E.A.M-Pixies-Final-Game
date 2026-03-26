@@ -71,6 +71,9 @@ public class SecondConversationsDialogue : MonoBehaviour
 
     private void Update()
     {
+        if (ClueManager.Instance != null && ClueManager.Instance.IsInventoryOpen)
+            return;
+
         if (Input.GetMouseButtonDown(0))
         {
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);

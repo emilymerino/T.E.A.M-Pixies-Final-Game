@@ -11,6 +11,9 @@ public class GuessChoiceSprite : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (ClueManager.Instance != null && ClueManager.Instance.IsInventoryOpen)
+            return;
+
         if (isCorrectChoice)
         {
             SceneManager.LoadScene(correctSceneName);
