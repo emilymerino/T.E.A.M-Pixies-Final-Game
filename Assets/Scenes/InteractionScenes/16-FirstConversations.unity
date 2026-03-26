@@ -598,7 +598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0758003ce5bb04f20b100f771ee13a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 134821584}
+  glowSprite: {fileID: 134821584}
 --- !u!61 &233234940
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2030,7 +2030,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0758003ce5bb04f20b100f771ee13a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 1065542135}
+  glowSprite: {fileID: 1065542135}
 --- !u!61 &711203793
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2242,7 +2242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0758003ce5bb04f20b100f771ee13a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 2124613973}
+  glowSprite: {fileID: 2124613973}
 --- !u!61 &751254071
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2664,7 +2664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0758003ce5bb04f20b100f771ee13a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 623919795}
+  glowSprite: {fileID: 623919795}
 --- !u!61 &1005544018
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3254,7 +3254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0758003ce5bb04f20b100f771ee13a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 287919148}
+  glowSprite: {fileID: 287919148}
 --- !u!61 &1282108036
 BoxCollider2D:
   m_ObjectHideFlags: 0
