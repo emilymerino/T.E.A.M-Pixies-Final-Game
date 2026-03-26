@@ -223,10 +223,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2059695799}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &307645359
 Animator:
@@ -908,6 +908,7 @@ MonoBehaviour:
   dialogueFinished: 0
   nextSceneName: 21-OClassroom
   typingSpeed: 0.03
+  clue9: {fileID: 11400000, guid: 170fbe515366677488b0fff44ef66d56, type: 2}
 --- !u!4 &1524127306
 Transform:
   m_ObjectHideFlags: 0
@@ -1152,10 +1153,10 @@ RectTransform:
   - {fileID: 1599534469}
   m_Father: {fileID: 2059695799}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 540}
-  m_SizeDelta: {x: 0, y: 1080}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1658014622
 MonoBehaviour:

@@ -17,6 +17,7 @@ public class AfterBehindTheMessDialogue : MonoBehaviour
     public string nextSceneName = "21-OClassroom";
 
     public float typingSpeed = 0.03f;
+    public ClueData clue9; // storage room findings clue
 
     void Start()
     {
@@ -37,6 +38,9 @@ public class AfterBehindTheMessDialogue : MonoBehaviour
         mainText.SetActive(true);
 
         yield return StartCoroutine(currentDialogue("", "Eloise finds some unexpected things."));
+
+        ClueManager.Instance.UnlockClue(clue9); // unlocks findings
+
         yield return StartCoroutine(currentDialogue("", "The first thing was the transfers where it shows a record of purchasing blood packets. It was probably what Mei was looking at in the meeting room earlier."));
         yield return StartCoroutine(currentDialogue("", "And the second thing was some sort of letter. Upon closer inspection, it seems to be… a love letter? It says it’s from Archie to Mei."));
         yield return StartCoroutine(currentDialogue("", "Though this was an odd love letter considering there’s an angry blurb at the end that talks about how upset Archie was to see Mei with Quinton last week."));

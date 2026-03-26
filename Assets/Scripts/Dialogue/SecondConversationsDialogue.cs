@@ -49,6 +49,14 @@ public class SecondConversationsDialogue : MonoBehaviour
     public GameObject zekeNervous;
     public GameObject missEvelyn;
 
+    // second convo clues
+
+    public ClueData clue10;
+    public ClueData clue11;
+    public ClueData clue12;
+    public ClueData clue13;
+    public ClueData clue14;
+
 
     // Start is called before the first frame update
     void Start()
@@ -216,6 +224,9 @@ public class SecondConversationsDialogue : MonoBehaviour
         eloiseNeutral.SetActive(true);
         louNeutral.SetActive(false);
         yield return StartCoroutine(currentDialogue("Eloise", "<i>Odd to bring up Archie suddenly, but I’ll keep that in mind.</i>"));
+
+        ClueManager.Instance.UnlockClue(clue11); // lou clue
+
         eloiseNeutral.SetActive(false);
         louTalked = true;
 
@@ -260,6 +271,9 @@ public class SecondConversationsDialogue : MonoBehaviour
         eloiseSuspicious.SetActive(true);
         archieDarken.SetActive(false);
         yield return StartCoroutine(currentDialogue("Eloise", "<i>He was quick to shut that conversation down…</i>"));
+
+        ClueManager.Instance.UnlockClue(clue13); // archie clue
+
         eloiseSuspicious.SetActive(false);
         archieTalked = true;
 
@@ -297,6 +311,9 @@ public class SecondConversationsDialogue : MonoBehaviour
         quintonNeutral.SetActive(false);
         yield return StartCoroutine(currentDialogue("Eloise", "<i>Archie never mentioned seeing him in the hall before… strange.</i>"));
         eloiseSuspicious.SetActive(false);
+
+        ClueManager.Instance.UnlockClue(clue12); // quinton clue
+
         quintonTalked = true;
 
         enabledInteractions();
@@ -345,6 +362,9 @@ public class SecondConversationsDialogue : MonoBehaviour
         zekeNeutral.SetActive(true);
         yield return StartCoroutine(currentDialogue("Zeke", "I-If anything, Archie was probably the one who murdered Mei. Weirdly enough, he’s been hovering around her recently so I bet he has something to do with it."));
         zekeNeutral.SetActive(false);
+
+        ClueManager.Instance.UnlockClue(clue14); // zeke clue
+
         zekeTalked = true;
 
         enabledInteractions();
@@ -388,6 +408,9 @@ public class SecondConversationsDialogue : MonoBehaviour
         missEvelyn.SetActive(false);
         yield return StartCoroutine(currentDialogue("Eloise", "<i>Oh, I’m sure you didn’t…</i>"));
         eloiseSuspicious.SetActive(false);
+
+        ClueManager.Instance.UnlockClue(clue10); // miss evelyn clue
+
         missEvelynTalked = true;
 
         enabledInteractions();

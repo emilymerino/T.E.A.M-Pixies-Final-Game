@@ -3,7 +3,13 @@ guid: 1e3d66eeda52e4eec8e748fe03a5e32c
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - fadeTransition: {instanceID: 0}
+  - textBox: {instanceID: 0}
+  - mainText: {instanceID: 0}
+  - charName: {instanceID: 0}
+  - eloise: {instanceID: 0}
+  - clue2: {fileID: 11400000, guid: 5cdd83fa71f388c419d96d07e631ac76, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
