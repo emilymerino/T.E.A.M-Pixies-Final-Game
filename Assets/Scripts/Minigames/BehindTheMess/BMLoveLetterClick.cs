@@ -7,6 +7,8 @@ public class BMLoveLetterClick : MonoBehaviour
 {
     public bool canBeClicked = false;
     public string nextSceneName = "20-AfterBehindTheMess";
+
+    private ISHoverGlow hoverGlow;
     public SpriteRenderer letterRenderer;
 
     void Start()
@@ -14,6 +16,12 @@ public class BMLoveLetterClick : MonoBehaviour
         if (letterRenderer == null)
         {
             letterRenderer = GetComponent<SpriteRenderer>();
+        }
+
+        hoverGlow = GetComponent<ISHoverGlow>();
+        if (hoverGlow != null)
+        {
+            hoverGlow.HideGlow();
         }
 
         if (letterRenderer != null)

@@ -6,7 +6,9 @@ public class LCReadyButtonSelection : MonoBehaviour
 {
     public LCInstructionsPopUp instructionsPopUp;
 
+    private ISHoverGlow hoverGlow;
     public SpriteRenderer ReadyButton;
+
     public bool isSelected = false;
 
     void Start()
@@ -15,6 +17,13 @@ public class LCReadyButtonSelection : MonoBehaviour
         {
             ReadyButton = GetComponent<SpriteRenderer>();
         }
+
+        hoverGlow = GetComponent<ISHoverGlow>();
+        if (hoverGlow != null)
+        {
+            hoverGlow.HideGlow();
+        }
+
         ReadyButton.gameObject.SetActive(false);
     }
 
@@ -23,6 +32,12 @@ public class LCReadyButtonSelection : MonoBehaviour
         if (CompareTag("Selectable"))
         {
             isSelected = true;
+
+            if (hoverGlow != null)
+            {
+                hoverGlow.HideGlow();
+            }
+
             Debug.Log("Button Selected");
             HideReadyButton();
         }
@@ -38,6 +53,15 @@ public class LCReadyButtonSelection : MonoBehaviour
     {
         ReadyButton.gameObject.SetActive(false);
         Debug.Log("Button Hidden");
-        instructionsPopUp.HideInstructions();
+
+        if (hoverGlow != null)
+        {
+            hoverGlow.HideGlow();
+        }
+
+        if (instructionsPopUp != null)
+        {
+            instructionsPopUp.HideInstructions();
+        }
     }
 }

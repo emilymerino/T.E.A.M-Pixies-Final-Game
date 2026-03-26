@@ -596,7 +596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0758003ce5bb04f20b100f771ee13a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 2143470589}
+  glowSprite: {fileID: 2143470589}
 --- !u!1 &375749352
 GameObject:
   m_ObjectHideFlags: 0
@@ -2340,7 +2340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0758003ce5bb04f20b100f771ee13a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 1126179732}
+  glowSprite: {fileID: 1126179732}
 --- !u!1 &1145697757
 GameObject:
   m_ObjectHideFlags: 0
@@ -5132,14 +5132,14 @@ SceneRoots:
   - {fileID: 660703363}
   - {fileID: 225582991}
   - {fileID: 939588326}
-  - {fileID: 1130975981}
-  - {fileID: 1126179733}
-  - {fileID: 304211998}
-  - {fileID: 2143470590}
   - {fileID: 2093001084}
   - {fileID: 839493637}
   - {fileID: 772834474}
   - {fileID: 1967550399}
   - {fileID: 1664376903}
   - {fileID: 823710488}
+  - {fileID: 1130975981}
+  - {fileID: 1126179733}
+  - {fileID: 304211998}
+  - {fileID: 2143470590}
   - {fileID: 779009944}
