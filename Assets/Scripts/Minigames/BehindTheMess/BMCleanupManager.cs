@@ -10,7 +10,6 @@ public class BMCleanupManager : MonoBehaviour
     public BMIndicatorPopUp indicatorPopUp;
     public BMLoveLetterClick loveLetterClick;
 
-
     private bool finished = false;
 
     public void AddCleanedItem()

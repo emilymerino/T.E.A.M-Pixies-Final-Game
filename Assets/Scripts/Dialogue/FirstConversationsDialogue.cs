@@ -15,6 +15,8 @@ public class FirstConversationsDialogue : MonoBehaviour
     public bool skipped = false;
 
     public bool dialogueFinished = false;
+    public static bool isTalking = false;
+
     public string nextSceneName = "17-OutsideStorageRoom";
 
     public float typingSpeed = 0.03f;
@@ -218,6 +220,8 @@ public class FirstConversationsDialogue : MonoBehaviour
 
     public IEnumerator louConversation()
     {
+        FirstConversationsDialogue.isTalking = true;
+
         characters.SetActive(false);
         enableText();
 
@@ -253,16 +257,18 @@ public class FirstConversationsDialogue : MonoBehaviour
 
         louTalked = true;
 
-
-
         characters.SetActive(true);
         disableText();
+
+        FirstConversationsDialogue.isTalking = false;
 
         Debug.Log("Finished Lou's conversation");
     }
 
     public IEnumerator archieConversation()
     {
+        FirstConversationsDialogue.isTalking = true;
+
         characters.SetActive(false);
         enableText();
 
@@ -293,11 +299,15 @@ public class FirstConversationsDialogue : MonoBehaviour
         characters.SetActive(true);
         disableText();
 
+        FirstConversationsDialogue.isTalking = false;
+
         Debug.Log("Finished Archie's conversation");
     }
 
     public IEnumerator quintonConversation()
     {
+        FirstConversationsDialogue.isTalking = true;
+
         characters.SetActive(false);
         enableText();
 
@@ -333,11 +343,15 @@ public class FirstConversationsDialogue : MonoBehaviour
         characters.SetActive(true);
         disableText();
 
+        FirstConversationsDialogue.isTalking = false;
+
         Debug.Log("Finished Quinton's conversation");
     }
 
     public IEnumerator zekeConversation()
     {
+        FirstConversationsDialogue.isTalking = true;
+
         characters.SetActive(false);
         enableText();
 
@@ -364,11 +378,15 @@ public class FirstConversationsDialogue : MonoBehaviour
         characters.SetActive(true);
         disableText();
 
+        FirstConversationsDialogue.isTalking = false;
+
         Debug.Log("Finished Zeke's conversation");
     }
 
     public IEnumerator missEvelynConversation()
     {
+        FirstConversationsDialogue.isTalking = true;
+
         characters.SetActive(false);
         enableText();
 
@@ -403,6 +421,8 @@ public class FirstConversationsDialogue : MonoBehaviour
 
         characters.SetActive(true);
         disableText();
+
+        FirstConversationsDialogue.isTalking = false;
 
         Debug.Log("Finished Miss Evelyn's conversation");
     }
