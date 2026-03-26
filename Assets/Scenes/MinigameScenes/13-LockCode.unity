@@ -4441,6 +4441,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statusLightsBehaviour: {fileID: 839493638}
   LockUnlocked: {fileID: 1967550398}
+  nextSceneName: 14-AfterLockCodeMinigame
 --- !u!1 &1968668025
 GameObject:
   m_ObjectHideFlags: 0
