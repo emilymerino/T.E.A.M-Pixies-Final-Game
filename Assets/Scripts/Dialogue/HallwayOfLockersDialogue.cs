@@ -14,7 +14,7 @@ public class HallwayOfLockersDialogue : MonoBehaviour
 
     public GameObject lockerGlow;
     public GameObject locker;
-    //public GameObject lockerModified;
+    public GameObject lockerModified;
     public GameObject exclamationMark;
 
     public float typingSpeed = 0.03f;
@@ -29,7 +29,7 @@ public class HallwayOfLockersDialogue : MonoBehaviour
 
         lockerGlow.SetActive(false);
         locker.SetActive(false);
-        //lockerModified.SetActive(false);
+        lockerModified.SetActive(false);
         exclamationMark.SetActive(false);
 
 
@@ -52,7 +52,7 @@ public class HallwayOfLockersDialogue : MonoBehaviour
 
         lockerGlow.SetActive(true);
         locker.SetActive(true);
-        //lockerModified.SetActive(true);
+        lockerModified.SetActive(true);
         exclamationMark.SetActive(true);
     }
 
