@@ -19,16 +19,7 @@ public class FirstConversationsDialogue : MonoBehaviour
 
     public float typingSpeed = 0.03f;
 
-    public GameObject louInteraction;
-    public GameObject archieInteraction;
-    public GameObject quintonInteraction;
-    public GameObject zekeInteraction;
-    public GameObject missEvelynInteraction;
-    public GameObject louGlow;
-    public GameObject archieGlow;
-    public GameObject quintonGlow;
-    public GameObject zekeGlow;
-    public GameObject missEvelynGlow;
+    public GameObject characters;
 
     public bool louTalked;
     public bool archieTalked;
@@ -68,7 +59,7 @@ public class FirstConversationsDialogue : MonoBehaviour
         fadeTransition.SetActive(true);
         disableText();
 
-        disableInteractions();
+        characters.SetActive(false);
 
         louTalked = false;
         archieTalked = false;
@@ -168,12 +159,12 @@ public class FirstConversationsDialogue : MonoBehaviour
     {
         disableText();
 
-        enabledInteractions();
+        characters.SetActive(true);
 
 
         yield return new WaitUntil(() => louTalked && archieTalked && quintonTalked && zekeTalked && missEvelynTalked);
 
-        disableInteractions();
+        characters.SetActive(false);
 
         enableText();
 
@@ -227,7 +218,7 @@ public class FirstConversationsDialogue : MonoBehaviour
 
     public IEnumerator louConversation()
     {
-        disableInteractions();
+        characters.SetActive(false);
         enableText();
 
         eloiseNeutral.SetActive(true);
@@ -262,9 +253,9 @@ public class FirstConversationsDialogue : MonoBehaviour
 
         louTalked = true;
 
-       
 
-        enabledInteractions();
+
+        characters.SetActive(true);
         disableText();
 
         Debug.Log("Finished Lou's conversation");
@@ -272,7 +263,7 @@ public class FirstConversationsDialogue : MonoBehaviour
 
     public IEnumerator archieConversation()
     {
-        disableInteractions();
+        characters.SetActive(false);
         enableText();
 
         eloiseNeutral.SetActive(true);
@@ -299,7 +290,7 @@ public class FirstConversationsDialogue : MonoBehaviour
         archieTalked = true;
 
 
-        enabledInteractions();
+        characters.SetActive(true);
         disableText();
 
         Debug.Log("Finished Archie's conversation");
@@ -307,7 +298,7 @@ public class FirstConversationsDialogue : MonoBehaviour
 
     public IEnumerator quintonConversation()
     {
-        disableInteractions();
+        characters.SetActive(false);
         enableText();
 
         eloiseSuspicious.SetActive(true);
@@ -339,7 +330,7 @@ public class FirstConversationsDialogue : MonoBehaviour
 
         quintonTalked = true;
 
-        enabledInteractions();
+        characters.SetActive(true);
         disableText();
 
         Debug.Log("Finished Quinton's conversation");
@@ -347,7 +338,7 @@ public class FirstConversationsDialogue : MonoBehaviour
 
     public IEnumerator zekeConversation()
     {
-        disableInteractions();
+        characters.SetActive(false);
         enableText();
 
         eloiseNeutral.SetActive(true);
@@ -370,7 +361,7 @@ public class FirstConversationsDialogue : MonoBehaviour
 
         zekeTalked = true;
 
-        enabledInteractions();
+        characters.SetActive(true);
         disableText();
 
         Debug.Log("Finished Zeke's conversation");
@@ -378,7 +369,7 @@ public class FirstConversationsDialogue : MonoBehaviour
 
     public IEnumerator missEvelynConversation()
     {
-        disableInteractions();
+        characters.SetActive(false);
         enableText();
 
         missEvelynNeutral.SetActive(true);
@@ -410,45 +401,13 @@ public class FirstConversationsDialogue : MonoBehaviour
 
         missEvelynTalked = true;
 
-        enabledInteractions();
+        characters.SetActive(true);
         disableText();
 
         Debug.Log("Finished Miss Evelyn's conversation");
     }
 
     //Enable + Disable
-
-    private void disableInteractions()
-    {
-        louInteraction.SetActive(false);
-        archieInteraction.SetActive(false);
-        quintonInteraction.SetActive(false);
-        zekeInteraction.SetActive(false);
-        missEvelynInteraction.SetActive(false);
-        louGlow.SetActive(false);
-        archieGlow.SetActive(false);
-        quintonGlow.SetActive(false);
-        zekeGlow.SetActive(false);
-        missEvelynGlow.SetActive(false);
-
-    }
-
-    private void enabledInteractions()
-    {
-        louInteraction.SetActive(true);
-        archieInteraction.SetActive(true);
-        quintonInteraction.SetActive(true);
-        zekeInteraction.SetActive(true);
-        missEvelynInteraction.SetActive(true);
-
-        /*
-        louGlow.SetActive(true);
-        archieGlow.SetActive(true);
-        quintonGlow.SetActive(true);
-        zekeGlow.SetActive(true);
-        missEvelynGlow.SetActive(true);
-        */
-    }
 
     private void enableText()
     {

@@ -175,16 +175,7 @@ MonoBehaviour:
   dialogueFinished: 0
   nextSceneName: 17-OutsideStorageRoom
   typingSpeed: 0.03
-  louInteraction: {fileID: 1005544015}
-  archieInteraction: {fileID: 751254068}
-  quintonInteraction: {fileID: 233234937}
-  zekeInteraction: {fileID: 711203790}
-  missEvelynInteraction: {fileID: 1282108033}
-  louGlow: {fileID: 623919793}
-  archieGlow: {fileID: 2124613971}
-  quintonGlow: {fileID: 134821582}
-  zekeGlow: {fileID: 1065542133}
-  missEvelynGlow: {fileID: 287919146}
+  characters: {fileID: 181371502}
   louTalked: 0
   archieTalked: 0
   quintonTalked: 0
