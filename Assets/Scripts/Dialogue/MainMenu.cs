@@ -5,8 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public UIHoverGlow hoverGlow;
+
     public void GameStart()
     {
+        if (hoverGlow != null)
+        {
+            hoverGlow.HideGlow();
+        }
+
         SceneManager.LoadSceneAsync("2-Outside");
     }
 
