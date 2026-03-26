@@ -8,7 +8,6 @@ public class LCCombinationChecker : MonoBehaviour
     public LCCombination combination;
     public LCLockBehaviour lockBehaviour;
     public LCLockUnlockedBehaviour lockUnlockedBehaviour;
-    public LCGameGuideManager gameGuideManager;
     public LCStatusLightsBehaviour statusLightsBehaviour;
 
     public bool CompareCombinations(List<SpriteRenderer> combinationList, List<SpriteRenderer> playersSelection)
@@ -43,9 +42,7 @@ public class LCCombinationChecker : MonoBehaviour
         combination.HideNotCombinationList();
 
         statusLightsBehaviour.ResetStatusLights();
-
         statusLightsBehaviour.ShowLockedStatusLights(3f);
-        gameGuideManager.ShowNotQuite("Not quite, try again", 3f);
 
         selectionManager.canSelect = true;
 
@@ -57,10 +54,8 @@ public class LCCombinationChecker : MonoBehaviour
         combination.HideCombination();
 
         lockBehaviour.HideLock();
-        lockUnlockedBehaviour.ShowLockUnlocked();
 
-        gameGuideManager.HideInPlayInstructions();
-        gameGuideManager.ShowYouGotIt();
+        lockUnlockedBehaviour.ShowLockUnlocked();
 
         statusLightsBehaviour.ResetStatusLights();
         statusLightsBehaviour.ShowUnlockedStatusLights();
