@@ -15,7 +15,6 @@ TagManager:
   - Zeke
   - TornNote
   - SchoolDoors
-  - Locker
   - Lock
   - StorageRoomDoor
   - FirstStudentCouncilDoor
@@ -24,6 +23,8 @@ TagManager:
   - ThirdStudentCouncilDoor
   - SecondOpenedBathroomDoor
   - DropBox
+  - Sleeve
+  - Locker
   layers:
   - Default
   - TransparentFX
