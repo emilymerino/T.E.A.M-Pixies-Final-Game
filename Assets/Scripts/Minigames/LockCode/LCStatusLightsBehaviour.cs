@@ -8,90 +8,78 @@ public class LCStatusLightsBehaviour : MonoBehaviour
 
     public List<SpriteRenderer> statusLightsList;
     public List<SpriteRenderer> unlockedStatusLightsList;
-    //public List<SpriteRenderer> lockedStatusLightsList;
 
     [SerializeField] private List<SpriteRenderer> lockedStatusLightsList;
+
+    public bool isLockedShowing = false;
 
     private int currentIndex = 0;
 
     void Start()
     {
-        if (statusLightsList != null)
-        {
-            foreach (SpriteRenderer statusLight in statusLightsList)
-            {
-                if (statusLight != null)
-                    statusLight.enabled = false;
-            }
-        }
+        TurnOffList(statusLightsList);
+        TurnOffList(unlockedStatusLightsList);
+        TurnOffList(lockedStatusLightsList);
+    }
 
-        if (unlockedStatusLightsList != null)
-        {
-            foreach (SpriteRenderer uStatusLight in unlockedStatusLightsList)
-            {
-                if (uStatusLight != null)
-                    uStatusLight.enabled = false;
-            }
-        }
+    void TurnOffList(List<SpriteRenderer> list)
+    {
+        if (list == null) return;
 
-        if (lockedStatusLightsList != null)
+        foreach (SpriteRenderer light in list)
         {
-            foreach (SpriteRenderer lStatusLight in lockedStatusLightsList)
-            {
-                if (lStatusLight != null)
-                    lStatusLight.enabled = false;
-            }
+            if (light != null)
+                light.enabled = false;
         }
     }
 
     public void ShowStatusLights()
     {
-        for (int i = 0; i < statusLightsList.Count; i++)
+        if (currentIndex < statusLightsList.Count)
         {
-            statusLightsList[currentIndex].enabled = true; // show current sprite
-        }
-        currentIndex++;
-
-        if (currentIndex >= statusLightsList.Count)
-        {
-            currentIndex = 0;
+            statusLightsList[currentIndex].enabled = true;
+            currentIndex++;
         }
     }
 
     public void HideStatusLights()
     {
-        foreach (SpriteRenderer statusLight in statusLightsList)
+        foreach (SpriteRenderer light in statusLightsList)
         {
-            if (statusLight != null)
-            {
-                statusLight.enabled = false;
-                selectionManager.playersSelection.Clear();
-            }
+            if (light != null)
+                light.enabled = false;
         }
+
+        selectionManager.playersSelection.Clear();
     }
 
     public void ShowUnlockedStatusLights()
     {
-        for (int i = 0; i < unlockedStatusLightsList.Count; i++)
+        foreach (SpriteRenderer light in unlockedStatusLightsList)
         {
-            unlockedStatusLightsList[i].enabled = true; // show current sprite
+            if (light != null)
+                light.enabled = true;
         }
     }
 
     public void ShowLockedStatusLights(float duration)
     {
         StopAllCoroutines();
-        StartCoroutine(ShowlockedLightsRoutine(duration));
+        StartCoroutine(ShowLockedLightsRoutine(duration));
     }
 
-    private IEnumerator ShowlockedLightsRoutine(float duration)
+    private IEnumerator ShowLockedLightsRoutine(float duration)
     {
-        foreach (SpriteRenderer lStatusLight in lockedStatusLightsList)
+        isLockedShowing = true;
+
+        // block input
+        if (selectionManager != null)
+            selectionManager.canSelect = false;
+
+        foreach (SpriteRenderer light in lockedStatusLightsList)
         {
-            if (lStatusLight != null)
-            {
-                lStatusLight.enabled = true;
-            }
+            if (light != null)
+                light.enabled = true;
         }
 
         yield return new WaitForSeconds(duration);
@@ -99,33 +87,25 @@ public class LCStatusLightsBehaviour : MonoBehaviour
         foreach (SpriteRenderer light in lockedStatusLightsList)
         {
             if (light != null)
-            {
                 light.enabled = false;
-            }
         }
+
+        // unlock
+        isLockedShowing = false;
+
+        // allow selection again after lock is gone
+        if (selectionManager != null)
+            selectionManager.canSelect = true;
     }
 
     public void ResetStatusLights()
     {
-        foreach (SpriteRenderer light in statusLightsList) // turn off normal lights
+        TurnOffList(statusLightsList);
+        TurnOffList(unlockedStatusLightsList);
+        TurnOffList(lockedStatusLightsList);
 
-        {
-            if (light != null)
-                light.enabled = false;
-        }
-
-        foreach (SpriteRenderer light in unlockedStatusLightsList) // turn off unlocked lights
-        {
-            if (light != null)
-                light.enabled = false;
-        }
-
-        foreach (SpriteRenderer light in lockedStatusLightsList) // turn off locked lights
-        {
-            if (light != null)
-                light.enabled = false;
-        }
         currentIndex = 0;
+
         selectionManager.playersSelection.Clear();
     }
 }

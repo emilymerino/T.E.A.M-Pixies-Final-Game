@@ -15,32 +15,36 @@ public class LCSelectionManager : MonoBehaviour
 
     public void AddToSelection(SpriteRenderer buttonLight)
     {
-        if (!canSelect) return;
+        if (!canSelect || statusLightsBehaviour.isLockedShowing || playersSelection.Count >= maxSelections)
+            return;
 
-        if (currentButtonLight != null) // turn off previous button light
-        {
+        // turn off previous light
+        if (currentButtonLight != null)
             currentButtonLight.enabled = false;
-        }
 
         // set new light
         currentButtonLight = buttonLight;
         currentButtonLight.enabled = true;
 
-        playersSelection.Add(buttonLight); // allow duplicates
-        Debug.Log(buttonLight.gameObject.name + " added to list.");
+        playersSelection.Add(buttonLight);
+        Debug.Log(buttonLight.gameObject.name + " added.");
+
         statusLightsBehaviour.ShowStatusLights();
 
-        if (playersSelection.Count >= maxSelections)
+        // reached max, lock input
+        if (playersSelection.Count == maxSelections)
         {
-            Debug.Log("Maximum selections reached");
+            Debug.Log("Max selections reached");
 
-             StartCoroutine(CompareAfterDelay());
+            canSelect = false;
+
+            StartCoroutine(CompareAfterDelay());
         }
     }
 
     IEnumerator CompareAfterDelay()
     {
-        yield return new WaitForSeconds(2f); // keep last light on for 2 seconds
+        yield return new WaitForSeconds(2f);
 
         combinationChecker.CompareCombinations(
             combinationChecker.combination.combinationList,
@@ -48,4 +52,3 @@ public class LCSelectionManager : MonoBehaviour
         );
     }
 }
-
