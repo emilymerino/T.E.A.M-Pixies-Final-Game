@@ -23,6 +23,9 @@ public class GuessReadyButton : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (ClueManager.Instance != null && ClueManager.Instance.IsInventoryOpen)
+            return;
+
         if (hoverGlow != null)
         {
             hoverGlow.HideGlow();
