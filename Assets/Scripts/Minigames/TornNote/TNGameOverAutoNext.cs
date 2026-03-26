@@ -17,7 +17,7 @@ public class TNGameOverAutoNext : MonoBehaviour
 
         SMMinigameAutoNext loader = FindObjectOfType<SMMinigameAutoNext>();
 
-        if (loader != null )
+        if (loader != null)
         {
             loader.LoadNextScene();
         }

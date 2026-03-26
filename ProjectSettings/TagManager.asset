@@ -25,6 +25,7 @@ TagManager:
   - DropBox
   - Sleeve
   - Locker
+  - BathroomDoor
   layers:
   - Default
   - TransparentFX
