@@ -1133,7 +1133,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 431f58f79c06b4fd98fe8b5e97e142d7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3923,7 +3923,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: a79e6f20de3b4414faee9f2caf394e0b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4007,7 +4007,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 91559484de6d84ff18e8bce854b508c1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4283,7 +4283,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1166184183
 Transform:
   m_ObjectHideFlags: 0
@@ -4638,8 +4638,8 @@ MonoBehaviour:
   alertRedSiren: {fileID: 21300000, guid: 9c202488fd0974a0d844301c36905cd3, type: 3}
   BlueSiren: {fileID: 1869308318}
   alertBlueSiren: {fileID: 21300000, guid: 5a0663068f061468590240ac30d75e7a, type: 3}
-  onTime: 2
-  offTime: 2
+  onTime: 0.5
+  offTime: 0.5
 --- !u!4 &1211174703
 Transform:
   m_ObjectHideFlags: 0

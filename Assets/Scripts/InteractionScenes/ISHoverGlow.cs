@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ISHoverGlow : MonoBehaviour
@@ -13,6 +11,9 @@ public class ISHoverGlow : MonoBehaviour
 
     void OnMouseEnter()
     {
+        // ❌ don't glow while talking
+        if (FirstConversationsDialogue.isTalking) return;
+
         Sprite.gameObject.SetActive(true);
         Debug.Log("Enter");
     }
