@@ -683,6 +683,7 @@ MonoBehaviour:
   lockGlow: {fileID: 374712741}
   exclamationMark: {fileID: 1242954911}
   skipped: 0
+  typingSpeed: 0.03
 --- !u!4 &283064514
 Transform:
   m_ObjectHideFlags: 0
@@ -1174,10 +1175,10 @@ RectTransform:
   - {fileID: 100865501}
   m_Father: {fileID: 274883652}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1920, y: 1080}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 540}
+  m_SizeDelta: {x: 0, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1095827841
 MonoBehaviour:
@@ -2000,10 +2001,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 274883652}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1920, y: 1080}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &2147066423
 Animator:

@@ -7,7 +7,6 @@ public class LCInstructionsPopUp : MonoBehaviour
 {
     public LCReadyButtonSelection readyButtonSelection;
     public LCLockBehaviour lockBehaviour;
-    public LCGameGuideManager gameGuideManager;
 
     public TextMeshProUGUI Instructions;
 
@@ -30,7 +29,7 @@ public class LCInstructionsPopUp : MonoBehaviour
     {
         Instructions.gameObject.SetActive(false); 
         lockBehaviour.ShowLock();
-        gameGuideManager.ShowWatchCombination();
+
         enabled = false;
     }
 }

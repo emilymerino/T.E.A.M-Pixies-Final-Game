@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class RightGuessEndingDialogue : MonoBehaviour
 {
-    public GameObject fadeInTransition;
+    public GameObject fadeInTransition1;
+    public GameObject fadeInTransition2;
     public GameObject fadeOutTransition;
     [SerializeField] GameObject textBox;
     public GameObject mainText;
@@ -34,10 +35,13 @@ public class RightGuessEndingDialogue : MonoBehaviour
     public GameObject missEvelynNeutral;
     public GameObject missEvelynStern;
 
+    public GameObject background;
+
     // Start is called before the first frame update
     void Start()
     {
-        fadeInTransition.SetActive(true);
+        fadeInTransition1.SetActive(true);
+        fadeInTransition2.SetActive(false);
         fadeOutTransition.SetActive(false);
         mainText.SetActive(false);
         textBox.SetActive(false);
@@ -57,13 +61,15 @@ public class RightGuessEndingDialogue : MonoBehaviour
         missEvelynNeutral.SetActive(false);
         missEvelynStern.SetActive(false);
 
+        background.SetActive(true);
+
         StartCoroutine(DialogueStart());
     }
 
     IEnumerator DialogueStart()
     {
         yield return new WaitForSeconds(2);
-        fadeInTransition.SetActive(false);
+        fadeInTransition1.SetActive(false);
         yield return new WaitForSeconds(1);
         textBox.SetActive(true);
         mainText.SetActive(true);
@@ -172,9 +178,13 @@ public class RightGuessEndingDialogue : MonoBehaviour
 
         textBox.SetActive(false);
         mainText.SetActive(false);
-        fadeOutTransition.SetActive(true);
-        yield return new WaitForSeconds(2);
         missEvelynStern.SetActive(false);
+        fadeOutTransition.SetActive(true);
+        yield return new WaitForSeconds(3);
+        background.SetActive(false);
+        fadeOutTransition.SetActive(false);
+        fadeInTransition2.SetActive(true);
+        yield return new WaitForSeconds(2);
         textBox.SetActive(true);
         mainText.SetActive(true);
 

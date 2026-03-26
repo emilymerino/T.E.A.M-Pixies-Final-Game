@@ -302,16 +302,7 @@ MonoBehaviour:
   dialogueFinished: 0
   nextSceneName: 23-GuessTheVampire
   typingSpeed: 0.03
-  louInteraction: {fileID: 1855740207}
-  archieInteraction: {fileID: 1145835005}
-  quintonInteraction: {fileID: 957533877}
-  zekeInteraction: {fileID: 740963183}
-  missEvelynInteraction: {fileID: 1083002621}
-  louGlow: {fileID: 419530122}
-  archieGlow: {fileID: 1048204861}
-  quintonGlow: {fileID: 2034698905}
-  zekeGlow: {fileID: 1421447144}
-  missEvelynGlow: {fileID: 1595873376}
+  characters: {fileID: 2079822261}
   louTalked: 0
   archieTalked: 0
   quintonTalked: 0
@@ -1521,10 +1512,10 @@ RectTransform:
   - {fileID: 268198280}
   m_Father: {fileID: 1028967456}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1920, y: 1080}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 540}
+  m_SizeDelta: {x: 0, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &736720890
 MonoBehaviour:
@@ -2119,10 +2110,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1028967456}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1920, y: 1080}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1017313475
 Animator:

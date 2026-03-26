@@ -8,7 +8,6 @@ public class LCCombinationChecker : MonoBehaviour
     public LCCombination combination;
     public LCLockBehaviour lockBehaviour;
     public LCLockUnlockedBehaviour lockUnlockedBehaviour;
-    public LCGameGuideManager gameGuideManager;
     public LCStatusLightsBehaviour statusLightsBehaviour;
 
     public bool CompareCombinations(List<SpriteRenderer> combinationList, List<SpriteRenderer> playersSelection)
@@ -20,12 +19,7 @@ public class LCCombinationChecker : MonoBehaviour
 
         if (combinationList.Count != playersSelection.Count)
         {
-            combination.HideCombination();
-            combination.HideNotCombinationList();
-            statusLightsBehaviour.HideStatusLights();
-            statusLightsBehaviour.ShowLockedStatusLights(3f);
-            gameGuideManager.ShowNotQuite("Not quite, try again", 3f);
-            Debug.Log("Lists are different lengths");
+            HandleFailure("Lists are different lengths");
             return false;
         }
 
@@ -33,27 +27,39 @@ public class LCCombinationChecker : MonoBehaviour
         {
             if (combinationList[i] != playersSelection[i])
             {
-                combination.HideCombination();
-                combination.HideNotCombinationList();
-                statusLightsBehaviour.HideStatusLights();
-                statusLightsBehaviour.ShowLockedStatusLights(3f);
-                gameGuideManager.ShowNotQuite("Not quite, try again", 3f);
-                Debug.Log("Lists are not the same");
+                HandleFailure("Lists are not the same");
                 return false;
             }
         }
-        combination.HideCombination();
-        lockBehaviour.HideLock();
-        lockUnlockedBehaviour.ShowLockUnlocked();
-        gameGuideManager.HideInPlayInstructions();
-        statusLightsBehaviour.HideStatusLights();
-        gameGuideManager.ShowYouGotIt();
-        Debug.Log("Lists are the same");
+
+        HandleSuccess();
         return true;
     }
 
-    public void ClearSelection()
+    private void HandleFailure(string debugMessage)
     {
-        //selectionManager.playersSelection.Clear();
+        combination.HideCombination();
+        combination.HideNotCombinationList();
+
+        statusLightsBehaviour.ResetStatusLights();
+        statusLightsBehaviour.ShowLockedStatusLights(3f);
+
+        selectionManager.canSelect = true;
+
+        Debug.Log(debugMessage);
+    }
+
+    private void HandleSuccess()
+    {
+        combination.HideCombination();
+
+        lockBehaviour.HideLock();
+
+        lockUnlockedBehaviour.ShowLockUnlocked();
+
+        statusLightsBehaviour.ResetStatusLights();
+        statusLightsBehaviour.ShowUnlockedStatusLights();
+
+        selectionManager.canSelect = false;
     }
 }

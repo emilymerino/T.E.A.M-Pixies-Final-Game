@@ -6,7 +6,6 @@ public class LCCombination : MonoBehaviour
 {
     public LCSelectionManager selectionManager;
     public LCPlayerSelection playerSelection;
-    public LCGameGuideManager gameGuideManager;
     public LCViewCombinationButton viewCombinationButton;
     public LCStatusLightsBehaviour statusLightsBehaviour;
 
@@ -74,8 +73,6 @@ public class LCCombination : MonoBehaviour
             {
                 buttonLight.enabled = false;
                 selectionManager.playersSelection.Clear();
-                gameGuideManager.HideWatchCombination();
-                gameGuideManager.ShowInPlayInstructions();
             }
         }
     }
