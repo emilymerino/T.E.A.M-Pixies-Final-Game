@@ -393,7 +393,7 @@ MonoBehaviour:
   lockerGlow: {fileID: 507079005}
   locker: {fileID: 627773535}
   lockerModified: {fileID: 1944158157}
-  exclamationMark: {fileID: 1788172073}
+  exclamationMark: {fileID: 1500369418}
   typingSpeed: 0.03
 --- !u!4 &183053626
 Transform:

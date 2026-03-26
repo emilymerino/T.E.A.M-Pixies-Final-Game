@@ -681,7 +681,7 @@ MonoBehaviour:
   lockOnLocker: {fileID: 1987805300}
   lockOnLockerImage: {fileID: 1600278908}
   lockGlow: {fileID: 374712741}
-  exclamationMark: {fileID: 1242954911}
+  exclamationMark: {fileID: 830906619}
   skipped: 0
   typingSpeed: 0.03
 --- !u!4 &283064514
