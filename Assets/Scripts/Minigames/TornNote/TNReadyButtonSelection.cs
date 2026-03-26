@@ -9,6 +9,7 @@ public class TNReadyButtonSelection : MonoBehaviour
     public GameObject instructionsTitle;
     public GameObject instructionsBody;
 
+    private ISHoverGlow hoverGlow;
     private SpriteRenderer ReadyButton;
 
     public bool isSelected = false;
@@ -16,6 +17,8 @@ public class TNReadyButtonSelection : MonoBehaviour
     void Start()
     {
         ReadyButton = GetComponent<SpriteRenderer>();
+        hoverGlow = GetComponent<ISHoverGlow>();
+
         ReadyButton.enabled = false;
     }
 
@@ -43,6 +46,11 @@ public class TNReadyButtonSelection : MonoBehaviour
     public void HideReadyButton()
     {
         ReadyButton.enabled = false;
+
+        if (hoverGlow != null)
+        {
+            hoverGlow.HideGlow();
+        }
 
         if (instructionsTitle != null)
         {

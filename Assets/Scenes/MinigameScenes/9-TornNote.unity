@@ -1246,7 +1246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0758003ce5bb04f20b100f771ee13a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 874785649}
+  glowSprite: {fileID: 874785649}
 --- !u!1 &672574953
 GameObject:
   m_ObjectHideFlags: 0

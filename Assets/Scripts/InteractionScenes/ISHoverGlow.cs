@@ -1,26 +1,53 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ISHoverGlow : MonoBehaviour
 {
-    public SpriteRenderer Sprite;
+    public SpriteRenderer glowSprite;
+    private SpriteRenderer buttonSprite;
+    private Collider2D buttonCollider;
 
     void Start()
     {
-        Sprite.gameObject.SetActive(false); // starts hidden
+        buttonSprite = GetComponent<SpriteRenderer>();
+        buttonCollider = GetComponent<Collider2D>();
+
+        if (glowSprite != null)
+        {
+            glowSprite.enabled = false;
+        }
     }
 
-    void OnMouseEnter()
+    void Update()
     {
-        // ❌ don't glow while talking
-        if (FirstConversationsDialogue.isTalking) return;
+        if (glowSprite == null || buttonSprite == null || buttonCollider == null)
+            return;
 
-        Sprite.gameObject.SetActive(true);
-        Debug.Log("Enter");
+        if (!buttonSprite.enabled)
+        {
+            glowSprite.enabled = false;
+            return;
+        }
+
+        Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        if (buttonCollider.OverlapPoint(mouseWorldPos))
+        {
+            glowSprite.enabled = true;
+        }
+        else
+        {
+            glowSprite.enabled = false;
+        }
     }
 
-    void OnMouseExit()
+    public void HideGlow()
     {
-        Sprite.gameObject.SetActive(false);
-        Debug.Log("Exit");
+        if (glowSprite != null)
+        {
+            glowSprite.enabled = false;
+        }
+
     }
 }
