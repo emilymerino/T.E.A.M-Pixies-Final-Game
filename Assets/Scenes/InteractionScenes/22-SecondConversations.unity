@@ -302,16 +302,7 @@ MonoBehaviour:
   dialogueFinished: 0
   nextSceneName: 23-GuessTheVampire
   typingSpeed: 0.03
-  louInteraction: {fileID: 1855740207}
-  archieInteraction: {fileID: 1145835005}
-  quintonInteraction: {fileID: 957533877}
-  zekeInteraction: {fileID: 740963183}
-  missEvelynInteraction: {fileID: 1083002621}
-  louGlow: {fileID: 419530122}
-  archieGlow: {fileID: 1048204861}
-  quintonGlow: {fileID: 2034698905}
-  zekeGlow: {fileID: 1421447144}
-  missEvelynGlow: {fileID: 1595873376}
+  characters: {fileID: 2079822261}
   louTalked: 0
   archieTalked: 0
   quintonTalked: 0
