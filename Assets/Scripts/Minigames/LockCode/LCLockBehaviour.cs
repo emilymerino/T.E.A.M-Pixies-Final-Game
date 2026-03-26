@@ -6,7 +6,6 @@ public class LCLockBehaviour : MonoBehaviour
 {
     public LCInstructionsPopUp instructionsPopUp;
     public LCCombination combination;
-    public LCGameGuideManager gameGuideManager;
 
     public SpriteRenderer Lock;
 
@@ -23,7 +22,6 @@ public class LCLockBehaviour : MonoBehaviour
     {
         Lock.gameObject.SetActive(true);
         StartCoroutine(combination.DelayAction(2.0f));
-        gameGuideManager.HideYouGotIt();
     }
 
     public void HideLock()
