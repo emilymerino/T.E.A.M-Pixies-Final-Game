@@ -7,7 +7,11 @@ public class SoundsManager : MonoBehaviour
 
     public static SoundsManager Instance;
 
-    public AudioSource musicSource;
+    public AudioSource musicSource; // music 
+
+    public AudioSource ambienceSource; // rain background sounds
+
+    public AudioSource sfxSource; // will store short sound effects
 
     void Awake()
     {
@@ -31,5 +35,27 @@ public class SoundsManager : MonoBehaviour
         musicSource.clip = clip;
         musicSource.loop = true;
         musicSource.Play();
+    }
+
+    public void PlayAmbience(AudioClip clip)
+    {
+        // not restartign
+
+        if (musicSource.clip == clip) return;
+
+        musicSource.clip = clip;
+        musicSource.loop = true;
+        musicSource.Play();
+    }
+
+
+    public void StopAmbience()
+    {
+        ambienceSource.Stop();
+    }
+
+    public void PlaySFX(AudioClip clip)
+    {
+        sfxSource.PlayOneShot(clip);
     }
 }
