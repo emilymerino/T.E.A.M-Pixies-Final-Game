@@ -2016,7 +2016,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   music: {fileID: 0}
-  ambience1: {fileID: 0}
+  ambience1: {fileID: 8300000, guid: f685c8c8291a44ee4b3efc10405e1b3b, type: 3}
 --- !u!4 &1831339745
 Transform:
   m_ObjectHideFlags: 0
@@ -2073,6 +2073,8 @@ MonoBehaviour:
   meiStern: {fileID: 1795375823}
   meiHappy: {fileID: 2136150822}
   typingSpeed: 0.03
+  scream: {fileID: 8300000, guid: 7e83c0ef053904e949644ab0ef2cb1ea, type: 3}
+  footsteps: {fileID: 8300000, guid: b817ad74deec24759a53eb5ef1f0febe, type: 3}
 --- !u!4 &1876123981
 Transform:
   m_ObjectHideFlags: 0
