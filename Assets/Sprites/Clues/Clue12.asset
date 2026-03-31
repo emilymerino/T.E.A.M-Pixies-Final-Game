@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clueID: 12
   clueName: Second talk with Quinton
-  description: Archie saw Quinton in the hallway and glared at him angrily.
+  description: Archie saw Quinton in the east hallway and glared at him angrily.
   icon: {fileID: 21300000, guid: 5f8dcda38090e4596829e475d80ecfc7, type: 3}
