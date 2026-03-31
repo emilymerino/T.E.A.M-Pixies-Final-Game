@@ -1,48 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LCViewCombinationButton : MonoBehaviour
 {
     public LCCombination combination;
 
     private ISHoverGlow hoverGlow;
-    public SpriteRenderer ViewCombinationButton;
-    
+
     public bool isSelected = false;
 
     void Start()
     {
-        if (ViewCombinationButton == null)
-        {
-            ViewCombinationButton = GetComponent<SpriteRenderer>();
-        }
-
         hoverGlow = GetComponent<ISHoverGlow>();
+
         if (hoverGlow != null)
         {
             hoverGlow.HideGlow();
         }
 
-        ViewCombinationButton.gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 
-    public void OnMouseDown()
+    public void OnButtonClick()
     {
-        if (CompareTag("Selectable"))
+        isSelected = true;
+
+        if (combination != null)
         {
-            isSelected = true;
-
             combination.PlayCombination();
-
-            Debug.Log("Button Selected");
         }
+
+        Debug.Log("Button Selected");
     }
 
     public void ShowViewCombinationButton()
     {
-        ViewCombinationButton.gameObject.SetActive(true);
-        Debug.Log("Button Shown");
+        gameObject.SetActive(true);
     }
 
     public void HideViewCombinationButton()
@@ -52,7 +47,6 @@ public class LCViewCombinationButton : MonoBehaviour
             hoverGlow.HideGlow();
         }
 
-        ViewCombinationButton.gameObject.SetActive(false);
-        Debug.Log("Button Hidden");
+        gameObject.SetActive(false);
     }
 }
