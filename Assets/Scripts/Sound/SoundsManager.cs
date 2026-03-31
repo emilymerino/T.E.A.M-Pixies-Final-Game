@@ -58,4 +58,13 @@ public class SoundsManager : MonoBehaviour
     {
         sfxSource.PlayOneShot(clip);
     }
+
+    public void PlayMusicImmediate(AudioClip newClip)
+    {
+        StopAllCoroutines();  
+        musicSource.Stop();
+        musicSource.clip = newClip;
+        musicSource.loop = true;
+        musicSource.Play();
+    }
 }
