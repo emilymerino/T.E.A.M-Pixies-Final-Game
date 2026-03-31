@@ -26,6 +26,9 @@ public class ClassroomDialogue : MonoBehaviour
 
     public AudioClip footsteps;
 
+    public AudioClip nextMusic; // music next
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +43,17 @@ public class ClassroomDialogue : MonoBehaviour
 
         StartCoroutine(DialogueStart());
     }
+
+    IEnumerator PlayNextMusicAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        if (nextMusic != null)
+        {
+            SoundsManager.Instance.PlayMusicWithFade(nextMusic, 1f);
+        }
+    }
+
 
     IEnumerator DialogueStart()
     {
@@ -70,7 +84,10 @@ public class ClassroomDialogue : MonoBehaviour
         yield return StartCoroutine(currentDialogue("", "Mei stands up, agenda in hand, and heads out the room."));
         yield return StartCoroutine(currentDialogue("", "Rain began tapping softly against the glass, then quickly turned into a relentless downpour. Eloise closes her eyes for a moment."));
 
+
         SoundsManager.Instance.PlaySFX(scream);
+
+        SoundsManager.Instance.StopAmbience();
 
         yield return StartCoroutine(currentDialogue("", "The quiet was then shattered by a blood-curdling scream. It came from the bathroom."));
 

@@ -39,13 +39,12 @@ public class SoundsManager : MonoBehaviour
 
     public void PlayAmbience(AudioClip clip)
     {
-        // not restartign
+        // don't restart if same ambience
+        if (ambienceSource.clip == clip) return;
 
-        if (musicSource.clip == clip) return;
-
-        musicSource.clip = clip;
-        musicSource.loop = true;
-        musicSource.Play();
+        ambienceSource.clip = clip;
+        ambienceSource.loop = true;
+        ambienceSource.Play();
     }
 
 
@@ -67,4 +66,53 @@ public class SoundsManager : MonoBehaviour
         musicSource.loop = true;
         musicSource.Play();
     }
+
+    public void PlayMusicWithFade(AudioClip newClip, float duration)
+    {
+        StartCoroutine(FadeMusic(newClip, duration));
+    }
+
+    IEnumerator FadeMusic(AudioClip newClip, float duration)
+    {
+        float startVolume = musicSource.volume;
+
+        while (musicSource.volume > 0)
+        {
+            musicSource.volume -= startVolume * Time.deltaTime / duration;
+            yield return null;
+        }
+
+        musicSource.Stop();
+        musicSource.clip = newClip;
+        musicSource.Play();
+
+        while (musicSource.volume < startVolume)
+        {
+            musicSource.volume += startVolume * Time.deltaTime / duration;
+            yield return null;
+        }
+
+        musicSource.volume = startVolume;
+    }
+
+
+    public void StopAmbienceWithFade(float duration)
+    {
+        StartCoroutine(FadeOutAmbience(duration));
+    }
+
+    IEnumerator FadeOutAmbience(float duration)
+    {
+        float startVolume = ambienceSource.volume;
+
+        while (ambienceSource.volume > 0)
+        {
+            ambienceSource.volume -= startVolume * Time.deltaTime / duration;
+            yield return null;
+        }
+
+        ambienceSource.Stop();
+        ambienceSource.volume = startVolume;
+    }
+
 }
