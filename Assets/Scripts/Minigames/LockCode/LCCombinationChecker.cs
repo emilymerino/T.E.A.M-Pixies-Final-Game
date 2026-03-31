@@ -9,6 +9,7 @@ public class LCCombinationChecker : MonoBehaviour
     public LCLockBehaviour lockBehaviour;
     public LCLockUnlockedBehaviour lockUnlockedBehaviour;
     public LCStatusLightsBehaviour statusLightsBehaviour;
+    public LCViewCombinationButton viewCombinationButton;
 
     public bool CompareCombinations(List<SpriteRenderer> combinationList, List<SpriteRenderer> playersSelection)
     {
@@ -59,6 +60,8 @@ public class LCCombinationChecker : MonoBehaviour
 
         statusLightsBehaviour.ResetStatusLights();
         statusLightsBehaviour.ShowUnlockedStatusLights();
+
+        viewCombinationButton.HideViewCombinationButton();
 
         selectionManager.canSelect = false;
     }
