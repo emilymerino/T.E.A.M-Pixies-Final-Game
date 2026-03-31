@@ -3322,7 +3322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   music: {fileID: 8300000, guid: c22df9c89681f4c1a8ee4fcc3afd6abf, type: 3}
-  ambience1: {fileID: 0}
+  ambience1: {fileID: 8300000, guid: 24448412cb78b4ffc8d9abfd61254dd0, type: 3}
 --- !u!4 &1528109058
 Transform:
   m_ObjectHideFlags: 0
