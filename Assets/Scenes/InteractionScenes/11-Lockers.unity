@@ -1208,7 +1208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf2b54abfaa44fc1a01979f42b3ff94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  music: {fileID: 0}
+  music: {fileID: 8300000, guid: 43df189037fe34e6a9eb0a2aff5167c1, type: 3}
   ambience1: {fileID: 0}
 --- !u!4 &1029396643
 Transform:

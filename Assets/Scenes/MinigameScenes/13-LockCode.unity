@@ -1884,7 +1884,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf2b54abfaa44fc1a01979f42b3ff94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  music: {fileID: 0}
+  music: {fileID: 8300000, guid: db3816d71247c4f4e843429c61dd1408, type: 3}
   ambience1: {fileID: 0}
 --- !u!4 &1057914605
 Transform:

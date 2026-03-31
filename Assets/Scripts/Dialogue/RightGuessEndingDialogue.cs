@@ -37,6 +37,10 @@ public class RightGuessEndingDialogue : MonoBehaviour
 
     public GameObject background;
 
+    public AudioClip realization;
+
+    public AudioClip sirens;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -161,6 +165,9 @@ public class RightGuessEndingDialogue : MonoBehaviour
         yield return StartCoroutine(currentDialogue("Lou", "I-I… This is…"));
         yield return StartCoroutine(currentDialogue("Lou", "…"));
         yield return StartCoroutine(currentDialogue("Lou", "Fine. Yeah, I did murder her."));
+
+        SoundsManager.Instance.PlaySFX(realization);
+
         louNervous.SetActive(false);
         archieSurprised.SetActive(true);
         yield return StartCoroutine(currentDialogue("Archie", "But… But why? She didn’t have to die!"));
@@ -187,6 +194,8 @@ public class RightGuessEndingDialogue : MonoBehaviour
         yield return new WaitForSeconds(2);
         textBox.SetActive(true);
         mainText.SetActive(true);
+
+        SoundsManager.Instance.PlaySFX(sirens);
 
         yield return StartCoroutine(currentDialogue("", "The police eventually came and arrested Lou."));
         yield return StartCoroutine(currentDialogue("", "Eloise should feel good. She found Mei’s killer and got justice."));
