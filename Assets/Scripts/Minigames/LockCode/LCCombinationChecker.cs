@@ -9,7 +9,6 @@ public class LCCombinationChecker : MonoBehaviour
     public LCLockBehaviour lockBehaviour;
     public LCLockUnlockedBehaviour lockUnlockedBehaviour;
     public LCStatusLightsBehaviour statusLightsBehaviour;
-    public LCViewCombinationButton viewCombinationButton;
 
     public bool CompareCombinations(List<SpriteRenderer> combinationList, List<SpriteRenderer> playersSelection)
     {
@@ -43,11 +42,21 @@ public class LCCombinationChecker : MonoBehaviour
         combination.HideNotCombinationList();
 
         statusLightsBehaviour.ResetStatusLights();
-        statusLightsBehaviour.ShowLockedStatusLights(3f);
+        statusLightsBehaviour.ShowLockedStatusLights(2f);
 
-        selectionManager.canSelect = true;
+        selectionManager.canSelect = false;
 
         Debug.Log(debugMessage);
+
+        // replay combination after delay
+        StartCoroutine(ReplayAfterDelay());
+    }
+
+    IEnumerator ReplayAfterDelay()
+    {
+        yield return new WaitForSeconds(2f);
+
+        combination.PlayCombination();
     }
 
     private void HandleSuccess()
@@ -55,13 +64,10 @@ public class LCCombinationChecker : MonoBehaviour
         combination.HideCombination();
 
         lockBehaviour.HideLock();
-
         lockUnlockedBehaviour.ShowLockUnlocked();
 
         statusLightsBehaviour.ResetStatusLights();
         statusLightsBehaviour.ShowUnlockedStatusLights();
-
-        viewCombinationButton.HideViewCombinationButton();
 
         selectionManager.canSelect = false;
     }

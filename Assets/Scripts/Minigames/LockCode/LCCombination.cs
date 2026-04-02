@@ -6,7 +6,6 @@ public class LCCombination : MonoBehaviour
 {
     public LCSelectionManager selectionManager;
     public LCPlayerSelection playerSelection;
-    public LCViewCombinationButton viewCombinationButton;
     public LCStatusLightsBehaviour statusLightsBehaviour;
 
     public List<SpriteRenderer> combinationList;
@@ -41,28 +40,26 @@ public class LCCombination : MonoBehaviour
     {
         for (int i = 0; i < combinationList.Count; i++)
         {
+            // turn everything off first
             foreach (SpriteRenderer buttonLight in combinationList)
             {
                 if (buttonLight != null)
-                {
-                    buttonLight.enabled = false; // starts hidden
-                }
+                    buttonLight.enabled = false;
             }
 
-            combinationList[currentIndex].enabled = true; // show current sprite
+            // show current
+            combinationList[currentIndex].enabled = true;
 
-            yield return new WaitForSeconds(displayDuration); // wait for specific duration before moving to next sprite
+            yield return new WaitForSeconds(displayDuration);
 
             currentIndex++;
-
-            if (currentIndex >= combinationList.Count)
-            {
-                currentIndex = 0;
-            }
         }
-        HideCombination(); // makes sures combination hidden after shown
-        viewCombinationButton.ShowViewCombinationButton();
-        selectionManager.canSelect = true; // enable clicks 
+
+        currentIndex = 0;
+
+        HideCombination();
+
+        selectionManager.canSelect = true; // allow player input after showing
     }
 
     public void HideCombination()
