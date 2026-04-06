@@ -2,13 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    public AudioMixer volumeMixer;
+    public static MenuManager Instance;
 
+    public AudioMixer volumeMixer;
+    public GameObject menuCanvas;
     public GameObject menu;
 
+    void Start()
+    {
+        menu.SetActive(false);
+    }
+
+    void Awake()
+    {
+
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(menuCanvas);
+        }
+        else
+        {
+            Destroy(gameObject);
+            Destroy(menuCanvas);
+            return;
+        }
+    }
 
     public void SetVolume(float volume)
     {
@@ -25,15 +49,9 @@ public class MenuManager : MonoBehaviour
         menu.SetActive(true);
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void QuitButton()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        menu.SetActive(false);
+        SceneManager.LoadScene("1-MainMenu");
     }
 }

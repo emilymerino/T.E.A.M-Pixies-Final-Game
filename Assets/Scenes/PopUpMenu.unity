@@ -168,6 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   volumeMixer: {fileID: 24100000, guid: b46a0e64f6a6f492a8d1be48e368e373, type: 2}
   menu: {fileID: 673404533}
+  openButton: {fileID: 1948888530}
 --- !u!1 &96387820
 GameObject:
   m_ObjectHideFlags: 0

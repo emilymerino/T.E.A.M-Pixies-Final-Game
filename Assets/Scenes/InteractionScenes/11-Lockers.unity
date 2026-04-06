@@ -2031,9 +2031,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 183053624}
         m_TargetAssemblyTypeName: SkipButton, Assembly-CSharp
-        m_MethodName: outsideSkip
+        m_MethodName: hallwayOfLockersSkip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
