@@ -52,6 +52,10 @@ public class MenuManager : MonoBehaviour
     public void QuitButton()
     {
         menu.SetActive(false);
+
+        if (ClueManager.Instance != null)
+            ClueManager.Instance.ResetClueSystem();
+
         SceneManager.LoadScene("1-MainMenu");
     }
 }
