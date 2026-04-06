@@ -211,7 +211,12 @@ public class RightGuessEndingDialogue : MonoBehaviour
         yield return new WaitForSeconds(2);
         endingText.SetActive(true);
         yield return new WaitForSeconds(5);
+
+        if (ClueManager.Instance != null)
+            ClueManager.Instance.ResetClueSystem(); //resetting clues
+
         SceneManager.LoadScene(nextSceneName);
+
     }
 
     IEnumerator currentDialogue(string name, string dialogue)

@@ -57,6 +57,17 @@ public class ClueManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        if (scene.name == "MainMenu")
+        {
+            ResetClueSystem();
+        }
+
+        if (clueSlotsParent == null)
+            clueSlotsParent = GameObject.Find("ClueSlotsParent")?.transform;
+
+        if (clueInventoryPanel == null)
+            clueInventoryPanel = GameObject.Find("ClueInventoryPanel");
+
         // show button only in allowed scenes
         bool showInventory = System.Array.Exists(allowedScenes, s => s == scene.name);
         if (openClueInventoryButton != null)
@@ -189,5 +200,35 @@ public class ClueManager : MonoBehaviour
         if (openClueInventoryButtonText == null) return;
 
         openClueInventoryButtonText.text = clueInventoryPanel.activeSelf ? "X" : "Clues";
+    }
+
+    public void ResetClueSystem() // new function used to reset inventory once game is over
+    {
+        foundClues.Clear();
+
+        if (clueSlotsParent != null)
+        {
+            for (int i = clueSlotsParent.childCount - 1; i >= 0; i--)
+            {
+                Destroy(clueSlotsParent.GetChild(i).gameObject);
+            }
+        }
+
+        if (clueDetailIcon != null)
+            clueDetailIcon.enabled = false;
+
+        if (clueDetailBackground != null)
+            clueDetailBackground.enabled = false;
+
+        if (clueDetailDescription != null)
+            clueDetailDescription.text = "Select a clue to view details.";
+
+        if (clueInventoryPanel != null)
+            clueInventoryPanel.SetActive(false);
+
+        if (cluePopupPanel != null)
+            cluePopupPanel.SetActive(false);
+
+        UpdateButtonText();
     }
 }
