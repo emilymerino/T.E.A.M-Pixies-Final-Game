@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class TNReadyButtonSelection : MonoBehaviour
 {
-    public TNAutoHideAfterSeconds readyPopUp;
-
     public GameObject instructionsTitle;
     public GameObject instructionsBody;
+
+    public GameObject puzzleRoot;
 
     private ISHoverGlow hoverGlow;
     private SpriteRenderer ReadyButton;
@@ -30,9 +30,9 @@ public class TNReadyButtonSelection : MonoBehaviour
             Debug.Log("Button Selected");
             HideReadyButton();
 
-            if (readyPopUp != null)
+            if (puzzleRoot != null)
             {
-                readyPopUp.HideObject(); // show ready popup
+                puzzleRoot.SetActive(true);
             }
         }
     }
