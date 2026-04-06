@@ -123,6 +123,9 @@ public class WrongGuessEndingDialogue : MonoBehaviour
 
         if (dialogueFinished)
         {
+            if (ClueManager.Instance != null)
+                ClueManager.Instance.ResetClueSystem();
+
             SceneManager.LoadScene(nextSceneName);
         }
     }
