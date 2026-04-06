@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clueID: 5
   clueName: First talk with Lou
-  description: Lou was close to the crime scene prior to the meeting.
+  description: Lou was at her locker in the west hallway, near the crime scene. She
+    saw Mei pass by.
   icon: {fileID: 21300000, guid: b1a6416bd1f6642a285f65a8d894c812, type: 3}

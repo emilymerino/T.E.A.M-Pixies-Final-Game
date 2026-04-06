@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clueID: 3
   clueName: Locker Findings
-  description: " Found a blood stained council blazer in a locker, a blood stained
+  description: "Found a blood stained council blazer in a locker, a blood stained
     medical vial, along with a crumpled sticky note given by Mei: \u201CMeeting you
     about the missing transfers. This ends tonight.\u201D "
   icon: {fileID: 21300000, guid: 432f63174b80b4f12a4ff6841b662d57, type: 3}

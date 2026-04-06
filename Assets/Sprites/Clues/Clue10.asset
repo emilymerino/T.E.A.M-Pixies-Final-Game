@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clueID: 10
   clueName: Second talk with Miss Evelyn
-  description: 'Miss Evelyn seems to be pointing her finger at everyone else. '
+  description: Miss Evelyn said that both Lou and Archie were late to the meeting.
+    Quinton went to get something for her so he also came in later. Zeke doesn't
+    seem to be doing his job very well as of late.
   icon: {fileID: 21300000, guid: 9d02670bad9c847f4b6cf6880c879186, type: 3}

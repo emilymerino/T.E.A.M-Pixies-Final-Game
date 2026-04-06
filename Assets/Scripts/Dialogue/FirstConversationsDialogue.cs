@@ -328,7 +328,7 @@ public class FirstConversationsDialogue : MonoBehaviour
         yield return StartCoroutine(currentDialogue("Eloise", "Oh come on, Quinton."));
         eloiseSuspicious.SetActive(false);
         quintonNeutral.SetActive(true);
-        yield return StartCoroutine(currentDialogue("Quinton", "She started acting weird with me. I feel like she found something out that she shouldn’t have, and told me she wasn’t going to confront it herself. That’s all."));
+        yield return StartCoroutine(currentDialogue("Quinton", "She started acting weird with me. I feel like she found something out that she shouldn’t have, and told me she was going to confront it herself. That’s all."));
         eloiseNeutral.SetActive(true);
         quintonNeutral.SetActive(false);
         yield return StartCoroutine(currentDialogue("Eloise", "Confront who?"));

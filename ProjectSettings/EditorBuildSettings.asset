@@ -86,7 +86,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/InteractionScenes/27-IBathroom.unity
     guid: 4468aed0e4614415e8478a00b3978fec
-  - enabled: 0
-    path: Assets/Scenes/DialogueScenes/14-AfterLockCode.unity
-    guid: 9676b2b70511a4e6cb8bfe88f3e5ae58
   m_configObjects: {}

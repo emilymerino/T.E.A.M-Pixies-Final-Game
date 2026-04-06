@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clueID: 11
   clueName: Second talk with Lou
-  description: "Lou has a burn mark on her palm. She says all she did was exchange
+  description: "Lou has mark on her palm which she claims it came from a basketball
+    injury. Though, it looks more like a burn mark. She says all she did was exchange
     glances with Mei, and quickly mention\u2019s Archie\u2019s presence near her
-    when she was at the lockers before the meeting."
+    when she was at the lockers before the meeting. She thinks that Archie was going
+    to go confess his love for Mei."
   icon: {fileID: 21300000, guid: 6024cbcb94d734930a69d758d27f7711, type: 3}
