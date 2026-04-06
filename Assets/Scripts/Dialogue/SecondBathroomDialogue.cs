@@ -53,7 +53,7 @@ public class SecondBathroomDialogue : MonoBehaviour
         fadeInAndOut.SetActive(true);
         yield return StartCoroutine(currentDialogue("", "A sudden sound of the door opening catches Eloise off-guard. But before she could react, a sharp pain sinks into her neck."));
         lou.SetActive(true);
-        yield return StartCoroutine(currentDialogue("Lou", "Don’t take it too personal. You’re just being too noisy for your own good."));
+        yield return StartCoroutine(currentDialogue("Lou", "Don’t take it too personal. You’re just being too nosy for your own good."));
         lou.SetActive(false);
         yield return StartCoroutine(currentDialogue("", "Eloise falls to the floor next to Mei’s body. Blood pooled on the ground mixing together with Mei’s."));
         yield return StartCoroutine(currentDialogue("", "She wanted to ask why. Why would she do this but she couldn’t get a word out as Lou walks out of the bathroom."));
