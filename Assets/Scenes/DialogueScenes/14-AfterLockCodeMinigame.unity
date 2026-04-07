@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa63b36ed7e4e4b9193e375ae803bdfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeInTransition: {fileID: 0}
+  fadeInTransition: {fileID: 819223196}
   textBox: {fileID: 682835910}
   mainText: {fileID: 983663284}
   charName: {fileID: 1627204648}
